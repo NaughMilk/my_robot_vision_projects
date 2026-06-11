@@ -1,0 +1,3297 @@
+<?xml version='1.0' encoding='utf-8'?>
+<sdf version="1.7">
+  <world name="autonomous_map_3d_world">
+    <plugin name="gazebo_ros_state" filename="libgazebo_ros_state.so">
+      <update_rate>50.0</update_rate>
+    </plugin>
+    <scene>
+      <ambient>0.82 0.82 0.82 1</ambient>
+      <background>0.86 0.91 0.98 1</background>
+      <shadows>0</shadows>
+    </scene>
+    <light name="sun" type="directional">
+      <cast_shadows>1</cast_shadows>
+      <pose>-0.000000 0.000000 10.000000 0.000000 -0.000000 3.141593</pose>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <constant>0.9</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <direction>-0.5 0.1 -0.9</direction>
+      <spot>
+        <inner_angle>0</inner_angle>
+        <outer_angle>0</outer_angle>
+        <falloff>0</falloff>
+      </spot>
+    </light>
+    <light name="key_light" type="directional">
+      <cast_shadows>0</cast_shadows>
+      <pose>-0.000000 0.000000 6.000000 0.000000 -0.000000 3.141593</pose>
+      <diffuse>0.92 0.92 0.9 1</diffuse>
+      <specular>0.15 0.15 0.15 1</specular>
+      <direction>-0.3 0.35 -1</direction>
+      <attenuation>
+        <range>10</range>
+      </attenuation>
+      <spot>
+        <inner_angle>0</inner_angle>
+        <outer_angle>0</outer_angle>
+        <falloff>0</falloff>
+      </spot>
+    </light>
+    <light name="fill_light" type="directional">
+      <cast_shadows>0</cast_shadows>
+      <pose>-0.000000 0.000000 6.000000 0.000000 -0.000000 3.141593</pose>
+      <diffuse>0.42 0.46 0.52 1</diffuse>
+      <specular>0.05 0.05 0.05 1</specular>
+      <direction>0.3 -0.2 -1</direction>
+      <attenuation>
+        <range>10</range>
+      </attenuation>
+      <spot>
+        <inner_angle>0</inner_angle>
+        <outer_angle>0</outer_angle>
+        <falloff>0</falloff>
+      </spot>
+    </light>
+    <model name="autonomous_map_3d">
+      <static>1</static>
+      <link name="map_link">
+        <visual name="textured_map_visual">
+          <geometry>
+            <mesh>
+              <uri>model://autonomous_map_3d/meshes/autonomous_map_3d.dae</uri>
+              <scale>-1.0 1.0 1.0</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name="floor_collision">
+          <pose>0 0 -0.01 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>6 6 0.02</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode />
+            </contact>
+            <bounce />
+            <friction>
+              <torsional>
+                <ode />
+              </torsional>
+              <ode />
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>0 0.3 0 0 -0 0</pose>
+    </model>
+    <model name="traffic_light_top_island">
+      <static>1</static>
+      <link name="traffic_light_link">
+        <visual name="base_visual">
+          <pose>0 0 0.015 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.07</radius>
+              <length>0.03</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.03 0.03 0.04 1</ambient>
+            <diffuse>0.04 0.04 0.05 1</diffuse>
+          </material>
+        </visual>
+        <visual name="pole_visual">
+          <pose>0 0 0.25 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.016</radius>
+              <length>0.47</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.08 0.08 0.1 1</ambient>
+            <diffuse>0.1 0.1 0.13 1</diffuse>
+          </material>
+        </visual>
+        <visual name="housing_visual">
+          <pose>0 -0.006 0.565 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.145 0.055 0.34</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.02 0.025 0.04 1</ambient>
+            <diffuse>0.03 0.035 0.06 1</diffuse>
+          </material>
+        </visual>
+        <visual name="red_lens_visual">
+          <pose>0 -0.038 0.66 0 -0 0</pose>
+          <geometry>
+            <sphere>
+              <radius>0.043</radius>
+            </sphere>
+          </geometry>
+          <material>
+            <ambient>0.035 0.002 0.002 1</ambient>
+            <diffuse>0.06 0.004 0.004 1</diffuse>
+            <emissive>0 0 0 1</emissive>
+          </material>
+        </visual>
+        <visual name="yellow_lens_visual">
+          <pose>0 -0.038 0.565 0 -0 0</pose>
+          <geometry>
+            <sphere>
+              <radius>0.043</radius>
+            </sphere>
+          </geometry>
+          <material>
+            <ambient>0.035 0.025 0.002 1</ambient>
+            <diffuse>0.06 0.045 0.004 1</diffuse>
+            <emissive>0 0 0 1</emissive>
+          </material>
+        </visual>
+        <visual name="green_lens_visual">
+          <pose>0 -0.038 0.47 0 -0 0</pose>
+          <geometry>
+            <sphere>
+              <radius>0.043</radius>
+            </sphere>
+          </geometry>
+          <material>
+            <ambient>0.002 0.04 0.004 1</ambient>
+            <diffuse>0.004 0.078 0.01 1</diffuse>
+            <emissive>0 0 0 1</emissive>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>0.562500 1.589100 0.000000 0.000000 -0.000000 -0.000003</pose>
+    </model>
+    <model name="traffic_light_lower_island">
+      <static>1</static>
+      <link name="traffic_light_link">
+        <visual name="base_visual">
+          <pose>0 0 0.015 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.07</radius>
+              <length>0.03</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.03 0.03 0.04 1</ambient>
+            <diffuse>0.04 0.04 0.05 1</diffuse>
+          </material>
+        </visual>
+        <visual name="pole_visual">
+          <pose>0 0 0.25 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.016</radius>
+              <length>0.47</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.08 0.08 0.1 1</ambient>
+            <diffuse>0.1 0.1 0.13 1</diffuse>
+          </material>
+        </visual>
+        <visual name="housing_visual">
+          <pose>0 -0.006 0.565 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.145 0.055 0.34</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.02 0.025 0.04 1</ambient>
+            <diffuse>0.03 0.035 0.06 1</diffuse>
+          </material>
+        </visual>
+        <visual name="red_lens_visual">
+          <pose>0 -0.038 0.66 0 -0 0</pose>
+          <geometry>
+            <sphere>
+              <radius>0.043</radius>
+            </sphere>
+          </geometry>
+          <material>
+            <ambient>0.035 0.002 0.002 1</ambient>
+            <diffuse>0.06 0.004 0.004 1</diffuse>
+            <emissive>0 0 0 1</emissive>
+          </material>
+        </visual>
+        <visual name="yellow_lens_visual">
+          <pose>0 -0.038 0.565 0 -0 0</pose>
+          <geometry>
+            <sphere>
+              <radius>0.043</radius>
+            </sphere>
+          </geometry>
+          <material>
+            <ambient>0.035 0.025 0.002 1</ambient>
+            <diffuse>0.06 0.045 0.004 1</diffuse>
+            <emissive>0 0 0 1</emissive>
+          </material>
+        </visual>
+        <visual name="green_lens_visual">
+          <pose>0 -0.038 0.47 0 -0 0</pose>
+          <geometry>
+            <sphere>
+              <radius>0.043</radius>
+            </sphere>
+          </geometry>
+          <material>
+            <ambient>0.002 0.04 0.004 1</ambient>
+            <diffuse>0.004 0.078 0.01 1</diffuse>
+            <emissive>0 0 0 1</emissive>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>-0.281200 -0.731200 0.000000 0.000000 -0.000000 3.141593</pose>
+    </model>
+    <model name="traffic_light_top_island_red_active_lamp">
+      <static>0</static>
+      <link name="lamp_link">
+        <gravity>0</gravity>
+        <visual name="lamp_visual">
+          <geometry>
+            <sphere>
+              <radius>0.065</radius>
+            </sphere>
+          </geometry>
+          <material>
+            <ambient>1 0 0 1</ambient>
+            <diffuse>1 0 0 1</diffuse>
+            <emissive>0.0313726 0 0 1</emissive>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>1</kinematic>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+          <mass>1</mass>
+        </inertial>
+      </link>
+      <pose>-0.000000 0.000000 -5.000000 0.000000 -0.000000 3.141593</pose>
+    </model>
+    <model name="traffic_light_top_island_yellow_active_lamp">
+      <static>0</static>
+      <link name="lamp_link">
+        <gravity>0</gravity>
+        <visual name="lamp_visual">
+          <geometry>
+            <sphere>
+              <radius>0.065</radius>
+            </sphere>
+          </geometry>
+          <material>
+            <ambient>1 0.72 0 1</ambient>
+            <diffuse>1 0.72 0 1</diffuse>
+            <emissive>0.0313726 0.0203922 0 1</emissive>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>1</kinematic>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+          <mass>1</mass>
+        </inertial>
+      </link>
+      <pose>-0.000000 0.000000 -5.000000 0.000000 -0.000000 3.141593</pose>
+    </model>
+    <model name="traffic_light_top_island_green_active_lamp">
+      <static>0</static>
+      <link name="lamp_link">
+        <gravity>0</gravity>
+        <visual name="lamp_visual">
+          <geometry>
+            <sphere>
+              <radius>0.065</radius>
+            </sphere>
+          </geometry>
+          <material>
+            <ambient>0 1 0.05 1</ambient>
+            <diffuse>0 1 0.05 1</diffuse>
+            <emissive>0 0.0313726 0.3 1</emissive>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>1</kinematic>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+          <mass>1</mass>
+        </inertial>
+      </link>
+      <pose>-0.241400 1.589700 0.470000 0.000000 -0.000000 3.141593</pose>
+    </model>
+    <model name="traffic_light_lower_island_red_active_lamp">
+      <static>0</static>
+      <link name="lamp_link">
+        <gravity>0</gravity>
+        <visual name="lamp_visual">
+          <geometry>
+            <sphere>
+              <radius>0.065</radius>
+            </sphere>
+          </geometry>
+          <material>
+            <ambient>1 0 0 1</ambient>
+            <diffuse>1 0 0 1</diffuse>
+            <emissive>0.0313726 0 0 1</emissive>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>1</kinematic>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+          <mass>1</mass>
+        </inertial>
+      </link>
+      <pose>-0.000000 0.000000 -5.000000 0.000000 -0.000000 3.141593</pose>
+    </model>
+    <model name="traffic_light_lower_island_yellow_active_lamp">
+      <static>0</static>
+      <link name="lamp_link">
+        <gravity>0</gravity>
+        <visual name="lamp_visual">
+          <geometry>
+            <sphere>
+              <radius>0.065</radius>
+            </sphere>
+          </geometry>
+          <material>
+            <ambient>1 0.72 0 1</ambient>
+            <diffuse>1 0.72 0 1</diffuse>
+            <emissive>0.0313726 0.0203922 0 1</emissive>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>1</kinematic>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+          <mass>1</mass>
+        </inertial>
+      </link>
+      <pose>-0.000000 0.000000 -5.000000 0.000000 -0.000000 3.141593</pose>
+    </model>
+    <model name="traffic_light_lower_island_green_active_lamp">
+      <static>0</static>
+      <link name="lamp_link">
+        <gravity>0</gravity>
+        <visual name="lamp_visual">
+          <geometry>
+            <sphere>
+              <radius>0.065</radius>
+            </sphere>
+          </geometry>
+          <material>
+            <ambient>0 1 0.05 1</ambient>
+            <diffuse>0 1 0.05 1</diffuse>
+            <emissive>0 0.0313726 0.3 1</emissive>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>1</kinematic>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+          <mass>1</mass>
+        </inertial>
+      </link>
+      <pose>0.308200 -1.237500 0.470000 0.000000 -0.000000 3.141593</pose>
+    </model>
+    <model name="sign_go_straight_top_island">
+      <static>1</static>
+      <link name="sign_link">
+        <visual name="base_visual">
+          <pose>0 0 0.01 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.055</radius>
+              <length>0.02</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.72 0.72 0.7 1</ambient>
+            <diffuse>0.78 0.78 0.76 1</diffuse>
+          </material>
+        </visual>
+        <visual name="pole_visual">
+          <pose>0 0 0.245 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.011</radius>
+              <length>0.47</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.72 0.72 0.7 1</ambient>
+            <diffuse>0.82 0.82 0.8 1</diffuse>
+          </material>
+        </visual>
+        <visual name="back_plate_visual">
+          <pose>0 0 0.52 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.26 0.014 0.26</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.96 0.96 0.94 1</ambient>
+            <diffuse>0.98 0.98 0.96 1</diffuse>
+          </material>
+        </visual>
+        <visual name="sign_face_visual">
+          <pose>0 -0.011 0.52 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.246 0.004 0.246</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://road_sign_go_straight/materials/scripts</uri>
+              <uri>model://road_sign_go_straight/materials/textures</uri>
+              <name>RoadSign/GoStraight</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>1.359400 1.589100 0.000000 0.000000 -0.000000 1.570793</pose>
+    </model>
+    <model name="sign_turn_right_top_right_island">
+      <static>1</static>
+      <link name="sign_link">
+        <visual name="base_visual">
+          <pose>0 0 0.01 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.055</radius>
+              <length>0.02</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.72 0.72 0.7 1</ambient>
+            <diffuse>0.78 0.78 0.76 1</diffuse>
+          </material>
+        </visual>
+        <visual name="pole_visual">
+          <pose>0 0 0.245 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.011</radius>
+              <length>0.47</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.72 0.72 0.7 1</ambient>
+            <diffuse>0.82 0.82 0.8 1</diffuse>
+          </material>
+        </visual>
+        <visual name="back_plate_visual">
+          <pose>0 0 0.52 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.26 0.014 0.26</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.96 0.96 0.94 1</ambient>
+            <diffuse>0.98 0.98 0.96 1</diffuse>
+          </material>
+        </visual>
+        <visual name="sign_face_visual">
+          <pose>0 -0.011 0.52 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.246 0.004 0.246</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://road_sign_turn_right/materials/scripts</uri>
+              <uri>model://road_sign_turn_right/materials/textures</uri>
+              <name>RoadSign/TurnRight</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>-1.359400 1.589100 0.000000 0.000000 -0.000000 1.570793</pose>
+    </model>
+    <model name="sign_speed_limit_left_island">
+      <static>1</static>
+      <link name="sign_link">
+        <visual name="base_visual">
+          <pose>0 0 0.01 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.055</radius>
+              <length>0.02</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.72 0.72 0.7 1</ambient>
+            <diffuse>0.78 0.78 0.76 1</diffuse>
+          </material>
+        </visual>
+        <visual name="pole_visual">
+          <pose>0 0 0.245 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.011</radius>
+              <length>0.47</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.72 0.72 0.7 1</ambient>
+            <diffuse>0.82 0.82 0.8 1</diffuse>
+          </material>
+        </visual>
+        <visual name="back_plate_visual">
+          <pose>0 0 0.52 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.26 0.014 0.26</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.96 0.96 0.94 1</ambient>
+            <diffuse>0.98 0.98 0.96 1</diffuse>
+          </material>
+        </visual>
+        <visual name="sign_face_visual">
+          <pose>0 -0.011 0.52 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.246 0.004 0.246</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://road_sign_speed_limit/materials/scripts</uri>
+              <uri>model://road_sign_speed_limit/materials/textures</uri>
+              <name>RoadSign/SpeedLimit</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>1.406200 -0.567200 0.000000 0.000000 0.000000 -1.570793</pose>
+    </model>
+    <model name="sign_parking_lower_right_island">
+      <static>1</static>
+      <link name="sign_link">
+        <visual name="base_visual">
+          <pose>0 0 0.01 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.055</radius>
+              <length>0.02</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.72 0.72 0.7 1</ambient>
+            <diffuse>0.78 0.78 0.76 1</diffuse>
+          </material>
+        </visual>
+        <visual name="pole_visual">
+          <pose>0 0 0.245 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.011</radius>
+              <length>0.47</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.72 0.72 0.7 1</ambient>
+            <diffuse>0.82 0.82 0.8 1</diffuse>
+          </material>
+        </visual>
+        <visual name="back_plate_visual">
+          <pose>0 0 0.52 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.31 0.014 0.21</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.96 0.96 0.94 1</ambient>
+            <diffuse>0.98 0.98 0.96 1</diffuse>
+          </material>
+        </visual>
+        <visual name="sign_face_visual">
+          <pose>0 -0.011 0.52 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.294 0.004 0.196</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://road_sign_parking/materials/scripts</uri>
+              <uri>model://road_sign_parking/materials/textures</uri>
+              <name>RoadSign/Parking</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>-1.429700 -0.731200 0.000000 0.000000 -0.000000 3.141593</pose>
+    </model>
+    <model name="sign_turn_left_lower_left_island">
+      <static>1</static>
+      <link name="sign_link">
+        <visual name="base_visual">
+          <pose>0 0 0.01 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.055</radius>
+              <length>0.02</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.72 0.72 0.7 1</ambient>
+            <diffuse>0.78 0.78 0.76 1</diffuse>
+          </material>
+        </visual>
+        <visual name="pole_visual">
+          <pose>0 0 0.245 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.011</radius>
+              <length>0.47</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.72 0.72 0.7 1</ambient>
+            <diffuse>0.82 0.82 0.8 1</diffuse>
+          </material>
+        </visual>
+        <visual name="back_plate_visual">
+          <pose>0 0 0.52 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.26 0.014 0.26</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.96 0.96 0.94 1</ambient>
+            <diffuse>0.98 0.98 0.96 1</diffuse>
+          </material>
+        </visual>
+        <visual name="sign_face_visual">
+          <pose>0 -0.011 0.52 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.246 0.004 0.246</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://road_sign_turn_left/materials/scripts</uri>
+              <uri>model://road_sign_turn_left/materials/textures</uri>
+              <name>RoadSign/TurnLeft</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>1.406200 -0.215600 0.000000 0.000000 0.000000 -1.570793</pose>
+    </model>
+    <model name="track_preview_car">
+      <static>0</static>
+      <self_collide>0</self_collide>
+      <allow_auto_disable>0</allow_auto_disable>
+      <link name="body">
+        <gravity>1</gravity>
+        <inertial>
+          <mass>1</mass>
+          <inertia>
+            <ixx>0.01</ixx>
+            <iyy>0.01</iyy>
+            <izz>0.01</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
+        <visual name="chassis_visual">
+          <pose>0 0 0.065 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.26 0.14 0.055</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.08 0.2 0.7 1</ambient>
+            <diffuse>0.12 0.28 0.88 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+          </material>
+        </visual>
+        <visual name="roof_visual">
+          <pose>-0.005 0 0.115 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.14 0.105 0.045</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.65 0.78 0.95 0.92</ambient>
+            <diffuse>0.75 0.86 0.98 0.92</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+          </material>
+        </visual>
+        <visual name="front_marker_visual">
+          <pose>0.105 0 0.083 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.025 0.075 0.018</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 0.85 0.2 1</ambient>
+            <diffuse>1 0.88 0.25 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <visual name="camera_lens_visual">
+          <pose>0.138 0 0.126 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.016 0.04 0.022</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.02 0.02 0.025 1</ambient>
+            <diffuse>0.04 0.04 0.05 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <visual name="camera_view_left_ray_visual">
+          <pose>1.67 1.15 0.335 -0 0.0505 0.6109</pose>
+          <geometry>
+            <box>
+              <size>3.68 0.008 0.008</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.85 1 1 0.82</ambient>
+            <diffuse>0.85 1 1 0.82</diffuse>
+            <emissive>0.2 0.55 0.75 1</emissive>
+          </material>
+        </visual>
+        <visual name="camera_view_center_ray_visual">
+          <pose>1.67 0 0.335 0 0.0555 0</pose>
+          <geometry>
+            <box>
+              <size>3.0647 0.008 0.008</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.85 1 1 0.82</ambient>
+            <diffuse>0.85 1 1 0.82</diffuse>
+            <emissive>0.2 0.55 0.75 1</emissive>
+          </material>
+        </visual>
+        <visual name="camera_view_right_ray_visual">
+          <pose>1.67 -1.15 0.335 0 0.0505 -0.6109</pose>
+          <geometry>
+            <box>
+              <size>3.68 0.008 0.008</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.85 1 1 0.82</ambient>
+            <diffuse>0.85 1 1 0.82</diffuse>
+            <emissive>0.2 0.55 0.75 1</emissive>
+          </material>
+        </visual>
+        <visual name="debug_origin_marker_visual">
+          <pose>0 0 0.165 0 -0 0</pose>
+          <geometry>
+            <sphere>
+              <radius>0.018</radius>
+            </sphere>
+          </geometry>
+          <material>
+            <ambient>1 0.02 0.02 1</ambient>
+            <diffuse>1 0.04 0.04 1</diffuse>
+            <specular>0.08 0.08 0.08 1</specular>
+          </material>
+        </visual>
+        <visual name="debug_ground_origin_visual">
+          <pose>0 0 -0.017 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.018</radius>
+              <length>0.004</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>1 0.02 0.02 1</ambient>
+            <diffuse>1 0.04 0.04 1</diffuse>
+            <specular>0.08 0.08 0.08 1</specular>
+          </material>
+        </visual>
+        <visual name="debug_ground_footprint_front_visual">
+          <pose>0.165 0 -0.017 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.008 0.238 0.004</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0.7 1 1</ambient>
+            <diffuse>0.05 0.86 1 1</diffuse>
+            <specular>0.02 0.02 0.02 1</specular>
+          </material>
+        </visual>
+        <visual name="debug_ground_footprint_rear_visual">
+          <pose>-0.145 0 -0.017 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.008 0.238 0.004</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0.7 1 1</ambient>
+            <diffuse>0.05 0.86 1 1</diffuse>
+            <specular>0.02 0.02 0.02 1</specular>
+          </material>
+        </visual>
+        <visual name="debug_ground_footprint_left_visual">
+          <pose>0.01 0.115 -0.017 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.318 0.008 0.004</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0.7 1 1</ambient>
+            <diffuse>0.05 0.86 1 1</diffuse>
+            <specular>0.02 0.02 0.02 1</specular>
+          </material>
+        </visual>
+        <visual name="debug_ground_footprint_right_visual">
+          <pose>0.01 -0.115 -0.017 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.318 0.008 0.004</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0.7 1 1</ambient>
+            <diffuse>0.05 0.86 1 1</diffuse>
+            <specular>0.02 0.02 0.02 1</specular>
+          </material>
+        </visual>
+        <visual name="rear_left_dummy_wheel_visual">
+          <pose>-0.08 0.085 0.032 1.5708 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.028</radius>
+              <length>0.016</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.03 0.03 0.03 1</ambient>
+            <diffuse>0.07 0.07 0.07 1</diffuse>
+            <specular>0.02 0.02 0.02 1</specular>
+          </material>
+        </visual>
+        <visual name="rear_right_dummy_wheel_visual">
+          <pose>-0.08 -0.085 0.032 1.5708 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.028</radius>
+              <length>0.016</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.03 0.03 0.03 1</ambient>
+            <diffuse>0.07 0.07 0.07 1</diffuse>
+            <specular>0.02 0.02 0.02 1</specular>
+          </material>
+        </visual>
+        <collision name="rear_left_caster_collision">
+          <pose>-0.095 0.072 0.026 0 -0 0</pose>
+          <geometry>
+            <sphere>
+              <radius>0.024</radius>
+            </sphere>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.05</mu>
+                <mu2>0.05</mu2>
+              </ode>
+              <torsional>
+                <ode />
+              </torsional>
+            </friction>
+            <contact>
+              <ode />
+            </contact>
+            <bounce />
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <collision name="rear_right_caster_collision">
+          <pose>-0.095 -0.072 0.026 0 -0 0</pose>
+          <geometry>
+            <sphere>
+              <radius>0.024</radius>
+            </sphere>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.05</mu>
+                <mu2>0.05</mu2>
+              </ode>
+              <torsional>
+                <ode />
+              </torsional>
+            </friction>
+            <contact>
+              <ode />
+            </contact>
+            <bounce />
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <collision name="body_collision">
+          <pose>0 0 0.065 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.26 0.14 0.05</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode />
+            </contact>
+            <bounce />
+            <friction>
+              <torsional>
+                <ode />
+              </torsional>
+              <ode />
+            </friction>
+          </surface>
+        </collision>
+        <sensor name="front_camera" type="camera">
+          <pose>0.14 0 0.42 0 0.18 0</pose>
+          <always_on>1</always_on>
+          <update_rate>30</update_rate>
+          <visualize>0</visualize>
+          <camera>
+            <horizontal_fov>2.45</horizontal_fov>
+            <image>
+              <width>960</width>
+              <height>540</height>
+              <format>R8G8B8</format>
+            </image>
+            <clip>
+              <near>0.02</near>
+              <far>6</far>
+            </clip>
+          </camera>
+          <plugin name="front_camera_controller" filename="libgazebo_ros_camera.so">
+            <ros>
+              <namespace>/track_preview_car</namespace>
+              <remapping>image_raw:=image_raw</remapping>
+              <remapping>camera_info:=camera_info</remapping>
+            </ros>
+            <camera_name>camera</camera_name>
+            <frame_name>track_preview_car/front_camera</frame_name>
+          </plugin>
+        </sensor>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name="left_wheel">
+        <gravity>1</gravity>
+        <pose>0.08 0.088 0.032 0 -0 0</pose>
+        <inertial>
+          <mass>0.08</mass>
+          <inertia>
+            <ixx>5e-05</ixx>
+            <iyy>8e-05</iyy>
+            <izz>5e-05</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
+        <visual name="left_wheel_visual">
+          <pose>0 0 0 1.5708 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.03</radius>
+              <length>0.02</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.03 0.03 0.03 1</ambient>
+            <diffuse>0.07 0.07 0.07 1</diffuse>
+            <specular>0.02 0.02 0.02 1</specular>
+          </material>
+        </visual>
+        <collision name="left_wheel_collision">
+          <pose>0 0 0 1.5708 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.03</radius>
+              <length>0.02</length>
+            </cylinder>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1.2</mu>
+                <mu2>1.2</mu2>
+              </ode>
+              <torsional>
+                <ode />
+              </torsional>
+            </friction>
+            <contact>
+              <ode />
+            </contact>
+            <bounce />
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name="right_wheel">
+        <gravity>1</gravity>
+        <pose>0.08 -0.088 0.032 0 -0 0</pose>
+        <inertial>
+          <mass>0.08</mass>
+          <inertia>
+            <ixx>5e-05</ixx>
+            <iyy>8e-05</iyy>
+            <izz>5e-05</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
+        <visual name="right_wheel_visual">
+          <pose>0 0 0 1.5708 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.03</radius>
+              <length>0.02</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.03 0.03 0.03 1</ambient>
+            <diffuse>0.07 0.07 0.07 1</diffuse>
+            <specular>0.02 0.02 0.02 1</specular>
+          </material>
+        </visual>
+        <collision name="right_wheel_collision">
+          <pose>0 0 0 1.5708 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.03</radius>
+              <length>0.02</length>
+            </cylinder>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1.2</mu>
+                <mu2>1.2</mu2>
+              </ode>
+              <torsional>
+                <ode />
+              </torsional>
+            </friction>
+            <contact>
+              <ode />
+            </contact>
+            <bounce />
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name="left_wheel_joint" type="revolute">
+        <parent>body</parent>
+        <child>left_wheel</child>
+        <axis>
+          <xyz>0 1 0</xyz>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <joint name="right_wheel_joint" type="revolute">
+        <parent>body</parent>
+        <child>right_wheel</child>
+        <axis>
+          <xyz>0 1 0</xyz>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <plugin name="track_preview_car_diff_drive" filename="libgazebo_ros_diff_drive.so">
+        <ros>
+          <namespace>/track_preview_car</namespace>
+          <remapping>cmd_vel:=cmd_vel</remapping>
+          <remapping>odom:=odom</remapping>
+        </ros>
+        <left_joint>left_wheel_joint</left_joint>
+        <right_joint>right_wheel_joint</right_joint>
+        <wheel_separation>0.176</wheel_separation>
+        <wheel_diameter>0.06</wheel_diameter>
+        <max_wheel_torque>2.0</max_wheel_torque>
+        <max_wheel_acceleration>8.0</max_wheel_acceleration>
+        <odometry_frame>odom</odometry_frame>
+        <robot_base_frame>body</robot_base_frame>
+        <publish_odom>1</publish_odom>
+        <publish_odom_tf>0</publish_odom_tf>
+        <publish_wheel_tf>0</publish_wheel_tf>
+        <update_rate>50</update_rate>
+      </plugin>
+      <pose>1.828120 2.179690 -0.002000 0.000000 -0.000000 0.000003</pose>
+    </model>
+    <physics name="default_physics" default="1" type="ode">
+      <max_step_size>0.001</max_step_size>
+      <real_time_update_rate>1000</real_time_update_rate>
+      <real_time_factor>1</real_time_factor>
+    </physics>
+    <gui fullscreen="0">
+      <camera name="user_camera">
+        <pose>1.36582 5.7559 5.72311 0 0.714092 -1.72161</pose>
+        <view_controller>orbit</view_controller>
+        <projection_type>perspective</projection_type>
+      </camera>
+    </gui>
+    <gravity>0 0 -9.8</gravity>
+    <magnetic_field>6e-06 2.3e-05 -4.2e-05</magnetic_field>
+    <atmosphere type="adiabatic" />
+    <wind />
+    <spherical_coordinates>
+      <surface_model>EARTH_WGS84</surface_model>
+      <latitude_deg>0</latitude_deg>
+      <longitude_deg>0</longitude_deg>
+      <elevation>0</elevation>
+      <heading_deg>0</heading_deg>
+    </spherical_coordinates>
+    <model name="route_preview_code_transform_magenta">
+      <static>1</static>
+      <link name="route_preview_link">
+        <visual name="route_segment_0000">
+          <pose>-0.937500 2.179688 0.040000 0.000000 0.000000 0.000000</pose>
+          <geometry>
+            <box>
+              <size>1.781250 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0001">
+          <pose>0.210938 2.179688 0.040000 0.000000 0.000000 0.000000</pose>
+          <geometry>
+            <box>
+              <size>0.515625 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0002">
+          <pose>0.703125 2.179688 0.040000 0.000000 0.000000 0.000000</pose>
+          <geometry>
+            <box>
+              <size>0.468750 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0003">
+          <pose>1.371094 2.179688 0.040000 0.000000 0.000000 0.000000</pose>
+          <geometry>
+            <box>
+              <size>0.867188 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0004">
+          <pose>1.839844 2.179688 0.040000 0.000000 0.000000 0.000000</pose>
+          <geometry>
+            <box>
+              <size>0.070312 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0005">
+          <pose>1.886719 2.167969 0.040000 0.000000 0.000000 -0.785398</pose>
+          <geometry>
+            <box>
+              <size>0.033146 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0006">
+          <pose>1.933594 2.156250 0.040000 0.000000 0.000000 0.000000</pose>
+          <geometry>
+            <box>
+              <size>0.070312 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0007">
+          <pose>1.980469 2.144531 0.040000 0.000000 0.000000 -0.785398</pose>
+          <geometry>
+            <box>
+              <size>0.033146 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0008">
+          <pose>2.027344 2.132812 0.040000 0.000000 0.000000 0.000000</pose>
+          <geometry>
+            <box>
+              <size>0.070312 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0009">
+          <pose>2.121094 2.074219 0.040000 0.000000 0.000000 -0.785398</pose>
+          <geometry>
+            <box>
+              <size>0.165728 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0010">
+          <pose>2.179688 1.921875 0.040000 0.000000 0.000000 -1.570796</pose>
+          <geometry>
+            <box>
+              <size>0.187500 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0011">
+          <pose>2.203125 1.359375 0.040000 0.000000 0.000000 -1.520838</pose>
+          <geometry>
+            <box>
+              <size>0.938671 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0012">
+          <pose>2.226562 0.187500 0.040000 0.000000 0.000000 -1.570796</pose>
+          <geometry>
+            <box>
+              <size>1.406250 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0013">
+          <pose>2.203125 -1.160156 0.040000 0.000000 0.000000 -1.607144</pose>
+          <geometry>
+            <box>
+              <size>1.289914 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0014">
+          <pose>2.167969 -1.804688 0.040000 0.000000 0.000000 3.141593</pose>
+          <geometry>
+            <box>
+              <size>0.023438 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0015">
+          <pose>2.132812 -1.828125 0.040000 0.000000 0.000000 -2.356194</pose>
+          <geometry>
+            <box>
+              <size>0.066291 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0016">
+          <pose>1.957031 -1.851562 0.040000 0.000000 0.000000 3.141593</pose>
+          <geometry>
+            <box>
+              <size>0.304688 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0017">
+          <pose>1.371094 -1.851562 0.040000 0.000000 0.000000 3.141593</pose>
+          <geometry>
+            <box>
+              <size>0.867188 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0018">
+          <pose>0.445312 -1.851562 0.040000 0.000000 0.000000 3.141593</pose>
+          <geometry>
+            <box>
+              <size>0.984375 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0019">
+          <pose>-0.539062 -1.851562 0.040000 0.000000 0.000000 3.141593</pose>
+          <geometry>
+            <box>
+              <size>0.984375 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0020">
+          <pose>-1.429688 -1.851562 0.040000 0.000000 0.000000 3.141593</pose>
+          <geometry>
+            <box>
+              <size>0.796875 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0021">
+          <pose>-1.968750 -1.851562 0.040000 0.000000 0.000000 3.141593</pose>
+          <geometry>
+            <box>
+              <size>0.281250 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0022">
+          <pose>-2.132812 -1.828125 0.040000 0.000000 0.000000 2.356194</pose>
+          <geometry>
+            <box>
+              <size>0.066291 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0023">
+          <pose>-2.167969 -1.804688 0.040000 0.000000 0.000000 3.141593</pose>
+          <geometry>
+            <box>
+              <size>0.023438 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0024">
+          <pose>-2.203125 -0.902344 0.040000 0.000000 0.000000 1.596765</pose>
+          <geometry>
+            <box>
+              <size>1.805296 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0025">
+          <pose>-2.226562 0.070312 0.040000 0.000000 0.000000 1.570796</pose>
+          <geometry>
+            <box>
+              <size>0.140625 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0026">
+          <pose>-2.214844 0.152344 0.040000 0.000000 0.000000 0.785398</pose>
+          <geometry>
+            <box>
+              <size>0.033146 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0027">
+          <pose>-2.203125 0.187500 0.040000 0.000000 0.000000 1.570796</pose>
+          <geometry>
+            <box>
+              <size>0.046875 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0028">
+          <pose>-2.191406 0.222656 0.040000 0.000000 0.000000 0.785398</pose>
+          <geometry>
+            <box>
+              <size>0.033146 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0029">
+          <pose>-2.214844 0.562500 0.040000 0.000000 0.000000 1.677532</pose>
+          <geometry>
+            <box>
+              <size>0.660006 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0030">
+          <pose>-2.238281 1.347656 0.040000 0.000000 0.000000 1.545161</pose>
+          <geometry>
+            <box>
+              <size>0.914363 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0031">
+          <pose>-2.226562 1.886719 0.040000 0.000000 0.000000 1.570796</pose>
+          <geometry>
+            <box>
+              <size>0.164062 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0032">
+          <pose>-2.144531 2.050781 0.040000 0.000000 0.000000 0.785398</pose>
+          <geometry>
+            <box>
+              <size>0.232019 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0033">
+          <pose>-2.050781 2.132812 0.040000 0.000000 0.000000 0.000000</pose>
+          <geometry>
+            <box>
+              <size>0.023438 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0034">
+          <pose>-2.027344 2.144531 0.040000 0.000000 0.000000 0.785398</pose>
+          <geometry>
+            <box>
+              <size>0.033146 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0035">
+          <pose>-1.980469 2.156250 0.040000 0.000000 0.000000 0.000000</pose>
+          <geometry>
+            <box>
+              <size>0.070312 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0036">
+          <pose>-1.933594 2.167969 0.040000 0.000000 0.000000 0.785398</pose>
+          <geometry>
+            <box>
+              <size>0.033146 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0037">
+          <pose>-1.875000 2.179688 0.040000 0.000000 0.000000 0.000000</pose>
+          <geometry>
+            <box>
+              <size>0.093750 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0038">
+          <pose>0.468750 1.265625 0.040000 0.000000 0.000000 -1.570796</pose>
+          <geometry>
+            <box>
+              <size>1.828125 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0039">
+          <pose>1.324219 0.351562 0.040000 0.000000 0.000000 0.000000</pose>
+          <geometry>
+            <box>
+              <size>1.710938 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0040">
+          <pose>2.203125 -0.082031 0.040000 0.000000 0.000000 -1.516795</pose>
+          <geometry>
+            <box>
+              <size>0.868453 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0041">
+          <pose>-2.121094 0.292969 0.040000 0.000000 0.000000 0.785398</pose>
+          <geometry>
+            <box>
+              <size>0.165728 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0042">
+          <pose>-1.804688 0.351562 0.040000 0.000000 0.000000 0.000000</pose>
+          <geometry>
+            <box>
+              <size>0.515625 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0043">
+          <pose>-1.031250 0.292969 0.040000 0.000000 0.000000 -0.113151</pose>
+          <geometry>
+            <box>
+              <size>1.037887 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0044">
+          <pose>-0.503906 0.234375 0.040000 0.000000 0.000000 0.000000</pose>
+          <geometry>
+            <box>
+              <size>0.023438 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0045">
+          <pose>-0.480469 0.246094 0.040000 0.000000 0.000000 0.785398</pose>
+          <geometry>
+            <box>
+              <size>0.033146 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0046">
+          <pose>-0.457031 0.257812 0.040000 0.000000 0.000000 0.000000</pose>
+          <geometry>
+            <box>
+              <size>0.023438 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0047">
+          <pose>-0.433594 0.269531 0.040000 0.000000 0.000000 0.785398</pose>
+          <geometry>
+            <box>
+              <size>0.033146 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0048">
+          <pose>-0.398438 0.281250 0.040000 0.000000 0.000000 0.000000</pose>
+          <geometry>
+            <box>
+              <size>0.046875 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0049">
+          <pose>-0.363281 0.292969 0.040000 0.000000 0.000000 0.785398</pose>
+          <geometry>
+            <box>
+              <size>0.033146 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0050">
+          <pose>-0.339844 0.304688 0.040000 0.000000 0.000000 0.000000</pose>
+          <geometry>
+            <box>
+              <size>0.023438 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0051">
+          <pose>-0.316406 0.316406 0.040000 0.000000 0.000000 0.785398</pose>
+          <geometry>
+            <box>
+              <size>0.033146 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0052">
+          <pose>-0.269531 0.328125 0.040000 0.000000 0.000000 0.000000</pose>
+          <geometry>
+            <box>
+              <size>0.070312 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0053">
+          <pose>-0.222656 0.339844 0.040000 0.000000 0.000000 0.785398</pose>
+          <geometry>
+            <box>
+              <size>0.033146 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0054">
+          <pose>-0.140625 0.351562 0.040000 0.000000 0.000000 0.000000</pose>
+          <geometry>
+            <box>
+              <size>0.140625 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0055">
+          <pose>-0.058594 0.363281 0.040000 0.000000 0.000000 0.785398</pose>
+          <geometry>
+            <box>
+              <size>0.033146 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0056">
+          <pose>0.210938 0.375000 0.040000 0.000000 0.000000 0.000000</pose>
+          <geometry>
+            <box>
+              <size>0.515625 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0057">
+          <pose>0.480469 0.363281 0.040000 0.000000 0.000000 -0.785398</pose>
+          <geometry>
+            <box>
+              <size>0.033146 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0058">
+          <pose>0.492188 0.339844 0.040000 0.000000 0.000000 -1.570796</pose>
+          <geometry>
+            <box>
+              <size>0.023438 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0059">
+          <pose>0.785156 0.328125 0.040000 0.000000 0.000000 0.000000</pose>
+          <geometry>
+            <box>
+              <size>0.585938 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0060">
+          <pose>1.089844 0.339844 0.040000 0.000000 0.000000 0.785398</pose>
+          <geometry>
+            <box>
+              <size>0.033146 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0061">
+          <pose>1.183594 0.351562 0.040000 0.000000 0.000000 0.000000</pose>
+          <geometry>
+            <box>
+              <size>0.164062 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0062">
+          <pose>1.277344 0.363281 0.040000 0.000000 0.000000 0.785398</pose>
+          <geometry>
+            <box>
+              <size>0.033146 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0063">
+          <pose>1.664062 0.375000 0.040000 0.000000 0.000000 0.000000</pose>
+          <geometry>
+            <box>
+              <size>0.750000 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0064">
+          <pose>2.109375 0.304688 0.040000 0.000000 0.000000 -0.785398</pose>
+          <geometry>
+            <box>
+              <size>0.198874 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0065">
+          <pose>2.203125 -0.140625 0.040000 0.000000 0.000000 -1.508378</pose>
+          <geometry>
+            <box>
+              <size>0.751463 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0066">
+          <pose>-0.058594 -1.839844 0.040000 0.000000 0.000000 2.356194</pose>
+          <geometry>
+            <box>
+              <size>0.033146 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0067">
+          <pose>-0.117188 -1.828125 0.040000 0.000000 0.000000 3.141593</pose>
+          <geometry>
+            <box>
+              <size>0.093750 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0068">
+          <pose>-0.187500 -1.804688 0.040000 0.000000 0.000000 2.356194</pose>
+          <geometry>
+            <box>
+              <size>0.066291 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0069">
+          <pose>-0.210938 -1.769531 0.040000 0.000000 0.000000 1.570796</pose>
+          <geometry>
+            <box>
+              <size>0.023438 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0070">
+          <pose>-0.246094 -1.757812 0.040000 0.000000 0.000000 3.141593</pose>
+          <geometry>
+            <box>
+              <size>0.070312 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0071">
+          <pose>-0.398438 -1.640625 0.040000 0.000000 0.000000 2.356194</pose>
+          <geometry>
+            <box>
+              <size>0.331456 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0072">
+          <pose>-0.515625 -0.585938 0.040000 0.000000 0.000000 1.570796</pose>
+          <geometry>
+            <box>
+              <size>1.875000 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0073">
+          <pose>-1.230469 0.351562 0.040000 0.000000 0.000000 3.141593</pose>
+          <geometry>
+            <box>
+              <size>1.429688 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0074">
+          <pose>-2.085938 0.210938 0.040000 0.000000 0.000000 -2.356194</pose>
+          <geometry>
+            <box>
+              <size>0.397748 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0075">
+          <pose>-2.226562 0.035156 0.040000 0.000000 0.000000 -1.570796</pose>
+          <geometry>
+            <box>
+              <size>0.070312 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0076">
+          <pose>2.203125 -0.140625 0.040000 0.000000 0.000000 1.633215</pose>
+          <geometry>
+            <box>
+              <size>0.751463 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0077">
+          <pose>2.109375 0.304688 0.040000 0.000000 0.000000 2.356194</pose>
+          <geometry>
+            <box>
+              <size>0.198874 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0078">
+          <pose>1.652344 0.375000 0.040000 0.000000 0.000000 3.141593</pose>
+          <geometry>
+            <box>
+              <size>0.773438 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0079">
+          <pose>1.253906 0.363281 0.040000 0.000000 0.000000 -2.356194</pose>
+          <geometry>
+            <box>
+              <size>0.033146 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0080">
+          <pose>1.171875 0.351562 0.040000 0.000000 0.000000 3.141593</pose>
+          <geometry>
+            <box>
+              <size>0.140625 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0081">
+          <pose>1.089844 0.339844 0.040000 0.000000 0.000000 -2.356194</pose>
+          <geometry>
+            <box>
+              <size>0.033146 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0082">
+          <pose>0.785156 0.328125 0.040000 0.000000 0.000000 3.141593</pose>
+          <geometry>
+            <box>
+              <size>0.585938 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0083">
+          <pose>0.492188 0.339844 0.040000 0.000000 0.000000 1.570796</pose>
+          <geometry>
+            <box>
+              <size>0.023438 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0084">
+          <pose>0.480469 0.363281 0.040000 0.000000 0.000000 2.356194</pose>
+          <geometry>
+            <box>
+              <size>0.033146 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0085">
+          <pose>0.199219 0.375000 0.040000 0.000000 0.000000 3.141593</pose>
+          <geometry>
+            <box>
+              <size>0.539062 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0086">
+          <pose>-0.082031 0.363281 0.040000 0.000000 0.000000 -2.356194</pose>
+          <geometry>
+            <box>
+              <size>0.033146 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0087">
+          <pose>-0.152344 0.351562 0.040000 0.000000 0.000000 3.141593</pose>
+          <geometry>
+            <box>
+              <size>0.117188 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0088">
+          <pose>-0.222656 0.339844 0.040000 0.000000 0.000000 -2.356194</pose>
+          <geometry>
+            <box>
+              <size>0.033146 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0089">
+          <pose>-0.269531 0.328125 0.040000 0.000000 0.000000 3.141593</pose>
+          <geometry>
+            <box>
+              <size>0.070312 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0090">
+          <pose>-0.316406 0.316406 0.040000 0.000000 0.000000 -2.356194</pose>
+          <geometry>
+            <box>
+              <size>0.033146 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0091">
+          <pose>-0.351562 0.304688 0.040000 0.000000 0.000000 3.141593</pose>
+          <geometry>
+            <box>
+              <size>0.046875 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0092">
+          <pose>-0.386719 0.292969 0.040000 0.000000 0.000000 -2.356194</pose>
+          <geometry>
+            <box>
+              <size>0.033146 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0093">
+          <pose>-0.410156 0.281250 0.040000 0.000000 0.000000 3.141593</pose>
+          <geometry>
+            <box>
+              <size>0.023438 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0094">
+          <pose>-0.433594 0.269531 0.040000 0.000000 0.000000 -2.356194</pose>
+          <geometry>
+            <box>
+              <size>0.033146 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0095">
+          <pose>-0.468750 0.257812 0.040000 0.000000 0.000000 3.141593</pose>
+          <geometry>
+            <box>
+              <size>0.046875 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0096">
+          <pose>-0.503906 0.246094 0.040000 0.000000 0.000000 -2.356194</pose>
+          <geometry>
+            <box>
+              <size>0.033146 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0097">
+          <pose>-1.031250 0.292969 0.040000 0.000000 0.000000 3.028442</pose>
+          <geometry>
+            <box>
+              <size>1.037887 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0098">
+          <pose>-1.804688 0.351562 0.040000 0.000000 0.000000 3.141593</pose>
+          <geometry>
+            <box>
+              <size>0.515625 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0099">
+          <pose>-2.121094 0.292969 0.040000 0.000000 0.000000 -2.356194</pose>
+          <geometry>
+            <box>
+              <size>0.165728 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0100">
+          <pose>-2.121094 0.292969 0.040000 0.000000 0.000000 0.785398</pose>
+          <geometry>
+            <box>
+              <size>0.165728 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0101">
+          <pose>-1.804688 0.351562 0.040000 0.000000 0.000000 0.000000</pose>
+          <geometry>
+            <box>
+              <size>0.515625 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0102">
+          <pose>-1.031250 0.292969 0.040000 0.000000 0.000000 -0.113151</pose>
+          <geometry>
+            <box>
+              <size>1.037887 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0103">
+          <pose>-0.503906 0.234375 0.040000 0.000000 0.000000 0.000000</pose>
+          <geometry>
+            <box>
+              <size>0.023438 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0104">
+          <pose>-0.480469 0.246094 0.040000 0.000000 0.000000 0.785398</pose>
+          <geometry>
+            <box>
+              <size>0.033146 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0105">
+          <pose>-0.457031 0.257812 0.040000 0.000000 0.000000 0.000000</pose>
+          <geometry>
+            <box>
+              <size>0.023438 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0106">
+          <pose>-0.433594 0.269531 0.040000 0.000000 0.000000 0.785398</pose>
+          <geometry>
+            <box>
+              <size>0.033146 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0107">
+          <pose>-0.398438 0.281250 0.040000 0.000000 0.000000 0.000000</pose>
+          <geometry>
+            <box>
+              <size>0.046875 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0108">
+          <pose>-0.363281 0.292969 0.040000 0.000000 0.000000 0.785398</pose>
+          <geometry>
+            <box>
+              <size>0.033146 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0109">
+          <pose>-0.339844 0.304688 0.040000 0.000000 0.000000 0.000000</pose>
+          <geometry>
+            <box>
+              <size>0.023438 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0110">
+          <pose>-0.316406 0.316406 0.040000 0.000000 0.000000 0.785398</pose>
+          <geometry>
+            <box>
+              <size>0.033146 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0111">
+          <pose>-0.269531 0.328125 0.040000 0.000000 0.000000 0.000000</pose>
+          <geometry>
+            <box>
+              <size>0.070312 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0112">
+          <pose>-0.222656 0.339844 0.040000 0.000000 0.000000 0.785398</pose>
+          <geometry>
+            <box>
+              <size>0.033146 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0113">
+          <pose>-0.140625 0.351562 0.040000 0.000000 0.000000 0.000000</pose>
+          <geometry>
+            <box>
+              <size>0.140625 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0114">
+          <pose>-0.058594 0.363281 0.040000 0.000000 0.000000 0.785398</pose>
+          <geometry>
+            <box>
+              <size>0.033146 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0115">
+          <pose>0.210938 0.375000 0.040000 0.000000 0.000000 0.000000</pose>
+          <geometry>
+            <box>
+              <size>0.515625 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0116">
+          <pose>0.480469 0.363281 0.040000 0.000000 0.000000 -0.785398</pose>
+          <geometry>
+            <box>
+              <size>0.033146 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0117">
+          <pose>0.492188 0.339844 0.040000 0.000000 0.000000 -1.570796</pose>
+          <geometry>
+            <box>
+              <size>0.023438 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0118">
+          <pose>0.785156 0.328125 0.040000 0.000000 0.000000 0.000000</pose>
+          <geometry>
+            <box>
+              <size>0.585938 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0119">
+          <pose>1.089844 0.339844 0.040000 0.000000 0.000000 0.785398</pose>
+          <geometry>
+            <box>
+              <size>0.033146 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0120">
+          <pose>1.183594 0.351562 0.040000 0.000000 0.000000 0.000000</pose>
+          <geometry>
+            <box>
+              <size>0.164062 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0121">
+          <pose>1.277344 0.363281 0.040000 0.000000 0.000000 0.785398</pose>
+          <geometry>
+            <box>
+              <size>0.033146 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0122">
+          <pose>1.664062 0.375000 0.040000 0.000000 0.000000 0.000000</pose>
+          <geometry>
+            <box>
+              <size>0.750000 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0123">
+          <pose>2.109375 0.304688 0.040000 0.000000 0.000000 -0.785398</pose>
+          <geometry>
+            <box>
+              <size>0.198874 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+        <visual name="route_segment_0124">
+          <pose>2.203125 -0.140625 0.040000 0.000000 0.000000 -1.508378</pose>
+          <geometry>
+            <box>
+              <size>0.751463 0.020000 0.020000</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+      </link>
+      <pose>0 0 0 0 0 0</pose>
+    </model>
+  </world>
+</sdf>

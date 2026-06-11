@@ -1,0 +1,22 @@
+{
+  "world": "/home/quocbao/my_robot_vision_full_project/my_robot_vision/route_drawing_lab/outputs/session_20260608_132843/preview_flat_magenta_original2d_3d_camera_match_2d/autonomous_map_3d_mirror_x_flat_magenta_original2d_camera_match_2d.world",
+  "source_world": "/home/quocbao/my_robot_vision_full_project/my_robot_vision/route_drawing_lab/outputs/session_20260608_132843/preview_flat_magenta_original2d_3d/autonomous_map_3d_mirror_x_flat_magenta_original2d_preview.world",
+  "purpose": "Same static 3D route preview, but camera yaw rotated 180 degrees to match the original 2D map orientation on screen.",
+  "map_and_route_transform_changed": false,
+  "camera_pose": [
+    0.0,
+    0.3,
+    7.5,
+    0.0,
+    1.570796,
+    -1.570796
+  ],
+  "previous_camera_pose": [
+    0.0,
+    0.3,
+    7.5,
+    0.0,
+    1.570796,
+    1.570796
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "source_world": "/home/quocbao/Downloads/map_1",
+  "output_world": "mirrored_world_lab/generated/autonomous_map_3d_mirror_x_outer_planned_preview.world",
+  "axis": "x",
+  "removed_state_blocks": 1,
+  "mirrored_meshes": 1,
+  "map_pose": [
+    0.0,
+    0.3,
+    0.0,
+    0.0,
+    -0.0,
+    0.0
+  ],
+  "route_preview": true,
+  "route_preview_mode": "magenta",
+  "route_preview_planned": true,
+  "route_preview_scope": "outer",
+  "clearance_px": 12
+}

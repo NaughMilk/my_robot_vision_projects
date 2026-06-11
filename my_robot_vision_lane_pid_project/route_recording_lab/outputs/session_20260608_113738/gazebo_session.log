@@ -1,0 +1,19 @@
+[INFO] [launch]: All log files can be found below /home/quocbao/.ros/log/2026-06-08-11-37-38-976619-ubuntu-36913
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [gzserver-1]: process started with pid [36915]
+[INFO] [gzclient   -2]: process started with pid [36917]
+[gzserver-1] [INFO] [1780943861.081348204] [track_preview_car.front_camera_controller]: Publishing camera info to [/track_preview_car/camera/camera_info]
+[gzserver-1] [INFO] [1780943861.092423907] [gazebo_ros_state]: Publishing states of gazebo models at [/model_states]
+[gzserver-1] [INFO] [1780943861.092800548] [gazebo_ros_state]: Publishing states of gazebo links at [/link_states]
+[gzserver-1] [INFO] [1780943861.105265535] [track_preview_car.track_preview_car_diff_drive]: Wheel pair 1 separation set to [0.176000m]
+[gzserver-1] [INFO] [1780943861.105428343] [track_preview_car.track_preview_car_diff_drive]: Wheel pair 1 diameter set to [0.060000m]
+[gzserver-1] [INFO] [1780943861.106435243] [track_preview_car.track_preview_car_diff_drive]: Subscribed to [/track_preview_car/cmd_vel]
+[gzserver-1] [INFO] [1780943861.107083006] [track_preview_car.track_preview_car_diff_drive]: Advertise odometry on [/track_preview_car/odom]
+[gzclient   -2] context mismatch in svga_surface_destroy
+[gzclient   -2] context mismatch in svga_surface_destroy
+[WARNING] [launch]: user interrupted with ctrl-c (SIGINT)
+[WARNING] [launch]: user interrupted with ctrl-c (SIGINT) again, ignoring...
+[ERROR] [gzserver-1]: process has died [pid 36915, exit code -2, cmd 'gzserver /home/quocbao/my_robot_vision_full_project/my_robot_vision/route_recording_lab/generated/autonomous_map_recording_signless.world                                                                      -s libgazebo_ros_init.so   -s libgazebo_ros_factory.so   -s libgazebo_ros_force_system.so       '].
+[gzclient   -2] context mismatch in svga_surface_destroy
+[gzclient   -2] context mismatch in svga_surface_destroy
+[ERROR] [gzclient   -2]: process has died [pid 36917, exit code -2, cmd 'gzclient   '].

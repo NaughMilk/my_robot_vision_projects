@@ -1,0 +1,9 @@
+path: /home/quocbao/my_robot_vision_full_project/my_robot_vision/datasets/sign_yolo_road_signs_no_traffic_light
+train: images/train
+val: images/val
+test: images/test
+names:
+  0: turn_right_sign
+  1: go_straight_sign
+  2: speed_limit_sign
+  3: parking_sign

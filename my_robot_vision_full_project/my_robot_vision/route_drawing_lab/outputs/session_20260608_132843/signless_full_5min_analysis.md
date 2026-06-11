@@ -1,0 +1,218 @@
+# Route Run Log Analysis
+
+- direction: `None`
+- motion lines: `149`
+- jitter groups/events: `274` / `11879`
+- rejoin teleports: `8`
+- spin-like motions: `2`
+- high-yaw motions: `3`
+- high-track-error motions: `114`
+
+## Max Motion
+
+- max_abs_cmd_w: `2.8000`
+- max_track_err_m: `0.1519`
+- max_step_err_m: `0.0265`
+- max_yaw_step_rad: `0.2210`
+
+## Problem Routes
+
+- `outer_left_lower_to_mid` score `808.0`
+- `outer_right_mid_to_lower` score `576.5`
+- `outer_right_upper_to_mid` score `528.5`
+- `outer_top_left_to_top_mid` score `472.5`
+- `outer_right_top_to_upper` score `396.0`
+- `outer_bottom_right_mid_to_bottom_mid` score `372.5`
+- `outer_bottom_mid_to_bottom_left_mid` score `364.5`
+- `outer_bottom_left_mid_to_bottom_left` score `348.5`
+- `outer_top_right_corner` score `341.0`
+- `outer_bottom_left_corner` score `340.5`
+- `outer_bottom_right_to_bottom_right_mid` score `326.5`
+- `outer_top_right_mid_to_top_right` score `214.5`
+
+## Jitter Reasons
+
+- `cmd_xy_error`: `11601`
+- `-1.852) step`: `1685`
+- `+2.180) step`: `1408`
+- `yaw_step_error`: `1270`
+- `-1.851) step`: `713`
+- `+2.179) step`: `194`
+- `-1.848) step`: `106`
+- `-1.850) step`: `101`
+- `-1.867) step`: `101`
+- `-1.853) step`: `100`
+- `-1.864) step`: `100`
+- `+2.188) step`: `96`
+- `+0.101) step`: `76`
+- `+2.182) step`: `69`
+- `speed_delta`: `67`
+- `+2.185) step`: `60`
+- `+1.294) step`: `55`
+- `-0.581) step`: `55`
+- `+0.006) step`: `55`
+- `-1.037) step`: `55`
+- `+0.627) step`: `55`
+- `-1.861) step`: `55`
+- `-1.444) step`: `55`
+- `+1.874) step`: `55`
+- `-1.837) step`: `54`
+- `-1.691) step`: `54`
+- `+0.250) step`: `54`
+- `-0.068) step`: `54`
+- `-1.882) step`: `54`
+- `-0.183) step`: `54`
+- `+1.986) step`: `54`
+- `-0.089) step`: `54`
+- `+0.079) step`: `54`
+- `-1.846) step`: `54`
+- `-1.745) step`: `51`
+- `-0.398) step`: `51`
+- `+1.594) step`: `51`
+- `-0.374) step`: `51`
+- `-0.654) step`: `51`
+- `-1.431) step`: `51`
+- `-0.296) step`: `51`
+- `+0.510) step`: `51`
+- `+2.040) step`: `51`
+- `+1.347) step`: `51`
+- `+0.795) step`: `51`
+- `-0.903) step`: `51`
+- `-1.817) step`: `51`
+- `-1.868) step`: `51`
+- `-0.489) step`: `51`
+- `-0.002) step`: `51`
+- `+0.908) step`: `51`
+- `-0.486) step`: `51`
+- `-1.756) step`: `51`
+- `-0.754) step`: `51`
+- `-0.191) step`: `51`
+- `+1.461) step`: `51`
+- `+1.999) step`: `51`
+- `+0.937) step`: `51`
+- `-0.481) step`: `51`
+- `-1.319) step`: `51`
+- `-1.858) step`: `50`
+- `-1.863) step`: `50`
+- `-1.498) step`: `50`
+- `-0.683) step`: `50`
+- `-0.135) step`: `50`
+- `+0.057) step`: `50`
+- `+2.075) step`: `50`
+- `+1.869) step`: `50`
+- `+1.019) step`: `50`
+- `+0.746) step`: `50`
+- `+0.468) step`: `50`
+- `+0.189) step`: `50`
+- `-0.091) step`: `50`
+- `-0.933) step`: `50`
+- `-1.212) step`: `50`
+- `-1.491) step`: `50`
+- `-1.702) step`: `50`
+- `-1.875) step`: `50`
+- `-1.860) step`: `50`
+- `-1.854) step`: `50`
+- `-1.163) step`: `50`
+- `-0.888) step`: `50`
+- `-0.095) step`: `50`
+- `-0.102) step`: `50`
+- `+0.782) step`: `50`
+- `+1.057) step`: `50`
+- `+1.335) step`: `50`
+- `+1.614) step`: `50`
+- `+2.163) step`: `50`
+- `+2.193) step`: `50`
+- `+2.151) step`: `50`
+- `+2.079) step`: `50`
+- `+1.880) step`: `50`
+- `+1.624) step`: `50`
+- `+1.071) step`: `50`
+- `+0.517) step`: `50`
+- `+0.238) step`: `50`
+- `-0.347) step`: `50`
+- `-0.620) step`: `50`
+- `-1.462) step`: `50`
+- `-1.696) step`: `50`
+- `-1.801) step`: `50`
+- `-1.575) step`: `50`
+- `-1.324) step`: `50`
+- `-1.052) step`: `50`
+- `-0.774) step`: `50`
+- `+1.733) step`: `50`
+- `+1.463) step`: `50`
+- `+1.186) step`: `50`
+- `+0.633) step`: `50`
+- `+0.354) step`: `50`
+- `-0.205) step`: `50`
+- `-0.763) step`: `50`
+- `-1.041) step`: `50`
+- `-1.321) step`: `50`
+- `-1.595) step`: `50`
+- `-1.865) step`: `50`
+- `-1.813) step`: `50`
+- `-1.594) step`: `50`
+- `-1.338) step`: `50`
+- `-0.475) step`: `50`
+- `-0.029) step`: `50`
+- `+0.329) step`: `50`
+- `+1.177) step`: `50`
+- `+1.739) step`: `50`
+- `+1.941) step`: `50`
+- `+2.105) step`: `50`
+- `+2.177) step`: `50`
+- `+2.169) step`: `50`
+- `+2.124) step`: `50`
+- `+1.752) step`: `50`
+- `+1.491) step`: `50`
+- `+1.217) step`: `50`
+- `+0.386) step`: `50`
+- `-0.200) step`: `50`
+- `-1.034) step`: `50`
+- `-1.599) step`: `50`
+- `-1.757) step`: `50`
+- `-1.856) step`: `50`
+- `-1.714) step`: `50`
+- `+1.604) step`: `50`
+- `-1.235) step`: `49`
+- `-0.962) step`: `49`
+- `-0.043) step`: `49`
+- `+1.858) step`: `49`
+- `-1.182) step`: `49`
+- `z_delta`: `49`
+- `-0.034) step`: `49`
+- `+0.074) step`: `49`
+- `+0.900) step`: `49`
+- `+0.664) step`: `49`
+- `-0.756) step`: `49`
+- `+2.092) step`: `41`
+- `-0.318) step`: `34`
+- `+1.890) step`: `28`
+- `+2.135) step`: `23`
+- `+2.181) step`: `20`
+- `+2.159) step`: `19`
+- `+1.896) step`: `13`
+- `+2.173) step`: `10`
+- `+2.161) step`: `9`
+- `yaw_rate_delta`: `8`
+- `+2.184) step`: `7`
+- `+2.103) step`: `5`
+- `+2.100) step`: `5`
+- `+2.095) step`: `4`
+- `-0.094) step`: `3`
+- `+1.903) step`: `3`
+
+## Rejoins
+
+- `outer_left_lower_to_mid@1.768m` cmd_error=`0.181` route_dist=`0.055`
+- `outer_left_middle_entry_to_upper@0.176m` cmd_error=`0.184` route_dist=`0.069`
+- `outer_left_lower_to_mid@1.781m` cmd_error=`0.181` route_dist=`0.054`
+- `outer_left_lower_to_mid@1.771m` cmd_error=`0.182` route_dist=`0.054`
+- `outer_left_middle_entry_to_upper@0.175m` cmd_error=`0.182` route_dist=`0.073`
+- `outer_left_lower_to_mid@1.782m` cmd_error=`0.182` route_dist=`0.054`
+- `outer_left_lower_to_mid@0.515m` cmd_error=`0.182` route_dist=`0.005`
+- `outer_left_middle_entry_to_upper@0.193m` cmd_error=`0.191` route_dist=`0.012`
+
+## Spin Samples
+
+- `outer_left_lower_to_mid` pos=(-2.264,-0.105) v=`0.117` cmd=(+0.050,-1.283) track_err=`0.099`
+- `outer_left_lower_to_mid` pos=(-2.227,-0.077) v=`0.201` cmd=(+0.000,-2.800) track_err=`0.053`

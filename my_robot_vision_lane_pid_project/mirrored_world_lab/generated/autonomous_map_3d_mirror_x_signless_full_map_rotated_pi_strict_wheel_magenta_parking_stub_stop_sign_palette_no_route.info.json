@@ -1,0 +1,111 @@
+{
+  "base_world": "/home/quocbao/my_robot_vision_full_project/my_robot_vision/mirrored_world_lab/generated/autonomous_map_3d_mirror_x_signless_full_map_rotated_pi_strict_wheel_magenta_parking_stub_stop.world",
+  "copies_per_model": 4,
+  "instances": [
+    "palette_arrow_00_yaw_000",
+    "palette_arrow_01_yaw_090",
+    "palette_arrow_02_yaw_180",
+    "palette_arrow_03_yaw_270",
+    "palette_go_straight_00_yaw_000",
+    "palette_go_straight_01_yaw_090",
+    "palette_go_straight_02_yaw_180",
+    "palette_go_straight_03_yaw_270",
+    "palette_turn_left_00_yaw_000",
+    "palette_turn_left_01_yaw_090",
+    "palette_turn_left_02_yaw_180",
+    "palette_turn_left_03_yaw_270",
+    "palette_turn_right_00_yaw_000",
+    "palette_turn_right_01_yaw_090",
+    "palette_turn_right_02_yaw_180",
+    "palette_turn_right_03_yaw_270",
+    "palette_parking_00_yaw_000",
+    "palette_parking_01_yaw_090",
+    "palette_parking_02_yaw_180",
+    "palette_parking_03_yaw_270",
+    "palette_speed_limit_00_yaw_000",
+    "palette_speed_limit_01_yaw_090",
+    "palette_speed_limit_02_yaw_180",
+    "palette_speed_limit_03_yaw_270",
+    "palette_stop_00_yaw_000",
+    "palette_stop_01_yaw_090",
+    "palette_stop_02_yaw_180",
+    "palette_stop_03_yaw_270",
+    "palette_traffic_light_00_yaw_000",
+    "palette_traffic_light_01_yaw_090",
+    "palette_traffic_light_02_yaw_180",
+    "palette_traffic_light_03_yaw_270",
+    "palette_traffic_light_00_yaw_000_red_active_lamp",
+    "palette_traffic_light_01_yaw_090_red_active_lamp",
+    "palette_traffic_light_02_yaw_180_red_active_lamp",
+    "palette_traffic_light_03_yaw_270_red_active_lamp",
+    "palette_traffic_light_00_yaw_000_yellow_active_lamp",
+    "palette_traffic_light_01_yaw_090_yellow_active_lamp",
+    "palette_traffic_light_02_yaw_180_yellow_active_lamp",
+    "palette_traffic_light_03_yaw_270_yellow_active_lamp",
+    "palette_traffic_light_00_yaw_000_green_active_lamp",
+    "palette_traffic_light_01_yaw_090_green_active_lamp",
+    "palette_traffic_light_02_yaw_180_green_active_lamp",
+    "palette_traffic_light_03_yaw_270_green_active_lamp"
+  ],
+  "models": [
+    "road_sign_arrow",
+    "road_sign_go_straight",
+    "road_sign_turn_left",
+    "road_sign_turn_right",
+    "road_sign_parking",
+    "road_sign_speed_limit",
+    "road_sign_stop",
+    "traffic_light_toy",
+    "traffic_light_active_lamp_red",
+    "traffic_light_active_lamp_yellow",
+    "traffic_light_active_lamp_green"
+  ],
+  "output_world": "mirrored_world_lab/generated/autonomous_map_3d_mirror_x_signless_full_map_rotated_pi_strict_wheel_magenta_parking_stub_stop_sign_palette_no_route.world",
+  "palette_area": {
+    "column_start_x": -1.575,
+    "column_step_m": 1.05,
+    "floor_pose": [
+      0.0,
+      -5.88,
+      -0.02,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "floor_size_m": [
+      4.4,
+      6.41,
+      0.02
+    ],
+    "outside_map": "bottom side of map",
+    "row_start_y": -3.5,
+    "row_step_m": 0.53
+  },
+  "removed_models": [
+    "flat_magenta_parking_stub_stop_route_overlay"
+  ],
+  "route_overlay_removed_for_performance": true,
+  "traffic_light_palette": {
+    "active_lamp_models": [
+      "traffic_light_active_lamp_red",
+      "traffic_light_active_lamp_yellow",
+      "traffic_light_active_lamp_green"
+    ],
+    "note": "Palette traffic lights use runtime-controlled traffic_light_toy columns plus active lamp models. The controller teleports the active color lamp to each column, so moving a column moves its color marker on the next visual update.",
+    "rows": [
+      {
+        "copies": 4,
+        "model": "traffic_light_toy",
+        "state": "runtime",
+        "y_m": -7.21
+      }
+    ]
+  },
+  "world": "/home/quocbao/my_robot_vision_full_project/my_robot_vision/mirrored_world_lab/generated/autonomous_map_3d_mirror_x_signless_full_map_rotated_pi_strict_wheel_magenta_parking_stub_stop_sign_palette_no_route.world",
+  "yaw_degrees": [
+    0.0,
+    90.0,
+    180.0,
+    -90.0
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "source_world": "/home/quocbao/Downloads/map_1",
+  "output_world": "/home/quocbao/my_robot_vision_full_project/my_robot_vision/mirrored_world_lab/generated/autonomous_map_3d_mirror_x_route_preview.world",
+  "axis": "x",
+  "removed_state_blocks": 1,
+  "mirrored_meshes": 1,
+  "map_pose": [
+    0.0,
+    0.3,
+    0.0,
+    0.0,
+    -0.0,
+    0.0
+  ],
+  "route_preview": true
+}

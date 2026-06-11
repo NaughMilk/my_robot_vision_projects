@@ -1,0 +1,16 @@
+{
+  "selected_signs": [
+    "turn_right"
+  ],
+  "class_names": [
+    "turn_right_sign"
+  ],
+  "samples_per_class": 300,
+  "negative_samples": 60,
+  "image_width": 640,
+  "image_height": 480,
+  "train_ratio": 0.8,
+  "val_ratio": 0.15,
+  "seed": 20260610,
+  "format": "jpg"
+}

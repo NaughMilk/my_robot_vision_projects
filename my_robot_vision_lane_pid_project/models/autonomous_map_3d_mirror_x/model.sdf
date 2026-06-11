@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<sdf version="1.6">
+  <model name="autonomous_map_3d_mirror_x">
+    <static>true</static>
+    <link name="map_link">
+      <visual name="textured_map_visual">
+        <geometry>
+          <mesh>
+            <uri>file:///home/quocbao/my_robot_vision_full_project/my_robot_vision/models/autonomous_map_3d_mirror_x/meshes/autonomous_map_3d_mirror_x.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="floor_collision">
+        <pose>0 0 -0.01 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>6.0 6.0 0.02</size>
+          </box>
+        </geometry>
+      </collision>
+    </link>
+  </model>
+</sdf>

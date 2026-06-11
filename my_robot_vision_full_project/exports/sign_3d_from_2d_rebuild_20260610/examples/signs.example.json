@@ -1,0 +1,30 @@
+[
+  {
+    "name": "palette_turn_right_03_yaw_270",
+    "kind": "turn_right",
+    "px": 43.0,
+    "py": 126.0,
+    "yaw_deg": 270
+  },
+  {
+    "name": "palette_parking_00_yaw_000",
+    "kind": "parking",
+    "px": 156.0,
+    "py": 103.0,
+    "yaw_deg": 0
+  },
+  {
+    "name": "palette_speed_limit_01_yaw_090",
+    "kind": "speed_limit",
+    "px": 208.0,
+    "py": 185.0,
+    "yaw_deg": 90
+  },
+  {
+    "name": "palette_stop_02_yaw_180",
+    "kind": "stop",
+    "px": 110.0,
+    "py": 214.0,
+    "yaw_deg": 180
+  }
+]

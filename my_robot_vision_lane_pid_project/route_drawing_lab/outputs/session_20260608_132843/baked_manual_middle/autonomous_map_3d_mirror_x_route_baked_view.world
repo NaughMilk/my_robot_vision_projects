@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<sdf version="1.7">
+  <world name="baked_route_view_world">
+    <scene>
+      <ambient>0.85 0.85 0.85 1</ambient>
+      <background>0.86 0.91 0.98 1</background>
+      <shadows>0</shadows>
+    </scene>
+    <gui fullscreen="0">
+      <camera name="user_camera">
+        <pose>0 0 7.5 0 1.570796 1.570796</pose>
+        <view_controller>orbit</view_controller>
+      </camera>
+    </gui>
+    <light name="sun" type="directional">
+      <cast_shadows>0</cast_shadows>
+      <pose>0 0 8 0 0 0</pose>
+      <diffuse>1 1 1 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <direction>0 0 -1</direction>
+    </light>
+    <model name="baked_route_map">
+      <static>1</static>
+      <pose>0 0.3 0 0 0 0</pose>
+      <link name="map_link">
+        <visual name="baked_route_visual">
+          <geometry>
+            <mesh>
+              <uri>file:///home/quocbao/my_robot_vision_full_project/my_robot_vision/route_drawing_lab/outputs/session_20260608_132843/baked_manual_middle/meshes/autonomous_map_route_baked.dae</uri>
+              <scale>-1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+      </link>
+    </model>
+  </world>
+</sdf>

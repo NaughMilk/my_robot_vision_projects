@@ -1,0 +1,62 @@
+{
+  "world": "/home/quocbao/my_robot_vision_full_project/my_robot_vision/mirrored_world_lab/generated/autonomous_map_3d_mirror_x_signless_full_map_rotated_pi_strict_wheel_magenta_parking_stub_stop.world",
+  "mesh": "/home/quocbao/my_robot_vision_full_project/my_robot_vision/route_drawing_lab/outputs/session_20260608_132843/runtime_visual_frame_overlay/flat_magenta_parking_stub_stop_runtime_route_overlay.dae",
+  "base_world": "/home/quocbao/my_robot_vision_full_project/my_robot_vision/mirrored_world_lab/generated/autonomous_map_3d_mirror_x_signless_full_map_rotated_pi.world",
+  "route_config": "/home/quocbao/my_robot_vision_full_project/my_robot_vision/route_drawing_lab/outputs/session_20260608_132843/autonomous_route_graph_flat_magenta_original2d_parking_stub_stop.json",
+  "map_image": "/home/quocbao/my_robot_vision_full_project/my_robot_vision/models/autonomous_map_3d/materials/textures/autonomous_map_visual.png",
+  "route_offset_x_m": 0.0,
+  "route_offset_y_m": 0.3,
+  "reverse_direction": true,
+  "route_explore_enabled": true,
+  "branch_probability": 0.35,
+  "route_seed": 7,
+  "segment_count": 18,
+  "triangle_count": 76,
+  "spawn_pose": {
+    "x": 2.1796875,
+    "y": 2.1046875,
+    "z": -0.002,
+    "yaw": -1.5707963267948966,
+    "segment": "flat_left_mid_to_top_reverse"
+  },
+  "terminal_segment": {
+    "name": "aaa_flat_parking_stub_stop",
+    "points_map": [
+      [
+        149.0,
+        116.0
+      ],
+      [
+        166.0,
+        116.0
+      ],
+      [
+        166.0,
+        140.0
+      ]
+    ],
+    "points_model": [
+      [
+        0.4921875,
+        0.58125
+      ],
+      [
+        0.890625,
+        0.58125
+      ],
+      [
+        0.890625,
+        0.01874999999999999
+      ]
+    ],
+    "length_m": 0.9609375,
+    "terminal_stop": true,
+    "parking_route": false
+  },
+  "runtime_policy": {
+    "drive_wheels": true,
+    "initial_pose_reset_enabled": false,
+    "route_rejoin_enabled": false,
+    "car_set_entity_state_runtime": "none expected"
+  }
+}

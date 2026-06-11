@@ -1,0 +1,606 @@
+{
+  "version": 1,
+  "map": {
+    "texture_size_px": 256.0,
+    "model_size_m": 6.0
+  },
+  "route": {
+    "start_segments": {
+      "forward": "outer_top_left_to_top_mid",
+      "reverse": "outer_top_left_corner"
+    },
+    "nodes": {
+      "top_left": [
+        50.0,
+        35.0
+      ],
+      "top_mid": [
+        126.0,
+        35.0
+      ],
+      "top_gap": [
+        148.0,
+        35.0
+      ],
+      "top_right_mid": [
+        168.0,
+        35.0
+      ],
+      "top_right": [
+        205.0,
+        35.0
+      ],
+      "right_top": [
+        221.0,
+        51.0
+      ],
+      "right_upper": [
+        221.0,
+        90.0
+      ],
+      "right_mid": [
+        221.0,
+        150.0
+      ],
+      "right_lower": [
+        221.0,
+        205.0
+      ],
+      "bottom_right": [
+        205.0,
+        221.0
+      ],
+      "bottom_right_mid": [
+        168.0,
+        221.0
+      ],
+      "bottom_mid": [
+        126.0,
+        221.0
+      ],
+      "bottom_left_mid": [
+        84.0,
+        221.0
+      ],
+      "bottom_left": [
+        50.0,
+        221.0
+      ],
+      "left_lower": [
+        35.0,
+        205.0
+      ],
+      "left_mid": [
+        35.0,
+        128.0
+      ],
+      "left_middle_entry": [
+        45.0,
+        131.781
+      ],
+      "left_upper": [
+        35.0,
+        90.0
+      ],
+      "left_top": [
+        35.0,
+        51.0
+      ]
+    },
+    "segments": [
+      {
+        "name": "outer_top_left_to_top_mid",
+        "start": "top_left",
+        "end": "top_mid",
+        "anchors": [
+          "top_left",
+          "top_mid"
+        ],
+        "inner_route": false
+      },
+      {
+        "name": "outer_top_mid_to_gap",
+        "start": "top_mid",
+        "end": "top_gap",
+        "anchors": [
+          "top_mid",
+          "top_gap"
+        ],
+        "inner_route": false
+      },
+      {
+        "name": "outer_top_gap_to_top_right_mid",
+        "start": "top_gap",
+        "end": "top_right_mid",
+        "anchors": [
+          "top_gap",
+          "top_right_mid"
+        ],
+        "inner_route": false
+      },
+      {
+        "name": "outer_top_right_mid_to_top_right",
+        "start": "top_right_mid",
+        "end": "top_right",
+        "anchors": [
+          "top_right_mid",
+          "top_right"
+        ],
+        "inner_route": false
+      },
+      {
+        "name": "outer_top_right_corner",
+        "start": "top_right",
+        "end": "right_top",
+        "anchors": [
+          "top_right",
+          [
+            218.0,
+            39.0
+          ],
+          "right_top"
+        ],
+        "inner_route": false
+      },
+      {
+        "name": "outer_right_top_to_upper",
+        "start": "right_top",
+        "end": "right_upper",
+        "anchors": [
+          "right_top",
+          "right_upper"
+        ],
+        "inner_route": false
+      },
+      {
+        "name": "outer_right_upper_to_mid",
+        "start": "right_upper",
+        "end": "right_mid",
+        "anchors": [
+          "right_upper",
+          "right_mid"
+        ],
+        "inner_route": false
+      },
+      {
+        "name": "outer_right_mid_to_lower",
+        "start": "right_mid",
+        "end": "right_lower",
+        "anchors": [
+          "right_mid",
+          "right_lower"
+        ],
+        "inner_route": false
+      },
+      {
+        "name": "outer_bottom_right_corner",
+        "start": "right_lower",
+        "end": "bottom_right",
+        "anchors": [
+          "right_lower",
+          [
+            218.0,
+            218.0
+          ],
+          "bottom_right"
+        ],
+        "inner_route": false
+      },
+      {
+        "name": "outer_bottom_right_to_bottom_right_mid",
+        "start": "bottom_right",
+        "end": "bottom_right_mid",
+        "anchors": [
+          "bottom_right",
+          "bottom_right_mid"
+        ],
+        "inner_route": false
+      },
+      {
+        "name": "outer_bottom_right_mid_to_bottom_mid",
+        "start": "bottom_right_mid",
+        "end": "bottom_mid",
+        "anchors": [
+          "bottom_right_mid",
+          "bottom_mid"
+        ],
+        "inner_route": false
+      },
+      {
+        "name": "outer_bottom_mid_to_bottom_left_mid",
+        "start": "bottom_mid",
+        "end": "bottom_left_mid",
+        "anchors": [
+          "bottom_mid",
+          "bottom_left_mid"
+        ],
+        "inner_route": false
+      },
+      {
+        "name": "outer_bottom_left_mid_to_bottom_left",
+        "start": "bottom_left_mid",
+        "end": "bottom_left",
+        "anchors": [
+          "bottom_left_mid",
+          "bottom_left"
+        ],
+        "inner_route": false
+      },
+      {
+        "name": "outer_bottom_left_corner",
+        "start": "bottom_left",
+        "end": "left_lower",
+        "anchors": [
+          "bottom_left",
+          [
+            38.0,
+            218.0
+          ],
+          "left_lower"
+        ],
+        "inner_route": false
+      },
+      {
+        "name": "outer_left_lower_to_mid",
+        "start": "left_lower",
+        "end": "left_mid",
+        "anchors": [
+          "left_lower",
+          "left_mid"
+        ],
+        "inner_route": false
+      },
+      {
+        "name": "outer_left_mid_to_middle_entry",
+        "start": "left_mid",
+        "end": "left_middle_entry",
+        "anchors": [
+          "left_mid",
+          "left_middle_entry"
+        ],
+        "inner_route": false
+      },
+      {
+        "name": "outer_left_middle_entry_to_upper",
+        "start": "left_middle_entry",
+        "end": "left_upper",
+        "anchors": [
+          "left_middle_entry",
+          "left_upper"
+        ],
+        "inner_route": false
+      },
+      {
+        "name": "outer_left_upper_to_top",
+        "start": "left_upper",
+        "end": "left_top",
+        "anchors": [
+          "left_upper",
+          "left_top"
+        ],
+        "inner_route": false
+      },
+      {
+        "name": "outer_top_left_corner",
+        "start": "left_top",
+        "end": "top_left",
+        "anchors": [
+          "left_top",
+          [
+            38.0,
+            39.0
+          ],
+          "top_left"
+        ],
+        "inner_route": false
+      },
+      {
+        "name": "inner_top_cut",
+        "start": "top_gap",
+        "end": "right_mid",
+        "anchors": [
+          "top_gap",
+          [
+            148.0,
+            76.0
+          ],
+          [
+            148.0,
+            113.0
+          ],
+          [
+            221.0,
+            113.0
+          ],
+          "right_mid"
+        ],
+        "inner_route": true
+      },
+      {
+        "name": "inner_middle_cross",
+        "start": "left_middle_entry",
+        "end": "right_mid",
+        "anchors": [
+          [
+            45.0,
+            131.781
+          ],
+          [
+            62.0,
+            131.852
+          ],
+          [
+            106.0,
+            132.314
+          ],
+          [
+            148.298,
+            130.95
+          ],
+          [
+            221.0,
+            130.617
+          ],
+          [
+            221.0,
+            150.0
+          ]
+        ],
+        "inner_route": true
+      },
+      {
+        "name": "inner_lower_cut",
+        "start": "bottom_mid",
+        "end": "left_mid",
+        "anchors": [
+          "bottom_mid",
+          [
+            126.0,
+            190.0
+          ],
+          [
+            106.0,
+            190.0
+          ],
+          [
+            106.0,
+            113.0
+          ],
+          [
+            62.0,
+            113.0
+          ],
+          "left_mid"
+        ],
+        "inner_route": true
+      }
+    ],
+    "additional_directed_segments": {
+      "forward": [],
+      "reverse": [
+        {
+          "name": "inner_middle_cross_from_left",
+          "start": "left_middle_entry",
+          "end": "right_mid",
+          "anchors": [
+          [
+              45.0,
+              131.781
+            ],
+            [
+              62.0,
+              131.852
+            ],
+            [
+              106.0,
+              132.314
+            ],
+            [
+              148.298,
+              130.95
+            ],
+            [
+              221.0,
+              130.617
+            ],
+            [
+              221.0,
+              150.0
+            ]
+          ],
+          "inner_route": true
+        }
+      ]
+    }
+  },
+  "behavior": {
+    "maneuver_max_branch_distance_m": 1.45,
+    "nearby_maneuver_route_distance_m": 0.35
+  },
+  "parking": {
+    "dynamic_route_name": "parking_lower_right_bay_active",
+    "dynamic_start_node": "parking_dynamic_start",
+    "stop_node": "parking_lower_right_stop",
+    "entry_label": "lower-right parking entry",
+    "approach_segments": [
+      "outer_bottom_right_mid_to_bottom_mid_reverse",
+      "outer_bottom_right_to_bottom_right_mid_reverse",
+      "outer_bottom_right_corner_reverse",
+      "outer_right_mid_to_lower_reverse",
+      "outer_right_upper_to_mid_reverse"
+    ],
+    "entry_segments": [
+      "outer_right_mid_to_lower_reverse",
+      "outer_right_upper_to_mid_reverse"
+    ],
+    "entry_max_distance_m": 0.45,
+    "sign_model_name_tokens": [
+      "parking"
+    ],
+    "sign_face_local_yaw_offset_rad": -1.57079632679,
+    "sign_face_min_dot": 0.2,
+    "sign_face_max_distance_m": 1.8,
+    "early_entry_anchors_px": [
+      [
+        223.0,
+        150.0
+      ],
+      [
+        210.0,
+        130.0
+      ],
+      [
+        184.0,
+        113.0
+      ]
+    ],
+    "orthogonal_tail_px": [
+      [
+        221.0,
+        145.0
+      ],
+      [
+        175.0,
+        145.0
+      ],
+      [
+        175.0,
+        116.0
+      ]
+    ],
+    "bay_goal_points_px": [
+      [
+        173.0,
+        130.0
+      ],
+      [
+        173.0,
+        128.0
+      ],
+      [
+        169.0,
+        128.0
+      ],
+      [
+        169.0,
+        126.0
+      ],
+      [
+        177.0,
+        128.0
+      ]
+    ],
+    "initial_heading_weight_m": 0.35,
+    "final_yaw_rad": 1.57079632679,
+    "final_heading_weight_m": 0.3,
+    "final_straight_extension_px": 12.0,
+    "semantic_route_enabled": true,
+    "semantic_staging_pose_px": [
+      221.0,
+      145.0,
+      -1.57079632679
+    ],
+    "semantic_entry_pose_px": [
+      175.0,
+      145.0,
+      3.14159265359
+    ],
+    "semantic_goal_pose_px": [
+      175.0,
+      116.0,
+      1.57079632679
+    ],
+    "semantic_final_extension_px": 8.0
+  },
+  "traffic_lights": {
+    "scene_models": [
+      {
+        "name": "traffic_light_top_island",
+        "default_pose": [
+          0.203395,
+          1.58911,
+          0.0,
+          1.5869
+        ]
+      },
+      {
+        "name": "traffic_light_lower_island",
+        "default_pose": [
+          -0.270238,
+          -1.23571,
+          0.0,
+          -1.52354
+        ]
+      }
+    ],
+    "release_fov_rad": 1.95,
+    "indicator_hidden_pose": [
+      0.0,
+      0.0,
+      -5.0
+    ],
+    "indicator_local_xy_m": [
+      0.0,
+      -0.038
+    ],
+    "indicator_models": {
+      "red": [
+        [
+          "traffic_light_top_island_red_active_lamp",
+          "traffic_light_top_island",
+          0.66
+        ],
+        [
+          "traffic_light_lower_island_red_active_lamp",
+          "traffic_light_lower_island",
+          0.66
+        ]
+      ],
+      "yellow": [
+        [
+          "traffic_light_top_island_yellow_active_lamp",
+          "traffic_light_top_island",
+          0.565
+        ],
+        [
+          "traffic_light_lower_island_yellow_active_lamp",
+          "traffic_light_lower_island",
+          0.565
+        ]
+      ],
+      "green": [
+        [
+          "traffic_light_top_island_green_active_lamp",
+          "traffic_light_top_island",
+          0.47
+        ],
+        [
+          "traffic_light_lower_island_green_active_lamp",
+          "traffic_light_lower_island",
+          0.47
+        ]
+      ]
+    }
+  },
+  "zones": [
+    {
+      "name": "left_island_speed_limit",
+      "kind": "speed_limit_sign",
+      "min_x_m": -10.0,
+      "max_x_m": -0.35,
+      "min_y_m": -10.0,
+      "max_y_m": 0.55
+    }
+  ],
+  "lab_notes": {
+    "manual_middle_candidate": {
+      "source": "route_drawing_lab/outputs/session_20260608_132843/drawn_route_codex_capture.json",
+      "changed": [
+        "route.nodes.left_middle_entry",
+        "route.segments.inner_middle_cross",
+        "additional_directed_segments inner_middle_cross variants"
+      ],
+      "not_applied_to_main_config": true
+    }
+  }
+}

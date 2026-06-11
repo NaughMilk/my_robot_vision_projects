@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<sdf version="1.6">
+  <model name="traffic_light_active_lamp_red">
+    <static>false</static>
+    <link name="lamp_link">
+      <gravity>0</gravity>
+      <visual name="lamp_visual">
+        <geometry>
+          <sphere>
+            <radius>0.065</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+          <emissive>0.0313726 0 0 1</emissive>
+        </material>
+      </visual>
+      <self_collide>0</self_collide>
+      <enable_wind>0</enable_wind>
+      <kinematic>1</kinematic>
+      <inertial>
+        <mass>1</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <iyy>1</iyy>
+          <izz>1</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+    </link>
+  </model>
+</sdf>

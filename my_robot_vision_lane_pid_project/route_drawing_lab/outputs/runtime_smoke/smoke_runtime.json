@@ -1,0 +1,139 @@
+{
+  "saved_at": "2026-06-08T13:26:53",
+  "map": {
+    "model_size_m": 6.0,
+    "texture_size_px": 256.0,
+    "pose_m": [
+      0.0,
+      0.3,
+      0.0
+    ],
+    "mirror_axis": "x"
+  },
+  "waypoints": [
+    {
+      "index": 0,
+      "name": "route_draw_wp_000",
+      "model": {
+        "x": -2.17969,
+        "y": 0.234375,
+        "z": 0.08
+      },
+      "code_px_no_offset": {
+        "x": 34.99989333333333,
+        "y": 118.0
+      },
+      "visual_mirror_px": {
+        "x": 221.00010666666668,
+        "y": 130.8
+      }
+    },
+    {
+      "index": 1,
+      "name": "route_draw_wp_001",
+      "model": {
+        "x": -1.54688,
+        "y": 0.234375,
+        "z": 0.08
+      },
+      "code_px_no_offset": {
+        "x": 61.999786666666665,
+        "y": 118.0
+      },
+      "visual_mirror_px": {
+        "x": 194.00021333333333,
+        "y": 130.8
+      }
+    },
+    {
+      "index": 2,
+      "name": "route_draw_wp_002",
+      "model": {
+        "x": -0.515625,
+        "y": 0.234375,
+        "z": 0.08
+      },
+      "code_px_no_offset": {
+        "x": 106.0,
+        "y": 118.0
+      },
+      "visual_mirror_px": {
+        "x": 150.0,
+        "y": 130.8
+      }
+    },
+    {
+      "index": 3,
+      "name": "route_draw_wp_003",
+      "model": {
+        "x": 0.46875,
+        "y": 0.234375,
+        "z": 0.08
+      },
+      "code_px_no_offset": {
+        "x": 148.0,
+        "y": 118.0
+      },
+      "visual_mirror_px": {
+        "x": 108.0,
+        "y": 130.8
+      }
+    },
+    {
+      "index": 4,
+      "name": "route_draw_wp_004",
+      "model": {
+        "x": 2.17969,
+        "y": 0.234375,
+        "z": 0.08
+      },
+      "code_px_no_offset": {
+        "x": 221.00010666666668,
+        "y": 118.0
+      },
+      "visual_mirror_px": {
+        "x": 34.99989333333333,
+        "y": 130.8
+      }
+    },
+    {
+      "index": 5,
+      "name": "route_draw_wp_005",
+      "model": {
+        "x": 2.17969,
+        "y": -0.515625,
+        "z": 0.08
+      },
+      "code_px_no_offset": {
+        "x": 221.00010666666668,
+        "y": 150.0
+      },
+      "visual_mirror_px": {
+        "x": 34.99989333333333,
+        "y": 162.8
+      }
+    }
+  ],
+  "edges": [
+    {
+      "start_index": 0,
+      "end_index": 1
+    },
+    {
+      "start_index": 1,
+      "end_index": 2
+    },
+    {
+      "start_index": 2,
+      "end_index": 3
+    },
+    {
+      "start_index": 3,
+      "end_index": 4
+    },
+    {
+      "start_index": 4,
+      "end_index": 5
+    }
+  ]
+}

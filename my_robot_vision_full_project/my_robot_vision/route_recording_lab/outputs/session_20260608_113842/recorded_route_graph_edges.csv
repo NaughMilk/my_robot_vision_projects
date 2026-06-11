@@ -1,0 +1,5 @@
+source,target,bidirectional,visits,length_m,segment_ids
+1,2,True,2,0.1000720905798485,[2]
+1,4,True,2,0.0820811665589789,[2]
+2,3,True,2,0.08098491167928056,[2]
+3,4,True,2,0.08634306344164466,[2]

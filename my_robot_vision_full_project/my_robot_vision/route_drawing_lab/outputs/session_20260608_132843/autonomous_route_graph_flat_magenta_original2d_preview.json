@@ -1,0 +1,470 @@
+{
+  "version": 1,
+  "map": {
+    "texture_size_px": 256.0,
+    "model_size_m": 6.0
+  },
+  "route": {
+    "start_segments": {
+      "forward": "flat_top_left_to_top_center",
+      "reverse": "flat_left_mid_to_top"
+    },
+    "nodes": {
+      "flat_top_left": [
+        206.0,
+        35.0
+      ],
+      "flat_top_center": [
+        149.0,
+        35.0
+      ],
+      "flat_top_right": [
+        51.0,
+        35.0
+      ],
+      "flat_right_top": [
+        35.0,
+        51.0
+      ],
+      "flat_right_mid": [
+        35.0,
+        116.0
+      ],
+      "flat_right_lower": [
+        35.0,
+        194.0
+      ],
+      "flat_bottom_right": [
+        51.0,
+        202.0
+      ],
+      "flat_bottom_center": [
+        106.0,
+        202.0
+      ],
+      "flat_bottom_left": [
+        206.0,
+        202.0
+      ],
+      "flat_left_lower": [
+        221.0,
+        194.0
+      ],
+      "flat_left_mid": [
+        221.0,
+        116.0
+      ],
+      "flat_left_top": [
+        221.0,
+        51.0
+      ],
+      "flat_mid_top": [
+        149.0,
+        116.0
+      ],
+      "flat_mid_center": [
+        106.0,
+        116.0
+      ],
+      "flat_stub_top": [
+        166.0,
+        116.0
+      ],
+      "flat_stub_end": [
+        166.0,
+        140.0
+      ]
+    },
+    "segments": [
+      {
+        "name": "flat_top_left_to_top_center",
+        "start": "flat_top_left",
+        "end": "flat_top_center",
+        "anchors": [
+          "flat_top_left",
+          "flat_top_center"
+        ],
+        "inner_route": false,
+        "manual_centerline": true
+      },
+      {
+        "name": "flat_top_center_to_top_right",
+        "start": "flat_top_center",
+        "end": "flat_top_right",
+        "anchors": [
+          "flat_top_center",
+          "flat_top_right"
+        ],
+        "inner_route": false,
+        "manual_centerline": true
+      },
+      {
+        "name": "flat_top_right_corner",
+        "start": "flat_top_right",
+        "end": "flat_right_top",
+        "anchors": [
+          "flat_top_right",
+          "flat_right_top"
+        ],
+        "inner_route": false,
+        "manual_centerline": true
+      },
+      {
+        "name": "flat_right_top_to_mid",
+        "start": "flat_right_top",
+        "end": "flat_right_mid",
+        "anchors": [
+          "flat_right_top",
+          "flat_right_mid"
+        ],
+        "inner_route": false,
+        "manual_centerline": true
+      },
+      {
+        "name": "flat_right_mid_to_lower",
+        "start": "flat_right_mid",
+        "end": "flat_right_lower",
+        "anchors": [
+          "flat_right_mid",
+          "flat_right_lower"
+        ],
+        "inner_route": false,
+        "manual_centerline": true
+      },
+      {
+        "name": "flat_bottom_right_corner",
+        "start": "flat_right_lower",
+        "end": "flat_bottom_right",
+        "anchors": [
+          "flat_right_lower",
+          "flat_bottom_right"
+        ],
+        "inner_route": false,
+        "manual_centerline": true
+      },
+      {
+        "name": "flat_bottom_right_to_bottom_center",
+        "start": "flat_bottom_right",
+        "end": "flat_bottom_center",
+        "anchors": [
+          "flat_bottom_right",
+          "flat_bottom_center"
+        ],
+        "inner_route": false,
+        "manual_centerline": true
+      },
+      {
+        "name": "flat_bottom_center_to_bottom_left",
+        "start": "flat_bottom_center",
+        "end": "flat_bottom_left",
+        "anchors": [
+          "flat_bottom_center",
+          "flat_bottom_left"
+        ],
+        "inner_route": false,
+        "manual_centerline": true
+      },
+      {
+        "name": "flat_bottom_left_corner",
+        "start": "flat_bottom_left",
+        "end": "flat_left_lower",
+        "anchors": [
+          "flat_bottom_left",
+          "flat_left_lower"
+        ],
+        "inner_route": false,
+        "manual_centerline": true
+      },
+      {
+        "name": "flat_left_lower_to_mid",
+        "start": "flat_left_lower",
+        "end": "flat_left_mid",
+        "anchors": [
+          "flat_left_lower",
+          "flat_left_mid"
+        ],
+        "inner_route": false,
+        "manual_centerline": true
+      },
+      {
+        "name": "flat_left_mid_to_top",
+        "start": "flat_left_mid",
+        "end": "flat_left_top",
+        "anchors": [
+          "flat_left_mid",
+          "flat_left_top"
+        ],
+        "inner_route": false,
+        "manual_centerline": true
+      },
+      {
+        "name": "flat_top_left_corner",
+        "start": "flat_left_top",
+        "end": "flat_top_left",
+        "anchors": [
+          "flat_left_top",
+          "flat_top_left"
+        ],
+        "inner_route": false,
+        "manual_centerline": true
+      },
+      {
+        "name": "flat_top_center_to_mid_top",
+        "start": "flat_top_center",
+        "end": "flat_mid_top",
+        "anchors": [
+          "flat_top_center",
+          "flat_mid_top"
+        ],
+        "inner_route": true,
+        "manual_centerline": true
+      },
+      {
+        "name": "flat_left_mid_to_mid_top",
+        "start": "flat_left_mid",
+        "end": "flat_mid_top",
+        "anchors": [
+          "flat_left_mid",
+          "flat_mid_top"
+        ],
+        "inner_route": true,
+        "manual_centerline": true
+      },
+      {
+        "name": "flat_mid_top_to_mid_center",
+        "start": "flat_mid_top",
+        "end": "flat_mid_center",
+        "anchors": [
+          "flat_mid_top",
+          "flat_mid_center"
+        ],
+        "inner_route": true,
+        "manual_centerline": true
+      },
+      {
+        "name": "flat_mid_center_to_right_mid",
+        "start": "flat_mid_center",
+        "end": "flat_right_mid",
+        "anchors": [
+          "flat_mid_center",
+          "flat_right_mid"
+        ],
+        "inner_route": true,
+        "manual_centerline": true
+      },
+      {
+        "name": "flat_mid_center_to_bottom_center",
+        "start": "flat_mid_center",
+        "end": "flat_bottom_center",
+        "anchors": [
+          "flat_mid_center",
+          "flat_bottom_center"
+        ],
+        "inner_route": true,
+        "manual_centerline": true
+      },
+      {
+        "name": "flat_draw_stub_mid_lane",
+        "start": "flat_stub_top",
+        "end": "flat_stub_end",
+        "anchors": [
+          "flat_stub_top",
+          "flat_stub_end"
+        ],
+        "inner_route": true,
+        "manual_centerline": true
+      }
+    ],
+    "additional_directed_segments": {
+      "forward": [],
+      "reverse": []
+    }
+  },
+  "behavior": {
+    "maneuver_max_branch_distance_m": 1.45,
+    "nearby_maneuver_route_distance_m": 0.35
+  },
+  "parking": {
+    "dynamic_route_name": "parking_lower_right_bay_active",
+    "dynamic_start_node": "parking_dynamic_start",
+    "stop_node": "parking_lower_right_stop",
+    "entry_label": "lower-right parking entry",
+    "approach_segments": [],
+    "entry_segments": [],
+    "entry_max_distance_m": 0.45,
+    "sign_model_name_tokens": [
+      "parking"
+    ],
+    "sign_face_local_yaw_offset_rad": -1.57079632679,
+    "sign_face_min_dot": 0.2,
+    "sign_face_max_distance_m": 1.8,
+    "early_entry_anchors_px": [
+      [
+        223.0,
+        150.0
+      ],
+      [
+        210.0,
+        130.0
+      ],
+      [
+        184.0,
+        113.0
+      ]
+    ],
+    "orthogonal_tail_px": [
+      [
+        221.0,
+        145.0
+      ],
+      [
+        175.0,
+        145.0
+      ],
+      [
+        175.0,
+        116.0
+      ]
+    ],
+    "bay_goal_points_px": [
+      [
+        173.0,
+        130.0
+      ],
+      [
+        173.0,
+        128.0
+      ],
+      [
+        169.0,
+        128.0
+      ],
+      [
+        169.0,
+        126.0
+      ],
+      [
+        177.0,
+        128.0
+      ]
+    ],
+    "initial_heading_weight_m": 0.35,
+    "final_yaw_rad": 1.57079632679,
+    "final_heading_weight_m": 0.3,
+    "final_straight_extension_px": 12.0,
+    "semantic_route_enabled": false,
+    "semantic_staging_pose_px": [
+      221.0,
+      145.0,
+      -1.57079632679
+    ],
+    "semantic_entry_pose_px": [
+      175.0,
+      145.0,
+      3.14159265359
+    ],
+    "semantic_goal_pose_px": [
+      175.0,
+      116.0,
+      1.57079632679
+    ],
+    "semantic_final_extension_px": 8.0
+  },
+  "traffic_lights": {
+    "scene_models": [
+      {
+        "name": "traffic_light_top_island",
+        "default_pose": [
+          0.203395,
+          1.58911,
+          0.0,
+          1.5869
+        ]
+      },
+      {
+        "name": "traffic_light_lower_island",
+        "default_pose": [
+          -0.270238,
+          -1.23571,
+          0.0,
+          -1.52354
+        ]
+      }
+    ],
+    "release_fov_rad": 1.95,
+    "indicator_hidden_pose": [
+      0.0,
+      0.0,
+      -5.0
+    ],
+    "indicator_local_xy_m": [
+      0.0,
+      -0.038
+    ],
+    "indicator_models": {
+      "red": [
+        [
+          "traffic_light_top_island_red_active_lamp",
+          "traffic_light_top_island",
+          0.66
+        ],
+        [
+          "traffic_light_lower_island_red_active_lamp",
+          "traffic_light_lower_island",
+          0.66
+        ]
+      ],
+      "yellow": [
+        [
+          "traffic_light_top_island_yellow_active_lamp",
+          "traffic_light_top_island",
+          0.565
+        ],
+        [
+          "traffic_light_lower_island_yellow_active_lamp",
+          "traffic_light_lower_island",
+          0.565
+        ]
+      ],
+      "green": [
+        [
+          "traffic_light_top_island_green_active_lamp",
+          "traffic_light_top_island",
+          0.47
+        ],
+        [
+          "traffic_light_lower_island_green_active_lamp",
+          "traffic_light_lower_island",
+          0.47
+        ]
+      ]
+    }
+  },
+  "zones": [
+    {
+      "name": "left_island_speed_limit",
+      "kind": "speed_limit_sign",
+      "min_x_m": -10.0,
+      "max_x_m": -0.35,
+      "min_y_m": -10.0,
+      "max_y_m": 0.55
+    }
+  ],
+  "lab_notes": {
+    "flat_magenta_route_candidate": {
+      "source": "generated from route_drawing_lab flat guide",
+      "purpose": "manual-centerline mirrored route candidate; renderer can force all segments magenta without changing driving semantics",
+      "draw_only_segments": [
+        "flat_draw_stub_mid_lane"
+      ],
+      "not_applied_to_main_config": true,
+      "bottom_lane_adjustment": "bottom y moved from 211 to 202 after headless diff-drive trace showed offroad oscillation at the lower edge"
+    },
+    "original2d_preview": {
+      "source": "/home/quocbao/my_robot_vision_full_project/my_robot_vision/route_drawing_lab/outputs/session_20260608_132843/autonomous_route_graph_flat_magenta_candidate.json",
+      "purpose": "unmirrored route preview against the original 2D map; do not treat as a driving config until reviewed",
+      "transform": "x_px = texture_size_px - x_px for route nodes and literal anchors",
+      "original_2d_map": "models/autonomous_map_3d/materials/textures/autonomous_map_visual.png"
+    }
+  }
+}

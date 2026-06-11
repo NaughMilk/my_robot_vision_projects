@@ -1,0 +1,9 @@
+{
+  "polylines": 24,
+  "texture": "/home/quocbao/my_robot_vision_full_project/my_robot_vision/mirrored_world_lab/generated/baked_route_view/materials/textures/autonomous_map_route_baked.png",
+  "world": "/home/quocbao/my_robot_vision_full_project/my_robot_vision/mirrored_world_lab/generated/baked_route_view/autonomous_map_3d_mirror_x_route_baked_view.world",
+  "mesh": "/home/quocbao/my_robot_vision_full_project/my_robot_vision/mirrored_world_lab/generated/baked_route_view/meshes/autonomous_map_route_baked.dae",
+  "route_scope": "all",
+  "route_planned": true,
+  "route_baked_for_mirror_x": true
+}

@@ -1,0 +1,3785 @@
+<sdf version='1.7'>
+  <world name='autonomous_map_3d_world'>
+    <plugin name='gazebo_ros_state' filename='libgazebo_ros_state.so'>
+      <update_rate>50.0</update_rate>
+    </plugin>
+    <scene>
+      <ambient>0.82 0.82 0.82 1</ambient>
+      <background>0.86 0.91 0.98 1</background>
+      <shadows>0</shadows>
+    </scene>
+    <light name='sun' type='directional'>
+      <cast_shadows>1</cast_shadows>
+      <pose>-0 0 10 0 -0 -3.14159</pose>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <constant>0.9</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <direction>-0.5 0.1 -0.9</direction>
+      <spot>
+        <inner_angle>0</inner_angle>
+        <outer_angle>0</outer_angle>
+        <falloff>0</falloff>
+      </spot>
+    </light>
+    <light name='key_light' type='directional'>
+      <cast_shadows>0</cast_shadows>
+      <pose>-0 0 6 0 -0 -3.14159</pose>
+      <diffuse>0.92 0.92 0.9 1</diffuse>
+      <specular>0.15 0.15 0.15 1</specular>
+      <direction>-0.3 0.35 -1</direction>
+      <attenuation>
+        <range>10</range>
+      </attenuation>
+      <spot>
+        <inner_angle>0</inner_angle>
+        <outer_angle>0</outer_angle>
+        <falloff>0</falloff>
+      </spot>
+    </light>
+    <light name='fill_light' type='directional'>
+      <cast_shadows>0</cast_shadows>
+      <pose>-0 0 6 0 -0 -3.14159</pose>
+      <diffuse>0.42 0.46 0.52 1</diffuse>
+      <specular>0.05 0.05 0.05 1</specular>
+      <direction>0.3 -0.2 -1</direction>
+      <attenuation>
+        <range>10</range>
+      </attenuation>
+      <spot>
+        <inner_angle>0</inner_angle>
+        <outer_angle>0</outer_angle>
+        <falloff>0</falloff>
+      </spot>
+    </light>
+    <model name='autonomous_map_3d_mirror_x'>
+      <static>1</static>
+      <link name='map_link'>
+        <visual name='textured_map_visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/quocbao/my_robot_vision_full_project/my_robot_vision/models/autonomous_map_3d_mirror_x/meshes/autonomous_map_3d_mirror_x.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='floor_collision'>
+          <pose>0 0 -0.01 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>6 6 0.02</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>0 0.3 0 0 -0 -3.14159</pose>
+    </model>
+    <model name="flat_magenta_parking_stub_stop_route_overlay">
+      <static>1</static>
+      <link name="route_preview_link">
+        <visual name="route_preview_mesh_visual">
+          <geometry>
+            <mesh>
+              <uri>file:///home/quocbao/my_robot_vision_full_project/my_robot_vision/route_drawing_lab/outputs/session_20260608_132843/runtime_visual_frame_overlay/flat_magenta_parking_stub_stop_runtime_route_overlay.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/RoutePreviewMagenta</name>
+            </script>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.8 0 0.8 1</emissive>
+          </material>
+          <cast_shadows>0</cast_shadows>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>1</kinematic>
+      </link>
+      <pose>0 0 0 0 0 0</pose>
+    </model>
+    <model name='sign_palette_floor_outside_map'>
+      <static>1</static>
+      <link name='palette_floor_link'>
+        <visual name='palette_floor_visual'>
+          <geometry>
+            <box>
+              <size>4.4 6.41 0.02</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.78 0.8 0.82 0.55</ambient>
+            <diffuse>0.78 0.8 0.82 0.55</diffuse>
+          </material>
+        </visual>
+        <collision name='palette_floor_collision'>
+          <geometry>
+            <box>
+              <size>4.4 6.41 0.02</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>0 -5.88 -0.02 0 -0 0</pose>
+    </model>
+    <model name='palette_arrow_00_yaw_000'>
+      <static>1</static>
+      <link name='arrow_sign_link'>
+        <visual name='base_visual'>
+          <pose>0 0 0.01 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.055</radius>
+              <length>0.02</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.72 0.72 0.7 1</ambient>
+            <diffuse>0.78 0.78 0.76 1</diffuse>
+          </material>
+        </visual>
+        <visual name='pole_visual'>
+          <pose>0 0 0.23 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.01</radius>
+              <length>0.44</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.72 0.72 0.7 1</ambient>
+            <diffuse>0.82 0.82 0.8 1</diffuse>
+          </material>
+        </visual>
+        <visual name='blue_plate_visual'>
+          <pose>0 -0.004 0.5 1.5708 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.102</radius>
+              <length>0.014</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.02 0.18 0.68 1</ambient>
+            <diffuse>0.03 0.24 0.92 1</diffuse>
+          </material>
+        </visual>
+        <visual name='arrow_stem_visual'>
+          <pose>0 -0.018 0.475 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.03 0.006 0.105</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name='arrow_head_left_visual'>
+          <pose>-0.028 -0.02 0.545 0 -0.75 0</pose>
+          <geometry>
+            <box>
+              <size>0.02 0.006 0.075</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name='arrow_head_right_visual'>
+          <pose>0.028 -0.02 0.545 0 0.75 0</pose>
+          <geometry>
+            <box>
+              <size>0.02 0.006 0.075</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>-1.575 -3.5 0 0 -0 0</pose>
+    </model>
+    <model name='palette_arrow_01_yaw_090'>
+      <static>1</static>
+      <link name='arrow_sign_link'>
+        <visual name='base_visual'>
+          <pose>0 0 0.01 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.055</radius>
+              <length>0.02</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.72 0.72 0.7 1</ambient>
+            <diffuse>0.78 0.78 0.76 1</diffuse>
+          </material>
+        </visual>
+        <visual name='pole_visual'>
+          <pose>0 0 0.23 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.01</radius>
+              <length>0.44</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.72 0.72 0.7 1</ambient>
+            <diffuse>0.82 0.82 0.8 1</diffuse>
+          </material>
+        </visual>
+        <visual name='blue_plate_visual'>
+          <pose>0 -0.004 0.5 1.5708 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.102</radius>
+              <length>0.014</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.02 0.18 0.68 1</ambient>
+            <diffuse>0.03 0.24 0.92 1</diffuse>
+          </material>
+        </visual>
+        <visual name='arrow_stem_visual'>
+          <pose>0 -0.018 0.475 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.03 0.006 0.105</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name='arrow_head_left_visual'>
+          <pose>-0.028 -0.02 0.545 0 -0.75 0</pose>
+          <geometry>
+            <box>
+              <size>0.02 0.006 0.075</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name='arrow_head_right_visual'>
+          <pose>0.028 -0.02 0.545 0 0.75 0</pose>
+          <geometry>
+            <box>
+              <size>0.02 0.006 0.075</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>-0.525 -3.5 0 0 -0 1.5708</pose>
+    </model>
+    <model name='palette_arrow_02_yaw_180'>
+      <static>1</static>
+      <link name='arrow_sign_link'>
+        <visual name='base_visual'>
+          <pose>0 0 0.01 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.055</radius>
+              <length>0.02</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.72 0.72 0.7 1</ambient>
+            <diffuse>0.78 0.78 0.76 1</diffuse>
+          </material>
+        </visual>
+        <visual name='pole_visual'>
+          <pose>0 0 0.23 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.01</radius>
+              <length>0.44</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.72 0.72 0.7 1</ambient>
+            <diffuse>0.82 0.82 0.8 1</diffuse>
+          </material>
+        </visual>
+        <visual name='blue_plate_visual'>
+          <pose>0 -0.004 0.5 1.5708 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.102</radius>
+              <length>0.014</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.02 0.18 0.68 1</ambient>
+            <diffuse>0.03 0.24 0.92 1</diffuse>
+          </material>
+        </visual>
+        <visual name='arrow_stem_visual'>
+          <pose>0 -0.018 0.475 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.03 0.006 0.105</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name='arrow_head_left_visual'>
+          <pose>-0.028 -0.02 0.545 0 -0.75 0</pose>
+          <geometry>
+            <box>
+              <size>0.02 0.006 0.075</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name='arrow_head_right_visual'>
+          <pose>0.028 -0.02 0.545 0 0.75 0</pose>
+          <geometry>
+            <box>
+              <size>0.02 0.006 0.075</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>0.525 -3.5 0 0 -0 -3.14159</pose>
+    </model>
+    <model name='palette_arrow_03_yaw_270'>
+      <static>1</static>
+      <link name='arrow_sign_link'>
+        <visual name='base_visual'>
+          <pose>0 0 0.01 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.055</radius>
+              <length>0.02</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.72 0.72 0.7 1</ambient>
+            <diffuse>0.78 0.78 0.76 1</diffuse>
+          </material>
+        </visual>
+        <visual name='pole_visual'>
+          <pose>0 0 0.23 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.01</radius>
+              <length>0.44</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.72 0.72 0.7 1</ambient>
+            <diffuse>0.82 0.82 0.8 1</diffuse>
+          </material>
+        </visual>
+        <visual name='blue_plate_visual'>
+          <pose>0 -0.004 0.5 1.5708 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.102</radius>
+              <length>0.014</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.02 0.18 0.68 1</ambient>
+            <diffuse>0.03 0.24 0.92 1</diffuse>
+          </material>
+        </visual>
+        <visual name='arrow_stem_visual'>
+          <pose>0 -0.018 0.475 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.03 0.006 0.105</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name='arrow_head_left_visual'>
+          <pose>-0.028 -0.02 0.545 0 -0.75 0</pose>
+          <geometry>
+            <box>
+              <size>0.02 0.006 0.075</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name='arrow_head_right_visual'>
+          <pose>0.028 -0.02 0.545 0 0.75 0</pose>
+          <geometry>
+            <box>
+              <size>0.02 0.006 0.075</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>1.575 -3.5 0 0 -0 -1.5708</pose>
+    </model>
+    <model name='palette_go_straight_00_yaw_000'>
+      <static>1</static>
+      <link name='sign_link'>
+        <visual name='base_visual'>
+          <pose>0 0 0.01 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.055</radius>
+              <length>0.02</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.72 0.72 0.7 1</ambient>
+            <diffuse>0.78 0.78 0.76 1</diffuse>
+          </material>
+        </visual>
+        <visual name='pole_visual'>
+          <pose>0 0 0.245 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.011</radius>
+              <length>0.47</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.72 0.72 0.7 1</ambient>
+            <diffuse>0.82 0.82 0.8 1</diffuse>
+          </material>
+        </visual>
+        <visual name='back_plate_visual'>
+          <pose>0 0 0.52 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.26 0.014 0.26</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.96 0.96 0.94 1</ambient>
+            <diffuse>0.98 0.98 0.96 1</diffuse>
+          </material>
+        </visual>
+        <visual name='sign_face_visual'>
+          <pose>0 -0.011 0.52 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.246 0.004 0.246</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://road_sign_go_straight/materials/scripts</uri>
+              <uri>model://road_sign_go_straight/materials/textures</uri>
+              <name>RoadSign/GoStraight</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>-1.575 -4.03 0 0 -0 0</pose>
+    </model>
+    <model name='palette_go_straight_01_yaw_090'>
+      <static>1</static>
+      <link name='sign_link'>
+        <visual name='base_visual'>
+          <pose>0 0 0.01 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.055</radius>
+              <length>0.02</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.72 0.72 0.7 1</ambient>
+            <diffuse>0.78 0.78 0.76 1</diffuse>
+          </material>
+        </visual>
+        <visual name='pole_visual'>
+          <pose>0 0 0.245 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.011</radius>
+              <length>0.47</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.72 0.72 0.7 1</ambient>
+            <diffuse>0.82 0.82 0.8 1</diffuse>
+          </material>
+        </visual>
+        <visual name='back_plate_visual'>
+          <pose>0 0 0.52 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.26 0.014 0.26</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.96 0.96 0.94 1</ambient>
+            <diffuse>0.98 0.98 0.96 1</diffuse>
+          </material>
+        </visual>
+        <visual name='sign_face_visual'>
+          <pose>0 -0.011 0.52 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.246 0.004 0.246</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://road_sign_go_straight/materials/scripts</uri>
+              <uri>model://road_sign_go_straight/materials/textures</uri>
+              <name>RoadSign/GoStraight</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>-0.525 -4.03 0 0 -0 1.5708</pose>
+    </model>
+    <model name='palette_go_straight_02_yaw_180'>
+      <static>1</static>
+      <link name='sign_link'>
+        <visual name='base_visual'>
+          <pose>0 0 0.01 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.055</radius>
+              <length>0.02</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.72 0.72 0.7 1</ambient>
+            <diffuse>0.78 0.78 0.76 1</diffuse>
+          </material>
+        </visual>
+        <visual name='pole_visual'>
+          <pose>0 0 0.245 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.011</radius>
+              <length>0.47</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.72 0.72 0.7 1</ambient>
+            <diffuse>0.82 0.82 0.8 1</diffuse>
+          </material>
+        </visual>
+        <visual name='back_plate_visual'>
+          <pose>0 0 0.52 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.26 0.014 0.26</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.96 0.96 0.94 1</ambient>
+            <diffuse>0.98 0.98 0.96 1</diffuse>
+          </material>
+        </visual>
+        <visual name='sign_face_visual'>
+          <pose>0 -0.011 0.52 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.246 0.004 0.246</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://road_sign_go_straight/materials/scripts</uri>
+              <uri>model://road_sign_go_straight/materials/textures</uri>
+              <name>RoadSign/GoStraight</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>0.525 -4.03 0 0 -0 -3.14159</pose>
+    </model>
+    <model name='palette_go_straight_03_yaw_270'>
+      <static>1</static>
+      <link name='sign_link'>
+        <visual name='base_visual'>
+          <pose>0 0 0.01 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.055</radius>
+              <length>0.02</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.72 0.72 0.7 1</ambient>
+            <diffuse>0.78 0.78 0.76 1</diffuse>
+          </material>
+        </visual>
+        <visual name='pole_visual'>
+          <pose>0 0 0.245 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.011</radius>
+              <length>0.47</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.72 0.72 0.7 1</ambient>
+            <diffuse>0.82 0.82 0.8 1</diffuse>
+          </material>
+        </visual>
+        <visual name='back_plate_visual'>
+          <pose>0 0 0.52 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.26 0.014 0.26</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.96 0.96 0.94 1</ambient>
+            <diffuse>0.98 0.98 0.96 1</diffuse>
+          </material>
+        </visual>
+        <visual name='sign_face_visual'>
+          <pose>0 -0.011 0.52 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.246 0.004 0.246</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://road_sign_go_straight/materials/scripts</uri>
+              <uri>model://road_sign_go_straight/materials/textures</uri>
+              <name>RoadSign/GoStraight</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>1.575 -4.03 0 0 -0 -1.5708</pose>
+    </model>
+    <model name='palette_turn_left_00_yaw_000'>
+      <static>1</static>
+      <link name='sign_link'>
+        <visual name='base_visual'>
+          <pose>0 0 0.01 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.055</radius>
+              <length>0.02</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.72 0.72 0.7 1</ambient>
+            <diffuse>0.78 0.78 0.76 1</diffuse>
+          </material>
+        </visual>
+        <visual name='pole_visual'>
+          <pose>0 0 0.245 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.011</radius>
+              <length>0.47</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.72 0.72 0.7 1</ambient>
+            <diffuse>0.82 0.82 0.8 1</diffuse>
+          </material>
+        </visual>
+        <visual name='back_plate_visual'>
+          <pose>0 0 0.52 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.26 0.014 0.26</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.96 0.96 0.94 1</ambient>
+            <diffuse>0.98 0.98 0.96 1</diffuse>
+          </material>
+        </visual>
+        <visual name='sign_face_visual'>
+          <pose>0 -0.011 0.52 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.246 0.004 0.246</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://road_sign_turn_left/materials/scripts</uri>
+              <uri>model://road_sign_turn_left/materials/textures</uri>
+              <name>RoadSign/TurnLeft</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>-1.575 -4.56 0 0 -0 0</pose>
+    </model>
+    <model name='palette_turn_left_01_yaw_090'>
+      <static>1</static>
+      <link name='sign_link'>
+        <visual name='base_visual'>
+          <pose>0 0 0.01 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.055</radius>
+              <length>0.02</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.72 0.72 0.7 1</ambient>
+            <diffuse>0.78 0.78 0.76 1</diffuse>
+          </material>
+        </visual>
+        <visual name='pole_visual'>
+          <pose>0 0 0.245 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.011</radius>
+              <length>0.47</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.72 0.72 0.7 1</ambient>
+            <diffuse>0.82 0.82 0.8 1</diffuse>
+          </material>
+        </visual>
+        <visual name='back_plate_visual'>
+          <pose>0 0 0.52 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.26 0.014 0.26</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.96 0.96 0.94 1</ambient>
+            <diffuse>0.98 0.98 0.96 1</diffuse>
+          </material>
+        </visual>
+        <visual name='sign_face_visual'>
+          <pose>0 -0.011 0.52 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.246 0.004 0.246</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://road_sign_turn_left/materials/scripts</uri>
+              <uri>model://road_sign_turn_left/materials/textures</uri>
+              <name>RoadSign/TurnLeft</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>-0.525 -4.56 0 0 -0 1.5708</pose>
+    </model>
+    <model name='palette_turn_left_02_yaw_180'>
+      <static>1</static>
+      <link name='sign_link'>
+        <visual name='base_visual'>
+          <pose>0 0 0.01 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.055</radius>
+              <length>0.02</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.72 0.72 0.7 1</ambient>
+            <diffuse>0.78 0.78 0.76 1</diffuse>
+          </material>
+        </visual>
+        <visual name='pole_visual'>
+          <pose>0 0 0.245 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.011</radius>
+              <length>0.47</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.72 0.72 0.7 1</ambient>
+            <diffuse>0.82 0.82 0.8 1</diffuse>
+          </material>
+        </visual>
+        <visual name='back_plate_visual'>
+          <pose>0 0 0.52 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.26 0.014 0.26</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.96 0.96 0.94 1</ambient>
+            <diffuse>0.98 0.98 0.96 1</diffuse>
+          </material>
+        </visual>
+        <visual name='sign_face_visual'>
+          <pose>0 -0.011 0.52 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.246 0.004 0.246</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://road_sign_turn_left/materials/scripts</uri>
+              <uri>model://road_sign_turn_left/materials/textures</uri>
+              <name>RoadSign/TurnLeft</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>0.525 -4.56 0 0 -0 -3.14159</pose>
+    </model>
+    <model name='palette_turn_left_03_yaw_270'>
+      <static>1</static>
+      <link name='sign_link'>
+        <visual name='base_visual'>
+          <pose>0 0 0.01 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.055</radius>
+              <length>0.02</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.72 0.72 0.7 1</ambient>
+            <diffuse>0.78 0.78 0.76 1</diffuse>
+          </material>
+        </visual>
+        <visual name='pole_visual'>
+          <pose>0 0 0.245 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.011</radius>
+              <length>0.47</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.72 0.72 0.7 1</ambient>
+            <diffuse>0.82 0.82 0.8 1</diffuse>
+          </material>
+        </visual>
+        <visual name='back_plate_visual'>
+          <pose>0 0 0.52 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.26 0.014 0.26</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.96 0.96 0.94 1</ambient>
+            <diffuse>0.98 0.98 0.96 1</diffuse>
+          </material>
+        </visual>
+        <visual name='sign_face_visual'>
+          <pose>0 -0.011 0.52 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.246 0.004 0.246</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://road_sign_turn_left/materials/scripts</uri>
+              <uri>model://road_sign_turn_left/materials/textures</uri>
+              <name>RoadSign/TurnLeft</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>1.575 -4.56 0 0 -0 -1.5708</pose>
+    </model>
+    <model name='palette_turn_right_00_yaw_000'>
+      <static>1</static>
+      <link name='sign_link'>
+        <visual name='base_visual'>
+          <pose>0 0 0.01 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.055</radius>
+              <length>0.02</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.72 0.72 0.7 1</ambient>
+            <diffuse>0.78 0.78 0.76 1</diffuse>
+          </material>
+        </visual>
+        <visual name='pole_visual'>
+          <pose>0 0 0.245 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.011</radius>
+              <length>0.47</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.72 0.72 0.7 1</ambient>
+            <diffuse>0.82 0.82 0.8 1</diffuse>
+          </material>
+        </visual>
+        <visual name='back_plate_visual'>
+          <pose>0 0 0.52 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.26 0.014 0.26</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.96 0.96 0.94 1</ambient>
+            <diffuse>0.98 0.98 0.96 1</diffuse>
+          </material>
+        </visual>
+        <visual name='sign_face_visual'>
+          <pose>0 -0.011 0.52 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.246 0.004 0.246</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://road_sign_turn_right/materials/scripts</uri>
+              <uri>model://road_sign_turn_right/materials/textures</uri>
+              <name>RoadSign/TurnRight</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>-1.575 -5.09 0 0 -0 0</pose>
+    </model>
+    <model name='palette_turn_right_01_yaw_090'>
+      <static>1</static>
+      <link name='sign_link'>
+        <visual name='base_visual'>
+          <pose>0 0 0.01 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.055</radius>
+              <length>0.02</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.72 0.72 0.7 1</ambient>
+            <diffuse>0.78 0.78 0.76 1</diffuse>
+          </material>
+        </visual>
+        <visual name='pole_visual'>
+          <pose>0 0 0.245 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.011</radius>
+              <length>0.47</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.72 0.72 0.7 1</ambient>
+            <diffuse>0.82 0.82 0.8 1</diffuse>
+          </material>
+        </visual>
+        <visual name='back_plate_visual'>
+          <pose>0 0 0.52 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.26 0.014 0.26</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.96 0.96 0.94 1</ambient>
+            <diffuse>0.98 0.98 0.96 1</diffuse>
+          </material>
+        </visual>
+        <visual name='sign_face_visual'>
+          <pose>0 -0.011 0.52 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.246 0.004 0.246</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://road_sign_turn_right/materials/scripts</uri>
+              <uri>model://road_sign_turn_right/materials/textures</uri>
+              <name>RoadSign/TurnRight</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>-0.525 -5.09 0 0 -0 1.5708</pose>
+    </model>
+    <model name='palette_turn_right_02_yaw_180'>
+      <static>1</static>
+      <link name='sign_link'>
+        <visual name='base_visual'>
+          <pose>0 0 0.01 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.055</radius>
+              <length>0.02</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.72 0.72 0.7 1</ambient>
+            <diffuse>0.78 0.78 0.76 1</diffuse>
+          </material>
+        </visual>
+        <visual name='pole_visual'>
+          <pose>0 0 0.245 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.011</radius>
+              <length>0.47</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.72 0.72 0.7 1</ambient>
+            <diffuse>0.82 0.82 0.8 1</diffuse>
+          </material>
+        </visual>
+        <visual name='back_plate_visual'>
+          <pose>0 0 0.52 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.26 0.014 0.26</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.96 0.96 0.94 1</ambient>
+            <diffuse>0.98 0.98 0.96 1</diffuse>
+          </material>
+        </visual>
+        <visual name='sign_face_visual'>
+          <pose>0 -0.011 0.52 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.246 0.004 0.246</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://road_sign_turn_right/materials/scripts</uri>
+              <uri>model://road_sign_turn_right/materials/textures</uri>
+              <name>RoadSign/TurnRight</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>0.525 -5.09 0 0 -0 -3.14159</pose>
+    </model>
+    <model name='palette_turn_right_03_yaw_270'>
+      <static>1</static>
+      <link name='sign_link'>
+        <visual name='base_visual'>
+          <pose>0 0 0.01 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.055</radius>
+              <length>0.02</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.72 0.72 0.7 1</ambient>
+            <diffuse>0.78 0.78 0.76 1</diffuse>
+          </material>
+        </visual>
+        <visual name='pole_visual'>
+          <pose>0 0 0.245 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.011</radius>
+              <length>0.47</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.72 0.72 0.7 1</ambient>
+            <diffuse>0.82 0.82 0.8 1</diffuse>
+          </material>
+        </visual>
+        <visual name='back_plate_visual'>
+          <pose>0 0 0.52 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.26 0.014 0.26</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.96 0.96 0.94 1</ambient>
+            <diffuse>0.98 0.98 0.96 1</diffuse>
+          </material>
+        </visual>
+        <visual name='sign_face_visual'>
+          <pose>0 -0.011 0.52 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.246 0.004 0.246</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://road_sign_turn_right/materials/scripts</uri>
+              <uri>model://road_sign_turn_right/materials/textures</uri>
+              <name>RoadSign/TurnRight</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>1.575 -5.09 0 0 -0 -1.5708</pose>
+    </model>
+    <model name='palette_parking_00_yaw_000'>
+      <static>1</static>
+      <link name='sign_link'>
+        <visual name='base_visual'>
+          <pose>0 0 0.01 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.055</radius>
+              <length>0.02</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.72 0.72 0.7 1</ambient>
+            <diffuse>0.78 0.78 0.76 1</diffuse>
+          </material>
+        </visual>
+        <visual name='pole_visual'>
+          <pose>0 0 0.245 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.011</radius>
+              <length>0.47</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.72 0.72 0.7 1</ambient>
+            <diffuse>0.82 0.82 0.8 1</diffuse>
+          </material>
+        </visual>
+        <visual name='back_plate_visual'>
+          <pose>0 0 0.52 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.31 0.014 0.21</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.96 0.96 0.94 1</ambient>
+            <diffuse>0.98 0.98 0.96 1</diffuse>
+          </material>
+        </visual>
+        <visual name='sign_face_visual'>
+          <pose>0 -0.011 0.52 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.294 0.004 0.196</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://road_sign_parking/materials/scripts</uri>
+              <uri>model://road_sign_parking/materials/textures</uri>
+              <name>RoadSign/Parking</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>-1.575 -5.62 0 0 -0 0</pose>
+    </model>
+    <model name='palette_parking_01_yaw_090'>
+      <static>1</static>
+      <link name='sign_link'>
+        <visual name='base_visual'>
+          <pose>0 0 0.01 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.055</radius>
+              <length>0.02</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.72 0.72 0.7 1</ambient>
+            <diffuse>0.78 0.78 0.76 1</diffuse>
+          </material>
+        </visual>
+        <visual name='pole_visual'>
+          <pose>0 0 0.245 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.011</radius>
+              <length>0.47</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.72 0.72 0.7 1</ambient>
+            <diffuse>0.82 0.82 0.8 1</diffuse>
+          </material>
+        </visual>
+        <visual name='back_plate_visual'>
+          <pose>0 0 0.52 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.31 0.014 0.21</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.96 0.96 0.94 1</ambient>
+            <diffuse>0.98 0.98 0.96 1</diffuse>
+          </material>
+        </visual>
+        <visual name='sign_face_visual'>
+          <pose>0 -0.011 0.52 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.294 0.004 0.196</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://road_sign_parking/materials/scripts</uri>
+              <uri>model://road_sign_parking/materials/textures</uri>
+              <name>RoadSign/Parking</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>-0.525 -5.62 0 0 -0 1.5708</pose>
+    </model>
+    <model name='palette_parking_02_yaw_180'>
+      <static>1</static>
+      <link name='sign_link'>
+        <visual name='base_visual'>
+          <pose>0 0 0.01 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.055</radius>
+              <length>0.02</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.72 0.72 0.7 1</ambient>
+            <diffuse>0.78 0.78 0.76 1</diffuse>
+          </material>
+        </visual>
+        <visual name='pole_visual'>
+          <pose>0 0 0.245 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.011</radius>
+              <length>0.47</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.72 0.72 0.7 1</ambient>
+            <diffuse>0.82 0.82 0.8 1</diffuse>
+          </material>
+        </visual>
+        <visual name='back_plate_visual'>
+          <pose>0 0 0.52 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.31 0.014 0.21</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.96 0.96 0.94 1</ambient>
+            <diffuse>0.98 0.98 0.96 1</diffuse>
+          </material>
+        </visual>
+        <visual name='sign_face_visual'>
+          <pose>0 -0.011 0.52 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.294 0.004 0.196</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://road_sign_parking/materials/scripts</uri>
+              <uri>model://road_sign_parking/materials/textures</uri>
+              <name>RoadSign/Parking</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>0.525 -5.62 0 0 -0 -3.14159</pose>
+    </model>
+    <model name='palette_parking_03_yaw_270'>
+      <static>1</static>
+      <link name='sign_link'>
+        <visual name='base_visual'>
+          <pose>0 0 0.01 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.055</radius>
+              <length>0.02</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.72 0.72 0.7 1</ambient>
+            <diffuse>0.78 0.78 0.76 1</diffuse>
+          </material>
+        </visual>
+        <visual name='pole_visual'>
+          <pose>0 0 0.245 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.011</radius>
+              <length>0.47</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.72 0.72 0.7 1</ambient>
+            <diffuse>0.82 0.82 0.8 1</diffuse>
+          </material>
+        </visual>
+        <visual name='back_plate_visual'>
+          <pose>0 0 0.52 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.31 0.014 0.21</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.96 0.96 0.94 1</ambient>
+            <diffuse>0.98 0.98 0.96 1</diffuse>
+          </material>
+        </visual>
+        <visual name='sign_face_visual'>
+          <pose>0 -0.011 0.52 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.294 0.004 0.196</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://road_sign_parking/materials/scripts</uri>
+              <uri>model://road_sign_parking/materials/textures</uri>
+              <name>RoadSign/Parking</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>1.575 -5.62 0 0 -0 -1.5708</pose>
+    </model>
+    <model name='palette_speed_limit_00_yaw_000'>
+      <static>1</static>
+      <link name='sign_link'>
+        <visual name='base_visual'>
+          <pose>0 0 0.01 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.055</radius>
+              <length>0.02</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.72 0.72 0.7 1</ambient>
+            <diffuse>0.78 0.78 0.76 1</diffuse>
+          </material>
+        </visual>
+        <visual name='pole_visual'>
+          <pose>0 0 0.245 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.011</radius>
+              <length>0.47</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.72 0.72 0.7 1</ambient>
+            <diffuse>0.82 0.82 0.8 1</diffuse>
+          </material>
+        </visual>
+        <visual name='back_plate_visual'>
+          <pose>0 0 0.52 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.26 0.014 0.26</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.96 0.96 0.94 1</ambient>
+            <diffuse>0.98 0.98 0.96 1</diffuse>
+          </material>
+        </visual>
+        <visual name='sign_face_visual'>
+          <pose>0 -0.011 0.52 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.246 0.004 0.246</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://road_sign_speed_limit/materials/scripts</uri>
+              <uri>model://road_sign_speed_limit/materials/textures</uri>
+              <name>RoadSign/SpeedLimit</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>-1.575 -6.15 0 0 -0 0</pose>
+    </model>
+    <model name='palette_speed_limit_01_yaw_090'>
+      <static>1</static>
+      <link name='sign_link'>
+        <visual name='base_visual'>
+          <pose>0 0 0.01 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.055</radius>
+              <length>0.02</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.72 0.72 0.7 1</ambient>
+            <diffuse>0.78 0.78 0.76 1</diffuse>
+          </material>
+        </visual>
+        <visual name='pole_visual'>
+          <pose>0 0 0.245 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.011</radius>
+              <length>0.47</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.72 0.72 0.7 1</ambient>
+            <diffuse>0.82 0.82 0.8 1</diffuse>
+          </material>
+        </visual>
+        <visual name='back_plate_visual'>
+          <pose>0 0 0.52 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.26 0.014 0.26</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.96 0.96 0.94 1</ambient>
+            <diffuse>0.98 0.98 0.96 1</diffuse>
+          </material>
+        </visual>
+        <visual name='sign_face_visual'>
+          <pose>0 -0.011 0.52 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.246 0.004 0.246</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://road_sign_speed_limit/materials/scripts</uri>
+              <uri>model://road_sign_speed_limit/materials/textures</uri>
+              <name>RoadSign/SpeedLimit</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>-0.525 -6.15 0 0 -0 1.5708</pose>
+    </model>
+    <model name='palette_speed_limit_02_yaw_180'>
+      <static>1</static>
+      <link name='sign_link'>
+        <visual name='base_visual'>
+          <pose>0 0 0.01 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.055</radius>
+              <length>0.02</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.72 0.72 0.7 1</ambient>
+            <diffuse>0.78 0.78 0.76 1</diffuse>
+          </material>
+        </visual>
+        <visual name='pole_visual'>
+          <pose>0 0 0.245 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.011</radius>
+              <length>0.47</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.72 0.72 0.7 1</ambient>
+            <diffuse>0.82 0.82 0.8 1</diffuse>
+          </material>
+        </visual>
+        <visual name='back_plate_visual'>
+          <pose>0 0 0.52 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.26 0.014 0.26</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.96 0.96 0.94 1</ambient>
+            <diffuse>0.98 0.98 0.96 1</diffuse>
+          </material>
+        </visual>
+        <visual name='sign_face_visual'>
+          <pose>0 -0.011 0.52 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.246 0.004 0.246</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://road_sign_speed_limit/materials/scripts</uri>
+              <uri>model://road_sign_speed_limit/materials/textures</uri>
+              <name>RoadSign/SpeedLimit</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>0.525 -6.15 0 0 -0 -3.14159</pose>
+    </model>
+    <model name='palette_speed_limit_03_yaw_270'>
+      <static>1</static>
+      <link name='sign_link'>
+        <visual name='base_visual'>
+          <pose>0 0 0.01 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.055</radius>
+              <length>0.02</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.72 0.72 0.7 1</ambient>
+            <diffuse>0.78 0.78 0.76 1</diffuse>
+          </material>
+        </visual>
+        <visual name='pole_visual'>
+          <pose>0 0 0.245 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.011</radius>
+              <length>0.47</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.72 0.72 0.7 1</ambient>
+            <diffuse>0.82 0.82 0.8 1</diffuse>
+          </material>
+        </visual>
+        <visual name='back_plate_visual'>
+          <pose>0 0 0.52 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.26 0.014 0.26</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.96 0.96 0.94 1</ambient>
+            <diffuse>0.98 0.98 0.96 1</diffuse>
+          </material>
+        </visual>
+        <visual name='sign_face_visual'>
+          <pose>0 -0.011 0.52 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.246 0.004 0.246</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://road_sign_speed_limit/materials/scripts</uri>
+              <uri>model://road_sign_speed_limit/materials/textures</uri>
+              <name>RoadSign/SpeedLimit</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>1.575 -6.15 0 0 -0 -1.5708</pose>
+    </model>
+    <model name='palette_stop_00_yaw_000'>
+      <static>1</static>
+      <link name='stop_sign_link'>
+        <visual name='base_visual'>
+          <pose>0 0 0.01 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.06</radius>
+              <length>0.02</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.72 0.72 0.7 1</ambient>
+            <diffuse>0.78 0.78 0.76 1</diffuse>
+          </material>
+        </visual>
+        <visual name='pole_visual'>
+          <pose>0 0 0.245 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.011</radius>
+              <length>0.47</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.72 0.72 0.7 1</ambient>
+            <diffuse>0.82 0.82 0.8 1</diffuse>
+          </material>
+        </visual>
+        <visual name='white_back_plate_visual'>
+          <pose>0 -0.002 0.52 1.5708 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.108</radius>
+              <length>0.012</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name='red_plate_visual'>
+          <pose>0 -0.01 0.52 1.5708 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.094</radius>
+              <length>0.014</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.72 0.02 0.02 1</ambient>
+            <diffuse>0.95 0.04 0.04 1</diffuse>
+          </material>
+        </visual>
+        <visual name='stop_bar_visual'>
+          <pose>0 -0.02 0.52 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.11 0.006 0.028</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>-1.575 -6.68 0 0 -0 0</pose>
+    </model>
+    <model name='palette_stop_01_yaw_090'>
+      <static>1</static>
+      <link name='stop_sign_link'>
+        <visual name='base_visual'>
+          <pose>0 0 0.01 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.06</radius>
+              <length>0.02</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.72 0.72 0.7 1</ambient>
+            <diffuse>0.78 0.78 0.76 1</diffuse>
+          </material>
+        </visual>
+        <visual name='pole_visual'>
+          <pose>0 0 0.245 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.011</radius>
+              <length>0.47</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.72 0.72 0.7 1</ambient>
+            <diffuse>0.82 0.82 0.8 1</diffuse>
+          </material>
+        </visual>
+        <visual name='white_back_plate_visual'>
+          <pose>0 -0.002 0.52 1.5708 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.108</radius>
+              <length>0.012</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name='red_plate_visual'>
+          <pose>0 -0.01 0.52 1.5708 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.094</radius>
+              <length>0.014</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.72 0.02 0.02 1</ambient>
+            <diffuse>0.95 0.04 0.04 1</diffuse>
+          </material>
+        </visual>
+        <visual name='stop_bar_visual'>
+          <pose>0 -0.02 0.52 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.11 0.006 0.028</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>-0.525 -6.68 0 0 -0 1.5708</pose>
+    </model>
+    <model name='palette_stop_02_yaw_180'>
+      <static>1</static>
+      <link name='stop_sign_link'>
+        <visual name='base_visual'>
+          <pose>0 0 0.01 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.06</radius>
+              <length>0.02</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.72 0.72 0.7 1</ambient>
+            <diffuse>0.78 0.78 0.76 1</diffuse>
+          </material>
+        </visual>
+        <visual name='pole_visual'>
+          <pose>0 0 0.245 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.011</radius>
+              <length>0.47</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.72 0.72 0.7 1</ambient>
+            <diffuse>0.82 0.82 0.8 1</diffuse>
+          </material>
+        </visual>
+        <visual name='white_back_plate_visual'>
+          <pose>0 -0.002 0.52 1.5708 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.108</radius>
+              <length>0.012</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name='red_plate_visual'>
+          <pose>0 -0.01 0.52 1.5708 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.094</radius>
+              <length>0.014</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.72 0.02 0.02 1</ambient>
+            <diffuse>0.95 0.04 0.04 1</diffuse>
+          </material>
+        </visual>
+        <visual name='stop_bar_visual'>
+          <pose>0 -0.02 0.52 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.11 0.006 0.028</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>0.525 -6.68 0 0 -0 -3.14159</pose>
+    </model>
+    <model name='palette_stop_03_yaw_270'>
+      <static>1</static>
+      <link name='stop_sign_link'>
+        <visual name='base_visual'>
+          <pose>0 0 0.01 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.06</radius>
+              <length>0.02</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.72 0.72 0.7 1</ambient>
+            <diffuse>0.78 0.78 0.76 1</diffuse>
+          </material>
+        </visual>
+        <visual name='pole_visual'>
+          <pose>0 0 0.245 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.011</radius>
+              <length>0.47</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.72 0.72 0.7 1</ambient>
+            <diffuse>0.82 0.82 0.8 1</diffuse>
+          </material>
+        </visual>
+        <visual name='white_back_plate_visual'>
+          <pose>0 -0.002 0.52 1.5708 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.108</radius>
+              <length>0.012</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name='red_plate_visual'>
+          <pose>0 -0.01 0.52 1.5708 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.094</radius>
+              <length>0.014</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.72 0.02 0.02 1</ambient>
+            <diffuse>0.95 0.04 0.04 1</diffuse>
+          </material>
+        </visual>
+        <visual name='stop_bar_visual'>
+          <pose>0 -0.02 0.52 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.11 0.006 0.028</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>1.575 -6.68 0 0 -0 -1.5708</pose>
+    </model>
+    <model name='palette_traffic_light_00_yaw_000'>
+      <static>1</static>
+      <link name='traffic_light_link'>
+        <visual name='base_visual'>
+          <pose>0 0 0.015 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.07</radius>
+              <length>0.03</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.03 0.03 0.04 1</ambient>
+            <diffuse>0.04 0.04 0.05 1</diffuse>
+          </material>
+        </visual>
+        <visual name='pole_visual'>
+          <pose>0 0 0.25 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.016</radius>
+              <length>0.47</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.08 0.08 0.1 1</ambient>
+            <diffuse>0.1 0.1 0.13 1</diffuse>
+          </material>
+        </visual>
+        <visual name='housing_visual'>
+          <pose>0 -0.006 0.565 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.145 0.055 0.34</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.02 0.025 0.04 1</ambient>
+            <diffuse>0.03 0.035 0.06 1</diffuse>
+          </material>
+        </visual>
+        <visual name='red_lens_visual'>
+          <pose>0 -0.038 0.66 0 -0 0</pose>
+          <geometry>
+            <sphere>
+              <radius>0.043</radius>
+            </sphere>
+          </geometry>
+          <material>
+            <ambient>0.035 0.002 0.002 1</ambient>
+            <diffuse>0.06 0.004 0.004 1</diffuse>
+            <emissive>0 0 0 1</emissive>
+          </material>
+        </visual>
+        <visual name='yellow_lens_visual'>
+          <pose>0 -0.038 0.565 0 -0 0</pose>
+          <geometry>
+            <sphere>
+              <radius>0.043</radius>
+            </sphere>
+          </geometry>
+          <material>
+            <ambient>0.035 0.025 0.002 1</ambient>
+            <diffuse>0.06 0.045 0.004 1</diffuse>
+            <emissive>0 0 0 1</emissive>
+          </material>
+        </visual>
+        <visual name='green_lens_visual'>
+          <pose>0 -0.038 0.47 0 -0 0</pose>
+          <geometry>
+            <sphere>
+              <radius>0.043</radius>
+            </sphere>
+          </geometry>
+          <material>
+            <ambient>0.002 0.04 0.004 1</ambient>
+            <diffuse>0.004 0.078 0.01 1</diffuse>
+            <emissive>0 0 0 1</emissive>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>-1.575 -7.21 0 0 -0 0</pose>
+    </model>
+    <model name='palette_traffic_light_01_yaw_090'>
+      <static>1</static>
+      <link name='traffic_light_link'>
+        <visual name='base_visual'>
+          <pose>0 0 0.015 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.07</radius>
+              <length>0.03</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.03 0.03 0.04 1</ambient>
+            <diffuse>0.04 0.04 0.05 1</diffuse>
+          </material>
+        </visual>
+        <visual name='pole_visual'>
+          <pose>0 0 0.25 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.016</radius>
+              <length>0.47</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.08 0.08 0.1 1</ambient>
+            <diffuse>0.1 0.1 0.13 1</diffuse>
+          </material>
+        </visual>
+        <visual name='housing_visual'>
+          <pose>0 -0.006 0.565 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.145 0.055 0.34</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.02 0.025 0.04 1</ambient>
+            <diffuse>0.03 0.035 0.06 1</diffuse>
+          </material>
+        </visual>
+        <visual name='red_lens_visual'>
+          <pose>0 -0.038 0.66 0 -0 0</pose>
+          <geometry>
+            <sphere>
+              <radius>0.043</radius>
+            </sphere>
+          </geometry>
+          <material>
+            <ambient>0.035 0.002 0.002 1</ambient>
+            <diffuse>0.06 0.004 0.004 1</diffuse>
+            <emissive>0 0 0 1</emissive>
+          </material>
+        </visual>
+        <visual name='yellow_lens_visual'>
+          <pose>0 -0.038 0.565 0 -0 0</pose>
+          <geometry>
+            <sphere>
+              <radius>0.043</radius>
+            </sphere>
+          </geometry>
+          <material>
+            <ambient>0.035 0.025 0.002 1</ambient>
+            <diffuse>0.06 0.045 0.004 1</diffuse>
+            <emissive>0 0 0 1</emissive>
+          </material>
+        </visual>
+        <visual name='green_lens_visual'>
+          <pose>0 -0.038 0.47 0 -0 0</pose>
+          <geometry>
+            <sphere>
+              <radius>0.043</radius>
+            </sphere>
+          </geometry>
+          <material>
+            <ambient>0.002 0.04 0.004 1</ambient>
+            <diffuse>0.004 0.078 0.01 1</diffuse>
+            <emissive>0 0 0 1</emissive>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>-0.525 -7.21 0 0 -0 1.5708</pose>
+    </model>
+    <model name='palette_traffic_light_02_yaw_180'>
+      <static>1</static>
+      <link name='traffic_light_link'>
+        <visual name='base_visual'>
+          <pose>0 0 0.015 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.07</radius>
+              <length>0.03</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.03 0.03 0.04 1</ambient>
+            <diffuse>0.04 0.04 0.05 1</diffuse>
+          </material>
+        </visual>
+        <visual name='pole_visual'>
+          <pose>0 0 0.25 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.016</radius>
+              <length>0.47</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.08 0.08 0.1 1</ambient>
+            <diffuse>0.1 0.1 0.13 1</diffuse>
+          </material>
+        </visual>
+        <visual name='housing_visual'>
+          <pose>0 -0.006 0.565 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.145 0.055 0.34</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.02 0.025 0.04 1</ambient>
+            <diffuse>0.03 0.035 0.06 1</diffuse>
+          </material>
+        </visual>
+        <visual name='red_lens_visual'>
+          <pose>0 -0.038 0.66 0 -0 0</pose>
+          <geometry>
+            <sphere>
+              <radius>0.043</radius>
+            </sphere>
+          </geometry>
+          <material>
+            <ambient>0.035 0.002 0.002 1</ambient>
+            <diffuse>0.06 0.004 0.004 1</diffuse>
+            <emissive>0 0 0 1</emissive>
+          </material>
+        </visual>
+        <visual name='yellow_lens_visual'>
+          <pose>0 -0.038 0.565 0 -0 0</pose>
+          <geometry>
+            <sphere>
+              <radius>0.043</radius>
+            </sphere>
+          </geometry>
+          <material>
+            <ambient>0.035 0.025 0.002 1</ambient>
+            <diffuse>0.06 0.045 0.004 1</diffuse>
+            <emissive>0 0 0 1</emissive>
+          </material>
+        </visual>
+        <visual name='green_lens_visual'>
+          <pose>0 -0.038 0.47 0 -0 0</pose>
+          <geometry>
+            <sphere>
+              <radius>0.043</radius>
+            </sphere>
+          </geometry>
+          <material>
+            <ambient>0.002 0.04 0.004 1</ambient>
+            <diffuse>0.004 0.078 0.01 1</diffuse>
+            <emissive>0 0 0 1</emissive>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>0.525 -7.21 0 0 -0 -3.14159</pose>
+    </model>
+    <model name='palette_traffic_light_03_yaw_270'>
+      <static>1</static>
+      <link name='traffic_light_link'>
+        <visual name='base_visual'>
+          <pose>0 0 0.015 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.07</radius>
+              <length>0.03</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.03 0.03 0.04 1</ambient>
+            <diffuse>0.04 0.04 0.05 1</diffuse>
+          </material>
+        </visual>
+        <visual name='pole_visual'>
+          <pose>0 0 0.25 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.016</radius>
+              <length>0.47</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.08 0.08 0.1 1</ambient>
+            <diffuse>0.1 0.1 0.13 1</diffuse>
+          </material>
+        </visual>
+        <visual name='housing_visual'>
+          <pose>0 -0.006 0.565 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.145 0.055 0.34</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.02 0.025 0.04 1</ambient>
+            <diffuse>0.03 0.035 0.06 1</diffuse>
+          </material>
+        </visual>
+        <visual name='red_lens_visual'>
+          <pose>0 -0.038 0.66 0 -0 0</pose>
+          <geometry>
+            <sphere>
+              <radius>0.043</radius>
+            </sphere>
+          </geometry>
+          <material>
+            <ambient>0.035 0.002 0.002 1</ambient>
+            <diffuse>0.06 0.004 0.004 1</diffuse>
+            <emissive>0 0 0 1</emissive>
+          </material>
+        </visual>
+        <visual name='yellow_lens_visual'>
+          <pose>0 -0.038 0.565 0 -0 0</pose>
+          <geometry>
+            <sphere>
+              <radius>0.043</radius>
+            </sphere>
+          </geometry>
+          <material>
+            <ambient>0.035 0.025 0.002 1</ambient>
+            <diffuse>0.06 0.045 0.004 1</diffuse>
+            <emissive>0 0 0 1</emissive>
+          </material>
+        </visual>
+        <visual name='green_lens_visual'>
+          <pose>0 -0.038 0.47 0 -0 0</pose>
+          <geometry>
+            <sphere>
+              <radius>0.043</radius>
+            </sphere>
+          </geometry>
+          <material>
+            <ambient>0.002 0.04 0.004 1</ambient>
+            <diffuse>0.004 0.078 0.01 1</diffuse>
+            <emissive>0 0 0 1</emissive>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>1.575 -7.21 0 0 -0 -1.5708</pose>
+    </model>
+    <model name='palette_traffic_light_00_yaw_000_red_active_lamp'>
+      <static>0</static>
+      <link name='lamp_link'>
+        <gravity>0</gravity>
+        <visual name='lamp_visual'>
+          <geometry>
+            <sphere>
+              <radius>0.065</radius>
+            </sphere>
+          </geometry>
+          <material>
+            <ambient>1 0 0 1</ambient>
+            <diffuse>1 0 0 1</diffuse>
+            <emissive>0.0313726 0 0 1</emissive>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>1</kinematic>
+        <inertial>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <iyy>1</iyy>
+            <izz>1</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
+      </link>
+      <pose>0 0 -5 0 -0 0</pose>
+    </model>
+    <model name='palette_traffic_light_01_yaw_090_red_active_lamp'>
+      <static>0</static>
+      <link name='lamp_link'>
+        <gravity>0</gravity>
+        <visual name='lamp_visual'>
+          <geometry>
+            <sphere>
+              <radius>0.065</radius>
+            </sphere>
+          </geometry>
+          <material>
+            <ambient>1 0 0 1</ambient>
+            <diffuse>1 0 0 1</diffuse>
+            <emissive>0.0313726 0 0 1</emissive>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>1</kinematic>
+        <inertial>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <iyy>1</iyy>
+            <izz>1</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
+      </link>
+      <pose>0 0 -5 0 -0 0</pose>
+    </model>
+    <model name='palette_traffic_light_02_yaw_180_red_active_lamp'>
+      <static>0</static>
+      <link name='lamp_link'>
+        <gravity>0</gravity>
+        <visual name='lamp_visual'>
+          <geometry>
+            <sphere>
+              <radius>0.065</radius>
+            </sphere>
+          </geometry>
+          <material>
+            <ambient>1 0 0 1</ambient>
+            <diffuse>1 0 0 1</diffuse>
+            <emissive>0.0313726 0 0 1</emissive>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>1</kinematic>
+        <inertial>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <iyy>1</iyy>
+            <izz>1</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
+      </link>
+      <pose>0 0 -5 0 -0 0</pose>
+    </model>
+    <model name='palette_traffic_light_03_yaw_270_red_active_lamp'>
+      <static>0</static>
+      <link name='lamp_link'>
+        <gravity>0</gravity>
+        <visual name='lamp_visual'>
+          <geometry>
+            <sphere>
+              <radius>0.065</radius>
+            </sphere>
+          </geometry>
+          <material>
+            <ambient>1 0 0 1</ambient>
+            <diffuse>1 0 0 1</diffuse>
+            <emissive>0.0313726 0 0 1</emissive>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>1</kinematic>
+        <inertial>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <iyy>1</iyy>
+            <izz>1</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
+      </link>
+      <pose>0 0 -5 0 -0 0</pose>
+    </model>
+    <model name='palette_traffic_light_00_yaw_000_yellow_active_lamp'>
+      <static>0</static>
+      <link name='lamp_link'>
+        <gravity>0</gravity>
+        <visual name='lamp_visual'>
+          <geometry>
+            <sphere>
+              <radius>0.065</radius>
+            </sphere>
+          </geometry>
+          <material>
+            <ambient>1 0.72 0 1</ambient>
+            <diffuse>1 0.72 0 1</diffuse>
+            <emissive>0.0313726 0.0203922 0 1</emissive>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>1</kinematic>
+        <inertial>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <iyy>1</iyy>
+            <izz>1</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
+      </link>
+      <pose>0 0 -5 0 -0 0</pose>
+    </model>
+    <model name='palette_traffic_light_01_yaw_090_yellow_active_lamp'>
+      <static>0</static>
+      <link name='lamp_link'>
+        <gravity>0</gravity>
+        <visual name='lamp_visual'>
+          <geometry>
+            <sphere>
+              <radius>0.065</radius>
+            </sphere>
+          </geometry>
+          <material>
+            <ambient>1 0.72 0 1</ambient>
+            <diffuse>1 0.72 0 1</diffuse>
+            <emissive>0.0313726 0.0203922 0 1</emissive>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>1</kinematic>
+        <inertial>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <iyy>1</iyy>
+            <izz>1</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
+      </link>
+      <pose>0 0 -5 0 -0 0</pose>
+    </model>
+    <model name='palette_traffic_light_02_yaw_180_yellow_active_lamp'>
+      <static>0</static>
+      <link name='lamp_link'>
+        <gravity>0</gravity>
+        <visual name='lamp_visual'>
+          <geometry>
+            <sphere>
+              <radius>0.065</radius>
+            </sphere>
+          </geometry>
+          <material>
+            <ambient>1 0.72 0 1</ambient>
+            <diffuse>1 0.72 0 1</diffuse>
+            <emissive>0.0313726 0.0203922 0 1</emissive>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>1</kinematic>
+        <inertial>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <iyy>1</iyy>
+            <izz>1</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
+      </link>
+      <pose>0 0 -5 0 -0 0</pose>
+    </model>
+    <model name='palette_traffic_light_03_yaw_270_yellow_active_lamp'>
+      <static>0</static>
+      <link name='lamp_link'>
+        <gravity>0</gravity>
+        <visual name='lamp_visual'>
+          <geometry>
+            <sphere>
+              <radius>0.065</radius>
+            </sphere>
+          </geometry>
+          <material>
+            <ambient>1 0.72 0 1</ambient>
+            <diffuse>1 0.72 0 1</diffuse>
+            <emissive>0.0313726 0.0203922 0 1</emissive>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>1</kinematic>
+        <inertial>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <iyy>1</iyy>
+            <izz>1</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
+      </link>
+      <pose>0 0 -5 0 -0 0</pose>
+    </model>
+    <model name='palette_traffic_light_00_yaw_000_green_active_lamp'>
+      <static>0</static>
+      <link name='lamp_link'>
+        <gravity>0</gravity>
+        <visual name='lamp_visual'>
+          <geometry>
+            <sphere>
+              <radius>0.065</radius>
+            </sphere>
+          </geometry>
+          <material>
+            <ambient>0 1 0.05 1</ambient>
+            <diffuse>0 1 0.05 1</diffuse>
+            <emissive>0 0.0313726 0.3 1</emissive>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>1</kinematic>
+        <inertial>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <iyy>1</iyy>
+            <izz>1</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
+      </link>
+      <pose>0 0 -5 0 -0 0</pose>
+    </model>
+    <model name='palette_traffic_light_01_yaw_090_green_active_lamp'>
+      <static>0</static>
+      <link name='lamp_link'>
+        <gravity>0</gravity>
+        <visual name='lamp_visual'>
+          <geometry>
+            <sphere>
+              <radius>0.065</radius>
+            </sphere>
+          </geometry>
+          <material>
+            <ambient>0 1 0.05 1</ambient>
+            <diffuse>0 1 0.05 1</diffuse>
+            <emissive>0 0.0313726 0.3 1</emissive>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>1</kinematic>
+        <inertial>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <iyy>1</iyy>
+            <izz>1</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
+      </link>
+      <pose>0 0 -5 0 -0 0</pose>
+    </model>
+    <model name='palette_traffic_light_02_yaw_180_green_active_lamp'>
+      <static>0</static>
+      <link name='lamp_link'>
+        <gravity>0</gravity>
+        <visual name='lamp_visual'>
+          <geometry>
+            <sphere>
+              <radius>0.065</radius>
+            </sphere>
+          </geometry>
+          <material>
+            <ambient>0 1 0.05 1</ambient>
+            <diffuse>0 1 0.05 1</diffuse>
+            <emissive>0 0.0313726 0.3 1</emissive>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>1</kinematic>
+        <inertial>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <iyy>1</iyy>
+            <izz>1</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
+      </link>
+      <pose>0 0 -5 0 -0 0</pose>
+    </model>
+    <model name='palette_traffic_light_03_yaw_270_green_active_lamp'>
+      <static>0</static>
+      <link name='lamp_link'>
+        <gravity>0</gravity>
+        <visual name='lamp_visual'>
+          <geometry>
+            <sphere>
+              <radius>0.065</radius>
+            </sphere>
+          </geometry>
+          <material>
+            <ambient>0 1 0.05 1</ambient>
+            <diffuse>0 1 0.05 1</diffuse>
+            <emissive>0 0.0313726 0.3 1</emissive>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>1</kinematic>
+        <inertial>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <iyy>1</iyy>
+            <izz>1</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
+      </link>
+      <pose>0 0 -5 0 -0 0</pose>
+    </model>
+    <model name='track_preview_car'>
+      <static>0</static>
+      <self_collide>0</self_collide>
+      <allow_auto_disable>0</allow_auto_disable>
+      <link name='body'>
+        <gravity>1</gravity>
+        <inertial>
+          <mass>1</mass>
+          <inertia>
+            <ixx>0.01</ixx>
+            <iyy>0.01</iyy>
+            <izz>0.01</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
+        <visual name='chassis_visual'>
+          <pose>0 0 0.065 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.26 0.14 0.055</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.08 0.2 0.7 1</ambient>
+            <diffuse>0.12 0.28 0.88 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+          </material>
+        </visual>
+        <visual name='roof_visual'>
+          <pose>-0.005 0 0.115 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.14 0.105 0.045</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.65 0.78 0.95 0.92</ambient>
+            <diffuse>0.75 0.86 0.98 0.92</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+          </material>
+        </visual>
+        <visual name='front_marker_visual'>
+          <pose>0.105 0 0.083 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.025 0.075 0.018</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 0.85 0.2 1</ambient>
+            <diffuse>1 0.88 0.25 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <visual name='camera_lens_visual'>
+          <pose>0.138 0 0.126 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.016 0.04 0.022</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.02 0.02 0.025 1</ambient>
+            <diffuse>0.04 0.04 0.05 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+        <visual name='camera_view_left_ray_visual'>
+          <pose>1.67 1.15 0.335 -0 0.0505 0.6109</pose>
+          <geometry>
+            <box>
+              <size>3.68 0.008 0.008</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.85 1 1 0.82</ambient>
+            <diffuse>0.85 1 1 0.82</diffuse>
+            <emissive>0.2 0.55 0.75 1</emissive>
+          </material>
+        </visual>
+        <visual name='camera_view_center_ray_visual'>
+          <pose>1.67 0 0.335 0 0.0555 0</pose>
+          <geometry>
+            <box>
+              <size>3.0647 0.008 0.008</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.85 1 1 0.82</ambient>
+            <diffuse>0.85 1 1 0.82</diffuse>
+            <emissive>0.2 0.55 0.75 1</emissive>
+          </material>
+        </visual>
+        <visual name='camera_view_right_ray_visual'>
+          <pose>1.67 -1.15 0.335 0 0.0505 -0.6109</pose>
+          <geometry>
+            <box>
+              <size>3.68 0.008 0.008</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.85 1 1 0.82</ambient>
+            <diffuse>0.85 1 1 0.82</diffuse>
+            <emissive>0.2 0.55 0.75 1</emissive>
+          </material>
+        </visual>
+        <visual name='debug_origin_marker_visual'>
+          <pose>0 0 0.165 0 -0 0</pose>
+          <geometry>
+            <sphere>
+              <radius>0.018</radius>
+            </sphere>
+          </geometry>
+          <material>
+            <ambient>1 0.02 0.02 1</ambient>
+            <diffuse>1 0.04 0.04 1</diffuse>
+            <specular>0.08 0.08 0.08 1</specular>
+          </material>
+        </visual>
+        <visual name='debug_ground_origin_visual'>
+          <pose>0 0 -0.017 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.018</radius>
+              <length>0.004</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>1 0.02 0.02 1</ambient>
+            <diffuse>1 0.04 0.04 1</diffuse>
+            <specular>0.08 0.08 0.08 1</specular>
+          </material>
+        </visual>
+        <visual name='debug_ground_footprint_front_visual'>
+          <pose>0.165 0 -0.017 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.008 0.238 0.004</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0.7 1 1</ambient>
+            <diffuse>0.05 0.86 1 1</diffuse>
+            <specular>0.02 0.02 0.02 1</specular>
+          </material>
+        </visual>
+        <visual name='debug_ground_footprint_rear_visual'>
+          <pose>-0.145 0 -0.017 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.008 0.238 0.004</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0.7 1 1</ambient>
+            <diffuse>0.05 0.86 1 1</diffuse>
+            <specular>0.02 0.02 0.02 1</specular>
+          </material>
+        </visual>
+        <visual name='debug_ground_footprint_left_visual'>
+          <pose>0.01 0.115 -0.017 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.318 0.008 0.004</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0.7 1 1</ambient>
+            <diffuse>0.05 0.86 1 1</diffuse>
+            <specular>0.02 0.02 0.02 1</specular>
+          </material>
+        </visual>
+        <visual name='debug_ground_footprint_right_visual'>
+          <pose>0.01 -0.115 -0.017 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.318 0.008 0.004</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0.7 1 1</ambient>
+            <diffuse>0.05 0.86 1 1</diffuse>
+            <specular>0.02 0.02 0.02 1</specular>
+          </material>
+        </visual>
+        <visual name='rear_left_dummy_wheel_visual'>
+          <pose>-0.08 0.085 0.032 1.5708 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.028</radius>
+              <length>0.016</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.03 0.03 0.03 1</ambient>
+            <diffuse>0.07 0.07 0.07 1</diffuse>
+            <specular>0.02 0.02 0.02 1</specular>
+          </material>
+        </visual>
+        <visual name='rear_right_dummy_wheel_visual'>
+          <pose>-0.08 -0.085 0.032 1.5708 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.028</radius>
+              <length>0.016</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.03 0.03 0.03 1</ambient>
+            <diffuse>0.07 0.07 0.07 1</diffuse>
+            <specular>0.02 0.02 0.02 1</specular>
+          </material>
+        </visual>
+        <collision name='rear_left_caster_collision'>
+          <pose>-0.095 0.072 0.026 0 -0 0</pose>
+          <geometry>
+            <sphere>
+              <radius>0.024</radius>
+            </sphere>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.05</mu>
+                <mu2>0.05</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <collision name='rear_right_caster_collision'>
+          <pose>-0.095 -0.072 0.026 0 -0 0</pose>
+          <geometry>
+            <sphere>
+              <radius>0.024</radius>
+            </sphere>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.05</mu>
+                <mu2>0.05</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <collision name='body_collision'>
+          <pose>0 0 0.065 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.26 0.14 0.05</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <sensor name='front_camera' type='camera'>
+          <pose>0.14 0 0.42 0 0.18 0</pose>
+          <always_on>1</always_on>
+          <update_rate>30</update_rate>
+          <visualize>0</visualize>
+          <camera>
+            <horizontal_fov>2.45</horizontal_fov>
+            <image>
+              <width>960</width>
+              <height>540</height>
+              <format>R8G8B8</format>
+            </image>
+            <clip>
+              <near>0.02</near>
+              <far>6</far>
+            </clip>
+          </camera>
+          <plugin name='front_camera_controller' filename='libgazebo_ros_camera.so'>
+            <ros>
+              <namespace>/track_preview_car</namespace>
+              <remapping>image_raw:=image_raw</remapping>
+              <remapping>camera_info:=camera_info</remapping>
+            </ros>
+            <camera_name>camera</camera_name>
+            <frame_name>track_preview_car/front_camera</frame_name>
+          </plugin>
+        </sensor>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='left_wheel'>
+        <gravity>1</gravity>
+        <pose>0.08 0.088 0.032 0 -0 0</pose>
+        <inertial>
+          <mass>0.08</mass>
+          <inertia>
+            <ixx>5e-05</ixx>
+            <iyy>8e-05</iyy>
+            <izz>5e-05</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
+        <visual name='left_wheel_visual'>
+          <pose>0 0 0 1.5708 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.03</radius>
+              <length>0.02</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.03 0.03 0.03 1</ambient>
+            <diffuse>0.07 0.07 0.07 1</diffuse>
+            <specular>0.02 0.02 0.02 1</specular>
+          </material>
+        </visual>
+        <collision name='left_wheel_collision'>
+          <pose>0 0 0 1.5708 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.03</radius>
+              <length>0.02</length>
+            </cylinder>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1.2</mu>
+                <mu2>1.2</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='right_wheel'>
+        <gravity>1</gravity>
+        <pose>0.08 -0.088 0.032 0 -0 0</pose>
+        <inertial>
+          <mass>0.08</mass>
+          <inertia>
+            <ixx>5e-05</ixx>
+            <iyy>8e-05</iyy>
+            <izz>5e-05</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
+        <visual name='right_wheel_visual'>
+          <pose>0 0 0 1.5708 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.03</radius>
+              <length>0.02</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.03 0.03 0.03 1</ambient>
+            <diffuse>0.07 0.07 0.07 1</diffuse>
+            <specular>0.02 0.02 0.02 1</specular>
+          </material>
+        </visual>
+        <collision name='right_wheel_collision'>
+          <pose>0 0 0 1.5708 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.03</radius>
+              <length>0.02</length>
+            </cylinder>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1.2</mu>
+                <mu2>1.2</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='left_wheel_joint' type='revolute'>
+        <parent>body</parent>
+        <child>left_wheel</child>
+        <axis>
+          <xyz>0 1 0</xyz>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <joint name='right_wheel_joint' type='revolute'>
+        <parent>body</parent>
+        <child>right_wheel</child>
+        <axis>
+          <xyz>0 1 0</xyz>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <plugin name='track_preview_car_diff_drive' filename='libgazebo_ros_diff_drive.so'>
+        <ros>
+          <namespace>/track_preview_car</namespace>
+          <remapping>cmd_vel:=cmd_vel</remapping>
+          <remapping>odom:=odom</remapping>
+        </ros>
+        <left_joint>left_wheel_joint</left_joint>
+        <right_joint>right_wheel_joint</right_joint>
+        <wheel_separation>0.176</wheel_separation>
+        <wheel_diameter>0.06</wheel_diameter>
+        <max_wheel_torque>2.0</max_wheel_torque>
+        <max_wheel_acceleration>8.0</max_wheel_acceleration>
+        <odometry_frame>odom</odometry_frame>
+        <robot_base_frame>body</robot_base_frame>
+        <publish_odom>1</publish_odom>
+        <publish_odom_tf>0</publish_odom_tf>
+        <publish_wheel_tf>0</publish_wheel_tf>
+        <update_rate>50</update_rate>
+      </plugin>
+      <pose>2.17969 2.10469 -0.002 0 -0 -1.5708</pose>
+    </model>
+    <physics name='default_physics' default='1' type='ode'>
+      <max_step_size>0.001</max_step_size>
+      <real_time_update_rate>1000</real_time_update_rate>
+      <real_time_factor>1</real_time_factor>
+    </physics>
+    <gui fullscreen='0'>
+      <camera name='user_camera'>
+        <pose>-6.07492 -5.05333 5.49767 0 0.522946 0.850154</pose>
+        <view_controller>orbit</view_controller>
+        <projection_type>perspective</projection_type>
+      </camera>
+    </gui>
+    <gravity>0 0 -9.8</gravity>
+    <magnetic_field>6e-06 2.3e-05 -4.2e-05</magnetic_field>
+    <atmosphere type='adiabatic'/>
+    <wind/>
+    <spherical_coordinates>
+      <surface_model>EARTH_WGS84</surface_model>
+      <latitude_deg>0</latitude_deg>
+      <longitude_deg>0</longitude_deg>
+      <elevation>0</elevation>
+      <heading_deg>0</heading_deg>
+    </spherical_coordinates>
+    <state world_name='autonomous_map_3d_world'>
+      <sim_time>929 119000000</sim_time>
+      <real_time>930 876055929</real_time>
+      <wall_time>1781020074 151277191</wall_time>
+      <iterations>929119</iterations>
+      <model name='autonomous_map_3d_mirror_x'>
+        <pose>0 0.3 0 0 -0 -3.14159</pose>
+        <scale>1 1 1</scale>
+        <link name='map_link'>
+          <pose>0 0.3 0 0 -0 -3.14159</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='palette_arrow_00_yaw_000'>
+        <pose>-1.575 -3.5 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='arrow_sign_link'>
+          <pose>-1.575 -3.5 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='palette_arrow_01_yaw_090'>
+        <pose>-0.525 -3.5 0 0 -0 1.5708</pose>
+        <scale>1 1 1</scale>
+        <link name='arrow_sign_link'>
+          <pose>-0.525 -3.5 0 0 -0 1.5708</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='palette_arrow_02_yaw_180'>
+        <pose>0.525 -3.5 0 0 -0 -3.14159</pose>
+        <scale>1 1 1</scale>
+        <link name='arrow_sign_link'>
+          <pose>0.525 -3.5 0 0 -0 -3.14159</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='palette_arrow_03_yaw_270'>
+        <pose>1.575 -3.5 0 0 0 -1.5708</pose>
+        <scale>1 1 1</scale>
+        <link name='arrow_sign_link'>
+          <pose>1.575 -3.5 0 0 0 -1.5708</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='palette_go_straight_00_yaw_000'>
+        <pose>-1.575 -4.03 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='sign_link'>
+          <pose>-1.575 -4.03 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='palette_go_straight_01_yaw_090'>
+        <pose>-0.525 -4.03 0 0 -0 1.5708</pose>
+        <scale>1 1 1</scale>
+        <link name='sign_link'>
+          <pose>-0.525 -4.03 0 0 -0 1.5708</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='palette_go_straight_02_yaw_180'>
+        <pose>0.525 -4.03 0 0 -0 -3.14159</pose>
+        <scale>1 1 1</scale>
+        <link name='sign_link'>
+          <pose>0.525 -4.03 0 0 -0 -3.14159</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='palette_go_straight_03_yaw_270'>
+        <pose>1.68364 1.26452 0 0 0 -3.09127</pose>
+        <scale>1 1 1</scale>
+        <link name='sign_link'>
+          <pose>1.68364 1.26452 0 0 0 -3.09127</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='palette_parking_00_yaw_000'>
+        <pose>-1.575 -5.62 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='sign_link'>
+          <pose>-1.575 -5.62 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='palette_parking_01_yaw_090'>
+        <pose>-0.525 -5.62 0 0 -0 1.5708</pose>
+        <scale>1 1 1</scale>
+        <link name='sign_link'>
+          <pose>-0.525 -5.62 0 0 -0 1.5708</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='palette_parking_02_yaw_180'>
+        <pose>0.525 -5.62 0 0 -0 -3.14159</pose>
+        <scale>1 1 1</scale>
+        <link name='sign_link'>
+          <pose>0.525 -5.62 0 0 -0 -3.14159</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='palette_parking_03_yaw_270'>
+        <pose>1.45031 0.181193 0 0 0 -1.5708</pose>
+        <scale>1 1 1</scale>
+        <link name='sign_link'>
+          <pose>1.45031 0.181193 0 0 0 -1.5708</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='palette_speed_limit_00_yaw_000'>
+        <pose>-1.575 -6.15 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='sign_link'>
+          <pose>-1.575 -6.15 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='palette_speed_limit_01_yaw_090'>
+        <pose>-0.525 -6.15 0 0 -0 1.5708</pose>
+        <scale>1 1 1</scale>
+        <link name='sign_link'>
+          <pose>-0.525 -6.15 0 0 -0 1.5708</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='palette_speed_limit_02_yaw_180'>
+        <pose>0.525 -6.15 0 0 -0 -3.14159</pose>
+        <scale>1 1 1</scale>
+        <link name='sign_link'>
+          <pose>0.525 -6.15 0 0 -0 -3.14159</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='palette_speed_limit_03_yaw_270'>
+        <pose>-1.22981 -1.07421 -0 0 -0 1.63357</pose>
+        <scale>1 1 1</scale>
+        <link name='sign_link'>
+          <pose>-1.22981 -1.07421 -0 0 -0 1.63357</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='palette_stop_00_yaw_000'>
+        <pose>-1.575 -6.68 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='stop_sign_link'>
+          <pose>-1.575 -6.68 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='palette_stop_01_yaw_090'>
+        <pose>-0.525 -6.68 0 0 -0 1.5708</pose>
+        <scale>1 1 1</scale>
+        <link name='stop_sign_link'>
+          <pose>-0.525 -6.68 0 0 -0 1.5708</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='palette_stop_02_yaw_180'>
+        <pose>0.525 -6.68 0 0 -0 -3.14159</pose>
+        <scale>1 1 1</scale>
+        <link name='stop_sign_link'>
+          <pose>0.525 -6.68 0 0 -0 -3.14159</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='palette_stop_03_yaw_270'>
+        <pose>1.575 -6.68 0 0 0 -1.5708</pose>
+        <scale>1 1 1</scale>
+        <link name='stop_sign_link'>
+          <pose>1.575 -6.68 0 0 0 -1.5708</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='palette_traffic_light_00_yaw_000'>
+        <pose>-1.575 -7.21 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='traffic_light_link'>
+          <pose>-1.575 -7.21 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='palette_traffic_light_00_yaw_000_green_active_lamp'>
+        <pose>0 0 -5 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='lamp_link'>
+          <pose>0 0 -5 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='palette_traffic_light_00_yaw_000_red_active_lamp'>
+        <pose>0 0 -5 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='lamp_link'>
+          <pose>0 0 -5 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='palette_traffic_light_00_yaw_000_yellow_active_lamp'>
+        <pose>-1.575 -7.248 0.565 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='lamp_link'>
+          <pose>-1.575 -7.248 0.565 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='palette_traffic_light_01_yaw_090'>
+        <pose>-0.525 -7.21 0 0 -0 1.5708</pose>
+        <scale>1 1 1</scale>
+        <link name='traffic_light_link'>
+          <pose>-0.525 -7.21 0 0 -0 1.5708</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='palette_traffic_light_01_yaw_090_green_active_lamp'>
+        <pose>0 0 -5 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='lamp_link'>
+          <pose>0 0 -5 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='palette_traffic_light_01_yaw_090_red_active_lamp'>
+        <pose>0 0 -5 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='lamp_link'>
+          <pose>0 0 -5 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='palette_traffic_light_01_yaw_090_yellow_active_lamp'>
+        <pose>-0.487 -7.21 0.565 0 -0 1.5708</pose>
+        <scale>1 1 1</scale>
+        <link name='lamp_link'>
+          <pose>-0.487 -7.21 0.565 0 -0 1.5708</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='palette_traffic_light_02_yaw_180'>
+        <pose>0.106403 -0.906696 -0 0 -0 1.5941</pose>
+        <scale>1 1 1</scale>
+        <link name='traffic_light_link'>
+          <pose>0.106403 -0.906696 -0 0 -0 1.5941</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='palette_traffic_light_02_yaw_180_green_active_lamp'>
+        <pose>0 0 -5 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='lamp_link'>
+          <pose>0 0 -5 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='palette_traffic_light_02_yaw_180_red_active_lamp'>
+        <pose>0 0 -5 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='lamp_link'>
+          <pose>0 0 -5 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='palette_traffic_light_02_yaw_180_yellow_active_lamp'>
+        <pose>0.144393 -0.905811 0.565 0 -0 1.5941</pose>
+        <scale>1 1 1</scale>
+        <link name='lamp_link'>
+          <pose>0.144393 -0.905811 0.565 0 -0 1.5941</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='palette_traffic_light_03_yaw_270'>
+        <pose>-0.176849 1.96838 0 0 -0 -1.48449</pose>
+        <scale>1 1 1</scale>
+        <link name='traffic_light_link'>
+          <pose>-0.176849 1.96838 0 0 -0 -1.48449</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='palette_traffic_light_03_yaw_270_green_active_lamp'>
+        <pose>0 0 -5 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='lamp_link'>
+          <pose>0 0 -5 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='palette_traffic_light_03_yaw_270_red_active_lamp'>
+        <pose>0 0 -5 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='lamp_link'>
+          <pose>0 0 -5 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='palette_traffic_light_03_yaw_270_yellow_active_lamp'>
+        <pose>-0.214708 1.9651 0.565 0 0 -1.48449</pose>
+        <scale>1 1 1</scale>
+        <link name='lamp_link'>
+          <pose>-0.214708 1.9651 0.565 0 0 -1.48449</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='palette_turn_left_00_yaw_000'>
+        <pose>-1.575 -4.56 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='sign_link'>
+          <pose>-1.575 -4.56 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='palette_turn_left_01_yaw_090'>
+        <pose>-0.525 -4.56 0 0 -0 1.5708</pose>
+        <scale>1 1 1</scale>
+        <link name='sign_link'>
+          <pose>-0.525 -4.56 0 0 -0 1.5708</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='palette_turn_left_02_yaw_180'>
+        <pose>0.525 -4.56 0 0 -0 -3.14159</pose>
+        <scale>1 1 1</scale>
+        <link name='sign_link'>
+          <pose>0.525 -4.56 0 0 -0 -3.14159</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='palette_turn_left_03_yaw_270'>
+        <pose>1.575 -4.56 0 0 0 -1.5708</pose>
+        <scale>1 1 1</scale>
+        <link name='sign_link'>
+          <pose>1.575 -4.56 0 0 0 -1.5708</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='palette_turn_right_00_yaw_000'>
+        <pose>-1.575 -5.09 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='sign_link'>
+          <pose>-1.575 -5.09 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='palette_turn_right_01_yaw_090'>
+        <pose>-0.525 -5.09 0 0 -0 1.5708</pose>
+        <scale>1 1 1</scale>
+        <link name='sign_link'>
+          <pose>-0.525 -5.09 0 0 -0 1.5708</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='palette_turn_right_02_yaw_180'>
+        <pose>0.525 -5.09 0 0 -0 -3.14159</pose>
+        <scale>1 1 1</scale>
+        <link name='sign_link'>
+          <pose>0.525 -5.09 0 0 -0 -3.14159</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='palette_turn_right_03_yaw_270'>
+        <pose>-1.65249 0.076234 -0 0 -0 0.033484</pose>
+        <scale>1 1 1</scale>
+        <link name='sign_link'>
+          <pose>-1.65249 0.076234 -0 0 -0 0.033484</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='sign_palette_floor_outside_map'>
+        <pose>0.000801 -5.87455 -0.02 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='palette_floor_link'>
+          <pose>0.000801 -5.87455 -0.02 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='track_preview_car'>
+        <pose>-2.07473 -1.13292 -0.002003 3.9e-05 1.1e-05 1.71005</pose>
+        <scale>1 1 1</scale>
+        <link name='body'>
+          <pose>-2.07473 -1.13292 -0.002003 3.9e-05 1.1e-05 1.71005</pose>
+          <velocity>3e-06 1.8e-05 -0.002856 -0.016071 0.037208 0.000238</velocity>
+          <acceleration>-0.010407 0.097713 -6.04923 -1.70906 -1.30386 0.262237</acceleration>
+          <wrench>-0.010407 0.097713 -6.04923 0 -0 0</wrench>
+        </link>
+        <link name='left_wheel'>
+          <pose>-2.17298 -1.06591 0.03 3.3e-05 0.090682 1.71005</pose>
+          <velocity>0.001146 0.000503 -0.000279 -0.016685 0.038214 0.000358</velocity>
+          <acceleration>1.30326 -0.692309 -0.293375 -1.49913 -1.26876 0.369542</acceleration>
+          <wrench>0.104261 -0.055385 -0.02347 0 -0 0</wrench>
+        </link>
+        <link name='right_wheel'>
+          <pose>-1.99868 -1.04148 0.029993 4.5e-05 0.589481 1.71007</pose>
+          <velocity>0.001162 0.000552 -0.007156 -0.016118 0.037547 0.000263</velocity>
+          <acceleration>1.31932 -0.626653 -7.15179 1.88138 -0.472922 -2.82247</acceleration>
+          <wrench>0.105545 -0.050132 -0.572143 0 -0 0</wrench>
+        </link>
+      </model>
+      <light name='fill_light'>
+        <pose>-0 0 6 0 -0 -3.14159</pose>
+      </light>
+      <light name='key_light'>
+        <pose>-0 0 6 0 -0 -3.14159</pose>
+      </light>
+      <light name='sun'>
+        <pose>-0 0 10 0 -0 -3.14159</pose>
+      </light>
+    </state>
+  </world>
+</sdf>

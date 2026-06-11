@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<sdf version="1.6">
+  <model name="road_sign_stop">
+    <static>true</static>
+    <link name="stop_sign_link">
+      <visual name="base_visual">
+        <pose>0 0 0.010 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.060</radius>
+            <length>0.020</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.72 0.72 0.70 1</ambient>
+          <diffuse>0.78 0.78 0.76 1</diffuse>
+        </material>
+      </visual>
+      <visual name="pole_visual">
+        <pose>0 0 0.245 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.011</radius>
+            <length>0.470</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.72 0.72 0.70 1</ambient>
+          <diffuse>0.82 0.82 0.80 1</diffuse>
+        </material>
+      </visual>
+      <visual name="white_back_plate_visual">
+        <pose>0 -0.002 0.520 1.5708 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.108</radius>
+            <length>0.012</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+        </material>
+      </visual>
+      <visual name="red_plate_visual">
+        <pose>0 -0.010 0.520 1.5708 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.094</radius>
+            <length>0.014</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.72 0.02 0.02 1</ambient>
+          <diffuse>0.95 0.04 0.04 1</diffuse>
+        </material>
+      </visual>
+      <visual name="stop_bar_visual">
+        <pose>0 -0.020 0.520 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.110 0.006 0.028</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>

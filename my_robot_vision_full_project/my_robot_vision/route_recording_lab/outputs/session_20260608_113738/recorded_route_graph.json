@@ -1,0 +1,50 @@
+{
+  "metadata": {
+    "reason": "session_end",
+    "entity_name": "track_preview_car",
+    "created_wall_time_s": 1780943875.648164,
+    "sample_distance_m": 0.045,
+    "sample_yaw_rad": 0.2,
+    "node_merge_radius_m": 0.085,
+    "model_size_m": 6.0,
+    "map_texture_size_px": 256.0,
+    "map_visual_offset_m": [
+      0.0,
+      0.3
+    ],
+    "notes": "Edges are undirected so reverse-direction passes merge into the same road graph."
+  },
+  "raw_samples": [
+    {
+      "stamp_s": 0.26813554763793945,
+      "segment_id": 2,
+      "x": -1.828125,
+      "y": 2.179688,
+      "z": 0.018138,
+      "yaw": -3.141592307179587,
+      "map_x": 50.0,
+      "map_y": 47.79997866666666,
+      "linear_cmd": 0.0,
+      "angular_cmd": 0.0
+    }
+  ],
+  "graph": {
+    "bidirectional_edges": true,
+    "merge_radius_m": 0.085,
+    "nodes": [
+      {
+        "id": 1,
+        "x": -1.828125,
+        "y": 2.179688,
+        "z": 0.018138,
+        "yaw": -3.141592307179587,
+        "map_x": 50.0,
+        "map_y": 47.79997866666666,
+        "visits": 1,
+        "first_stamp_s": 0.26813554763793945,
+        "last_stamp_s": 0.26813554763793945
+      }
+    ],
+    "edges": []
+  }
+}

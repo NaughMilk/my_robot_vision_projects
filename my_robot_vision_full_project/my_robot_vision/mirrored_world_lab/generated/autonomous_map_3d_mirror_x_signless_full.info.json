@@ -1,0 +1,39 @@
+{
+  "source_world": "/home/quocbao/Downloads/map_1",
+  "output_world": "mirrored_world_lab/generated/autonomous_map_3d_mirror_x_signless_full.world",
+  "axis": "x",
+  "removed_state_blocks": 1,
+  "removed_scene_objects": "signs_and_traffic",
+  "removed_models": [
+    "traffic_light_top_island",
+    "traffic_light_lower_island",
+    "traffic_light_top_island_red_active_lamp",
+    "traffic_light_top_island_yellow_active_lamp",
+    "traffic_light_top_island_green_active_lamp",
+    "traffic_light_lower_island_red_active_lamp",
+    "traffic_light_lower_island_yellow_active_lamp",
+    "traffic_light_lower_island_green_active_lamp",
+    "sign_go_straight_top_island",
+    "sign_turn_right_top_right_island",
+    "sign_speed_limit_left_island",
+    "sign_parking_lower_right_island",
+    "sign_turn_left_lower_left_island"
+  ],
+  "baked_mirrored_map": true,
+  "baked_map_mesh": "/home/quocbao/my_robot_vision_full_project/my_robot_vision/models/autonomous_map_3d_mirror_x/meshes/autonomous_map_3d_mirror_x.dae",
+  "mirrored_meshes": 1,
+  "map_pose": [
+    0.0,
+    0.3,
+    0.0,
+    0.0,
+    -0.0,
+    0.0
+  ],
+  "route_preview": false,
+  "route_preview_mode": "none",
+  "route_preview_geometry": "boxes",
+  "route_preview_planned": true,
+  "route_preview_scope": "all",
+  "clearance_px": 12
+}

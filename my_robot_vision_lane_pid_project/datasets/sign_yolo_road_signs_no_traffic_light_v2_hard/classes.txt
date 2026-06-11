@@ -1,0 +1,4 @@
+turn_right_sign
+go_straight_sign
+speed_limit_sign
+parking_sign

@@ -1,0 +1,41 @@
+{
+  "world": "/home/quocbao/my_robot_vision_full_project/my_robot_vision/route_drawing_lab/outputs/session_20260608_132843/preview_flat_magenta_3d/autonomous_map_3d_mirror_x_flat_magenta_preview.world",
+  "route_config": "/home/quocbao/my_robot_vision_full_project/my_robot_vision/route_drawing_lab/outputs/session_20260608_132843/autonomous_route_graph_flat_magenta_candidate.json",
+  "map_mesh": "/home/quocbao/my_robot_vision_full_project/my_robot_vision/models/autonomous_map_3d_mirror_x/meshes/autonomous_map_3d_mirror_x.dae",
+  "route_mesh": "/home/quocbao/my_robot_vision_full_project/my_robot_vision/route_drawing_lab/outputs/session_20260608_132843/preview_flat_magenta_3d/flat_magenta_route_overlay.dae",
+  "preview_type": "lightweight_static_3d_overlay",
+  "route_source": "manual anchors from route config, no A* replanning",
+  "map_pose_m": [
+    0.0,
+    0.3,
+    0.0
+  ],
+  "route_offset_m": [
+    0.0,
+    0.3
+  ],
+  "route_z_m": 0.07,
+  "route_thickness_m": 0.04,
+  "route_polylines": 18,
+  "route_triangles": 72,
+  "segments": [
+    "flat_top_left_to_top_center",
+    "flat_top_center_to_top_right",
+    "flat_top_right_corner",
+    "flat_right_top_to_mid",
+    "flat_right_mid_to_lower",
+    "flat_bottom_right_corner",
+    "flat_bottom_right_to_bottom_center",
+    "flat_bottom_center_to_bottom_left",
+    "flat_bottom_left_corner",
+    "flat_left_lower_to_mid",
+    "flat_left_mid_to_top",
+    "flat_top_left_corner",
+    "flat_top_center_to_mid_top",
+    "flat_left_mid_to_mid_top",
+    "flat_mid_top_to_mid_center",
+    "flat_mid_center_to_right_mid",
+    "flat_mid_center_to_bottom_center",
+    "flat_draw_stub_mid_lane"
+  ]
+}

@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<sdf version="1.6">
+  <model name="road_sign_arrow">
+    <static>true</static>
+    <link name="arrow_sign_link">
+      <visual name="base_visual">
+        <pose>0 0 0.010 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.055</radius>
+            <length>0.020</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.72 0.72 0.70 1</ambient>
+          <diffuse>0.78 0.78 0.76 1</diffuse>
+        </material>
+      </visual>
+      <visual name="pole_visual">
+        <pose>0 0 0.230 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.010</radius>
+            <length>0.440</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.72 0.72 0.70 1</ambient>
+          <diffuse>0.82 0.82 0.80 1</diffuse>
+        </material>
+      </visual>
+      <visual name="blue_plate_visual">
+        <pose>0 -0.004 0.500 1.5708 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.102</radius>
+            <length>0.014</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.02 0.18 0.68 1</ambient>
+          <diffuse>0.03 0.24 0.92 1</diffuse>
+        </material>
+      </visual>
+      <visual name="arrow_stem_visual">
+        <pose>0 -0.018 0.475 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.030 0.006 0.105</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+        </material>
+      </visual>
+      <visual name="arrow_head_left_visual">
+        <pose>-0.028 -0.020 0.545 0 -0.75 0</pose>
+        <geometry>
+          <box>
+            <size>0.020 0.006 0.075</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+        </material>
+      </visual>
+      <visual name="arrow_head_right_visual">
+        <pose>0.028 -0.020 0.545 0 0.75 0</pose>
+        <geometry>
+          <box>
+            <size>0.020 0.006 0.075</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>

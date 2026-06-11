@@ -1,0 +1,9 @@
+{
+  "polylines": 24,
+  "texture": "route_drawing_lab/outputs/session_20260608_132843/baked_manual_middle/materials/textures/autonomous_map_route_baked.png",
+  "world": "route_drawing_lab/outputs/session_20260608_132843/baked_manual_middle/autonomous_map_3d_mirror_x_route_baked_view.world",
+  "mesh": "route_drawing_lab/outputs/session_20260608_132843/baked_manual_middle/meshes/autonomous_map_route_baked.dae",
+  "route_scope": "all",
+  "route_planned": true,
+  "route_baked_for_mirror_x": true
+}

@@ -1,0 +1,19 @@
+{
+  "world": "route_drawing_lab/outputs/session_20260608_132843/preview_manual_middle/autonomous_map_3d_mirror_x_route_overlay_view.world",
+  "map_mesh": "/home/quocbao/my_robot_vision_full_project/my_robot_vision/models/autonomous_map_3d/meshes/autonomous_map_3d.dae",
+  "route_mesh": "route_drawing_lab/outputs/session_20260608_132843/preview_manual_middle/route_overlay_code_transform_magenta.dae",
+  "route_scope": "all",
+  "route_planned": true,
+  "map_visual_mirror_axis": "x",
+  "map_pose": [
+    0.0,
+    0.3,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "route_overlay_transform": "current_code_transform_planned_on_mirror_x_visual",
+  "route_polylines": 24,
+  "route_triangles": 572
+}

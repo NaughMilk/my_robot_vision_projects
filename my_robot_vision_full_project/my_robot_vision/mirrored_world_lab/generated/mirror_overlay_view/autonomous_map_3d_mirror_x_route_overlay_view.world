@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<sdf version="1.7">
+  <world name="mirror_x_overlay_view_world">
+    <scene>
+      <ambient>0.85 0.85 0.85 1</ambient>
+      <background>0.86 0.91 0.98 1</background>
+      <shadows>0</shadows>
+    </scene>
+    <gui fullscreen="0">
+      <camera name="user_camera">
+        <pose>0 0 7.5 0 1.570796 1.570796</pose>
+        <view_controller>orbit</view_controller>
+      </camera>
+    </gui>
+    <light name="sun" type="directional">
+      <cast_shadows>0</cast_shadows>
+      <pose>0 0 8 0 0 0</pose>
+      <diffuse>1 1 1 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <direction>0 0 -1</direction>
+    </light>
+    <model name="autonomous_map_3d_mirror_x_view">
+      <static>1</static>
+      <pose>0 0.3 0 0 0 0</pose>
+      <link name="map_link">
+        <visual name="mirrored_map_visual">
+          <geometry>
+            <mesh>
+              <uri>file:///home/quocbao/my_robot_vision_full_project/my_robot_vision/models/autonomous_map_3d/meshes/autonomous_map_3d.dae</uri>
+              <scale>-1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+      </link>
+    </model>
+    <model name="route_overlay_code_transform_magenta">
+      <static>1</static>
+      <pose>0 0 0 0 0 0</pose>
+      <link name="route_overlay_link">
+        <visual name="route_overlay_mesh_visual">
+          <geometry>
+            <mesh>
+              <uri>file:///home/quocbao/my_robot_vision_full_project/my_robot_vision/mirrored_world_lab/generated/mirror_overlay_view/route_overlay_code_transform_magenta.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>1 0 1 1</ambient>
+            <diffuse>1 0 1 1</diffuse>
+            <emissive>0.7 0 0.7 1</emissive>
+          </material>
+        </visual>
+      </link>
+    </model>
+  </world>
+</sdf>

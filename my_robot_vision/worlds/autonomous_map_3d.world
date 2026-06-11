@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<sdf version="1.6">
+  <world name="autonomous_map_3d_world">
+    <include>
+      <uri>model://sun</uri>
+    </include>
+    <include>
+      <uri>model://autonomous_map_3d</uri>
+    </include>
+    <physics name="default_physics" default="true" type="ode">
+      <max_step_size>0.001</max_step_size>
+      <real_time_update_rate>1000</real_time_update_rate>
+    </physics>
+    <gui fullscreen="0">
+      <camera name="user_camera">
+        <pose>0 -4.7 4.2 0 0.78 1.5708</pose>
+      </camera>
+    </gui>
+  </world>
+</sdf>

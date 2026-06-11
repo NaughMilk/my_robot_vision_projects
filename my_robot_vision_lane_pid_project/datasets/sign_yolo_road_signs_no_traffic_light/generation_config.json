@@ -1,0 +1,22 @@
+{
+  "selected_signs": [
+    "turn_right",
+    "go_straight",
+    "speed_limit",
+    "parking"
+  ],
+  "class_names": [
+    "turn_right_sign",
+    "go_straight_sign",
+    "speed_limit_sign",
+    "parking_sign"
+  ],
+  "samples_per_class": 300,
+  "negative_samples": 200,
+  "image_width": 640,
+  "image_height": 480,
+  "train_ratio": 0.8,
+  "val_ratio": 0.15,
+  "seed": 20260610,
+  "format": "jpg"
+}

@@ -1,0 +1,95 @@
+{
+  "base_world": "/home/quocbao/my_robot_vision_full_project/my_robot_vision/mirrored_world_lab/generated/autonomous_map_3d_mirror_x_signless_full_map_rotated_pi_strict_wheel_magenta_parking_stub_stop.world",
+  "copies_per_model": 4,
+  "instances": [
+    "palette_arrow_00_yaw_000",
+    "palette_arrow_01_yaw_090",
+    "palette_arrow_02_yaw_180",
+    "palette_arrow_03_yaw_270",
+    "palette_go_straight_00_yaw_000",
+    "palette_go_straight_01_yaw_090",
+    "palette_go_straight_02_yaw_180",
+    "palette_go_straight_03_yaw_270",
+    "palette_turn_left_00_yaw_000",
+    "palette_turn_left_01_yaw_090",
+    "palette_turn_left_02_yaw_180",
+    "palette_turn_left_03_yaw_270",
+    "palette_turn_right_00_yaw_000",
+    "palette_turn_right_01_yaw_090",
+    "palette_turn_right_02_yaw_180",
+    "palette_turn_right_03_yaw_270",
+    "palette_parking_00_yaw_000",
+    "palette_parking_01_yaw_090",
+    "palette_parking_02_yaw_180",
+    "palette_parking_03_yaw_270",
+    "palette_speed_limit_00_yaw_000",
+    "palette_speed_limit_01_yaw_090",
+    "palette_speed_limit_02_yaw_180",
+    "palette_speed_limit_03_yaw_270",
+    "palette_stop_00_yaw_000",
+    "palette_stop_01_yaw_090",
+    "palette_stop_02_yaw_180",
+    "palette_stop_03_yaw_270",
+    "palette_traffic_light_00_yaw_000",
+    "palette_traffic_light_01_yaw_090",
+    "palette_traffic_light_02_yaw_180",
+    "palette_traffic_light_03_yaw_270"
+  ],
+  "models": [
+    "road_sign_arrow",
+    "road_sign_go_straight",
+    "road_sign_turn_left",
+    "road_sign_turn_right",
+    "road_sign_parking",
+    "road_sign_speed_limit",
+    "road_sign_stop",
+    "traffic_light_toy"
+  ],
+  "palette_area": {
+    "column_start_x": -1.575,
+    "column_step_m": 1.05,
+    "floor_pose": [
+      0.0,
+      -5.35,
+      -0.02,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "outside_map": "bottom side of map",
+    "row_start_y": -3.5,
+    "row_step_m": 0.53
+  },
+  "traffic_light_palette": {
+    "lit_model_variants": [
+      "traffic_light_toy_red",
+      "traffic_light_toy_yellow",
+      "traffic_light_toy_green"
+    ],
+    "note": "Palette traffic lights are self-lit static variants for manual placement; runtime traffic-light controller still uses traffic_light_toy plus active lamp models.",
+    "rows": [
+      {
+        "copies": 4,
+        "state": "red",
+        "y_m": -7.21
+      },
+      {
+        "copies": 4,
+        "state": "yellow",
+        "y_m": -7.74
+      },
+      {
+        "copies": 4,
+        "state": "green",
+        "y_m": -8.27
+      }
+    ]
+  },
+  "world": "/home/quocbao/my_robot_vision_full_project/my_robot_vision/mirrored_world_lab/generated/autonomous_map_3d_mirror_x_signless_full_map_rotated_pi_strict_wheel_magenta_parking_stub_stop_sign_palette.world",
+  "yaw_degrees": [
+    0.0,
+    90.0,
+    180.0,
+    -90.0
+  ]
+}

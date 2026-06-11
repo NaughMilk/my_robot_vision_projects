@@ -1,0 +1,6 @@
+path: datasets/sign_yolo_turn_right
+train: images/train
+val: images/val
+test: images/test
+names:
+  0: turn_right_sign

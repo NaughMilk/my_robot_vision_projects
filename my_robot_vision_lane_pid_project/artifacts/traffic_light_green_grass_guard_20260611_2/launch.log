@@ -1,0 +1,246 @@
+[INFO] [launch]: All log files can be found below /home/quocbao/.ros/log/2026-06-11-01-52-41-070370-ubuntu-7393
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [gzserver-1]: process started with pid [7409]
+[INFO] [gazebo_track_car-2]: process started with pid [7411]
+[INFO] [gazebo_camera_viewer-3]: process started with pid [7414]
+[gazebo_camera_viewer-3] [INFO] [1781167961.554336515] [gazebo_camera_viewer]: Camera viewer listening on /track_preview_car/camera/image_raw; sign_overlay=on topic=/gazebo_track_car/camera_sign_detection; traffic_light_overlay=on topic=/gazebo_track_car/camera_traffic_light_state
+[gazebo_track_car-2] [INFO] [1781167961.656522477] [gazebo_track_car]: [MAP_TRANSFORM] image=256x256 path=/home/quocbao/my_robot_vision_full_project/my_robot_vision/models/autonomous_map_3d/materials/textures/autonomous_map_visual.png map_size=6.000x6.000m px_per_m_x=42.667 px_per_m_y=42.667 route_offset=(+0.000,+0.300)m map_visual_offset=(+0.000,+0.300)m
+[gazebo_track_car-2] [INFO] [1781167961.780915241] [gazebo_track_car]: [FOOTPRINT_CHECK] samples=1588 center_off_road=0 center_outside_safe=1005 failures=0 min_footprint_clearance=3.20px footprint=front:0.165m rear:0.145m half_width:0.115m
+[gazebo_track_car-2] [INFO] [1781167961.781181687] [gazebo_track_car]: [FOOTPRINT_CHECK] overlays=/tmp/gazebo_route_mask_debug.png, /tmp/gazebo_route_centerline_debug.png, /tmp/gazebo_route_footprint_debug.png
+[gazebo_track_car-2] [INFO] [1781167961.855413495] [gazebo_track_car]: SAFE_ROUTE_VERSION=semantic_parking_spawn_turn_guard_v31; direction=reversed to match map arrows; clearance=12px; drive_wheels=True; route_offset=(+0.000,+0.300)m; start_distance=0.000m; route_explore=False branch_probability=0.00; sign_detection=camera action_dist<=0.95m parking_action_dist<=1.35m roi=0.08-0.82; map_visual_offset=(+0.000,+0.300)m; base_speed=0.28m/s speed_limit=0.14m/s; traffic_light=cycle state=green green=5.0s yellow=1.0s red=8.0s trigger_distance=1.70m stop_distance=0.85m min_stop=2.0s camera=on topic=/track_preview_car/camera/image_raw fill>=0.42 slow_area>=45px stop_area>=160px distance_gate=on; camera_sign_templates=5 sign_score>=0.32 sign_stable=2; parking_auto_route=False; wheel_controller lookahead=0.32m parking_lookahead=0.20m heading_gain=3.80 max_wz=2.80rad/s rotate_heading>1.05rad; nearest_route=True nearest_dist<=0.65m; yaw_limits=1.80rad/s/4.00rad/s2; route_rejoin=False outer_only=True cmd_error>0.30m max_route_dist=0.55m; progress_sync=True cmd_error>0.06m route_dist<=0.20m yaw<=1.20rad; initial_pose_reset=True override=True tol=0.12m/0.35rad; segments=23; route_points=47.
+[gazebo_track_car-2] [INFO] [1781167961.855671124] [gazebo_track_car]: Motion log uses /model_states and /track_preview_car/cmd_vel: MOTION every 2.00s, JITTER at most every 1.00s, verbose=False; jitter thresholds xy_step_delta=0.0060m, cmd_error=0.050m, z_delta=0.0005m, tilt=0.0030rad, speed_delta=0.030m/s, yaw_step_error=0.025rad, yaw_rate_delta=0.400rad/s.
+[gzserver-1] [INFO] [1781167963.400316844] [track_preview_car.front_camera_controller]: Publishing camera info to [/track_preview_car/camera/camera_info]
+[gzserver-1] [INFO] [1781167963.414026800] [gazebo_ros_state]: Publishing states of gazebo models at [/model_states]
+[gzserver-1] [INFO] [1781167963.414348220] [gazebo_ros_state]: Publishing states of gazebo links at [/link_states]
+[gzserver-1] [INFO] [1781167963.428178314] [track_preview_car.track_preview_car_diff_drive]: Wheel pair 1 separation set to [0.176000m]
+[gzserver-1] [INFO] [1781167963.428245000] [track_preview_car.track_preview_car_diff_drive]: Wheel pair 1 diameter set to [0.060000m]
+[gzserver-1] [INFO] [1781167963.428810413] [track_preview_car.track_preview_car_diff_drive]: Subscribed to [/track_preview_car/cmd_vel]
+[gzserver-1] [INFO] [1781167963.429602888] [track_preview_car.track_preview_car_diff_drive]: Advertise odometry on [/track_preview_car/odom]
+[gazebo_track_car-2] [INFO] [1781167963.461657708] [gazebo_track_car]: initial pose reset to configured route start; actual=(+0.765,+2.480) yaw=-0.000 target=(-1.773,+2.498) yaw=+0.003 error=2.538m/0.003rad segment=flat_top_center_to_top_right_reverse
+[gazebo_track_car-2] [INFO] [1781167963.503924053] [gazebo_track_car]: traffic light is now RED.
+[gazebo_track_car-2] [WARN] [1781167963.506517997] [gazebo_track_car]: Waiting for /model_states pose before publishing wheel commands.
+[gazebo_track_car-2] [INFO] [1781167963.512300544] [gazebo_track_car]: wheel controller synced route progress from initial model pose; segment=flat_top_center_to_top_right_reverse@0.032m route_dist=0.018m startup_gate=1.250m
+[gazebo_track_car-2] [INFO] [1781167963.512980325] [gazebo_track_car]: MOTION pos=(-1.773,+2.498) yaw=+0.003 v=0.000 step_err=0.0000m/0.000rad track_err=0.0000m footprint=road:8.00px route=flat_top_center_to_top_right_reverse cmd_vel=(0.000,+0.000)
+[gazebo_track_car-2] [WARN] [1781167963.538012623] [gazebo_track_car]: JITTER events=1 reasons=z_delta=0.0093m pos=(-1.773,+2.498) step=0.0000/0.0000m yaw=0.000/0.000rad route=flat_top_center_to_top_right_reverse
+[gazebo_track_car-2] [INFO] [1781167963.800284969] [gazebo_track_car]: camera_sign=camera_sign_turn_right source=camera kind=turn_right_sign maneuver=right score=0.50 area=2650px bbox=50x53px center=(557,224)
+[gazebo_camera_viewer-3] [INFO] [1781167963.803388510] [gazebo_camera_viewer]: Receiving Gazebo camera frames.
+[gazebo_track_car-2] [INFO] [1781167963.846027332] [gazebo_track_car]: camera sign action allowed by route branch context; detected=turn_right_sign sign=camera_sign_turn_right next_branch=2.23m area=2650px matching 3D sign is not route-adjacent
+[gazebo_track_car-2] [INFO] [1781167963.846399158] [gazebo_track_car]: queued scene maneuver 'right' from camera sign camera_sign_turn_right; scene_sign=palette_turn_right_03_yaw_270 sign_dist=1.590m next_branch=2.23m
+[gazebo_track_car-2] [INFO] [1781167965.628772959] [gazebo_track_car]: MOTION pos=(-1.242,+2.480) yaw=-0.011 v=0.275 step_err=0.0201m/0.001rad track_err=0.0058m footprint=road:8.00px route=flat_top_center_to_top_right_reverse cmd_vel=(0.276,+0.029)
+[gazebo_track_car-2] [INFO] [1781167967.647314325] [gazebo_track_car]: MOTION pos=(-0.679,+2.480) yaw=+0.003 v=0.279 step_err=0.0228m/0.000rad track_err=0.0050m footprint=road:8.00px route=flat_top_center_to_top_right_reverse cmd_vel=(0.279,-0.009)
+[gazebo_track_car-2] [INFO] [1781167968.231739609] [gazebo_track_car]: traffic light is now GREEN.
+[gazebo_track_car-2] [INFO] [1781167968.239398520] [gazebo_track_car]: camera traffic-light green candidate ignored as non-lamp-shaped color patch; reason=aspect bbox=126x21px
+[gazebo_track_car-2] [INFO] [1781167968.239691426] [gazebo_track_car]: camera traffic-light green candidate ignored as non-lamp-shaped color patch; reason=aspect bbox=265x37px
+[gazebo_track_car-2] [INFO] [1781167968.427853471] [gazebo_track_car]: camera traffic-light green candidate ignored as non-lamp-shaped color patch; reason=aspect bbox=132x23px
+[gazebo_track_car-2] [INFO] [1781167968.706365952] [gazebo_track_car]: camera traffic-light green candidate ignored as non-lamp-shaped color patch; reason=aspect bbox=249x35px
+[gazebo_track_car-2] [INFO] [1781167968.938363200] [gazebo_track_car]: camera traffic-light green candidate ignored as non-lamp-shaped color patch; reason=aspect bbox=150x27px
+[gazebo_track_car-2] [INFO] [1781167969.166373918] [gazebo_track_car]: camera traffic-light green candidate ignored as non-lamp-shaped color patch; reason=aspect bbox=159x30px
+[gazebo_track_car-2] [INFO] [1781167969.249774953] [gazebo_track_car]: camera traffic-light green candidate ignored as non-lamp-shaped color patch; reason=aspect bbox=228x33px
+[gazebo_track_car-2] [INFO] [1781167969.429989047] [gazebo_track_car]: camera traffic-light green candidate ignored as non-lamp-shaped color patch; reason=aspect bbox=172x33px
+[gazebo_track_car-2] [INFO] [1781167969.628003627] [gazebo_track_car]: camera traffic-light green candidate ignored as non-lamp-shaped color patch; reason=aspect bbox=210x30px
+[gazebo_track_car-2] [INFO] [1781167969.650160033] [gazebo_track_car]: MOTION pos=(-0.122,+2.480) yaw=-0.000 v=0.279 step_err=0.0223m/0.000rad track_err=0.0056m footprint=road:8.00px route=flat_top_center_to_top_right_reverse cmd_vel=(0.279,-0.005)
+[gazebo_track_car-2] [INFO] [1781167969.729673517] [gazebo_track_car]: camera traffic-light green candidate ignored as non-lamp-shaped color patch; reason=aspect bbox=205x28px
+[gazebo_track_car-2] [INFO] [1781167970.032782911] [gazebo_track_car]: camera traffic-light green candidate ignored as non-lamp-shaped color patch; reason=aspect bbox=188x28px
+[gazebo_track_car-2] [INFO] [1781167970.354496010] [gazebo_track_car]: camera traffic-light green candidate ignored as non-lamp-shaped color patch; reason=aspect bbox=234x51px
+[gazebo_track_car-2] [WARN] [1781167970.371671941] [gazebo_track_car]: JITTER events=5 reasons=speed_delta=0.054m/s pos=(+0.078,+2.480) step=0.0047/0.0000m yaw=0.002/0.000rad route=flat_top_center_to_top_right_reverse
+[gazebo_track_car-2] [INFO] [1781167970.597125638] [gazebo_track_car]: camera traffic-light green candidate ignored as non-lamp-shaped color patch; reason=aspect bbox=251x56px
+[gazebo_track_car-2] [INFO] [1781167970.874496646] [gazebo_track_car]: camera traffic-light green candidate ignored as non-lamp-shaped color patch; reason=aspect bbox=271x62px
+[gazebo_track_car-2] [WARN] [1781167971.351018397] [gazebo_track_car]: JITTER events=3 reasons=yaw_step_error=0.038rad pos=(+0.235,+2.485) step=0.0021/0.0105m yaw=0.006/0.044rad route=flat_top_center_to_top_right_reverse
+[gazebo_track_car-2] [INFO] [1781167971.607892612] [gazebo_track_car]: camera traffic-light green candidate ignored as non-lamp-shaped color patch; reason=aspect bbox=225x64px
+[gazebo_track_car-2] [INFO] [1781167971.650667869] [gazebo_track_car]: MOTION pos=(+0.262,+2.490) yaw=-0.191 v=0.085 step_err=0.0066m/0.034rad track_err=0.0107m footprint=road:8.00px route=flat_top_center_to_top_right_reverse cmd_vel=(0.074,-0.419)
+[gazebo_track_car-2] [INFO] [1781167971.778870185] [gazebo_track_car]: camera traffic-light green candidate ignored as non-lamp-shaped color patch; reason=aspect bbox=208x64px
+[gazebo_track_car-2] [INFO] [1781167971.845661031] [gazebo_track_car]: camera traffic-light green candidate ignored as non-lamp-shaped color patch; reason=aspect bbox=272x43px
+[gazebo_track_car-2] [INFO] [1781167971.962895302] [gazebo_track_car]: camera traffic-light green candidate ignored as non-lamp-shaped color patch; reason=aspect bbox=293x45px
+[gazebo_track_car-2] [INFO] [1781167972.003253811] [gazebo_track_car]: camera traffic-light green candidate ignored as non-lamp-shaped color patch; reason=aspect bbox=299x64px
+[gazebo_track_car-2] [INFO] [1781167972.003509025] [gazebo_track_car]: camera traffic-light green candidate ignored as non-lamp-shaped color patch; reason=aspect bbox=188x62px
+[gazebo_track_car-2] [INFO] [1781167972.121625398] [gazebo_track_car]: camera traffic-light green candidate ignored as non-lamp-shaped color patch; reason=aspect bbox=312x66px
+[gazebo_track_car-2] [INFO] [1781167972.257732629] [gazebo_track_car]: camera traffic-light green candidate ignored as non-lamp-shaped color patch; reason=aspect bbox=353x67px
+[gazebo_track_car-2] [INFO] [1781167972.278980514] [gazebo_track_car]: camera traffic-light green candidate ignored as non-lamp-shaped color patch; reason=aspect bbox=333x67px
+[gazebo_track_car-2] [INFO] [1781167972.344844201] [gazebo_track_car]: camera traffic-light green candidate ignored as non-lamp-shaped color patch; reason=aspect bbox=170x61px
+[gazebo_track_car-2] [WARN] [1781167972.355716445] [gazebo_track_car]: JITTER events=9 reasons=yaw_step_error=0.030rad pos=(+0.312,+2.498) step=0.0012/0.0061m yaw=0.008/0.038rad route=flat_top_center_to_top_right_reverse
+[gazebo_track_car-2] [INFO] [1781167972.434824180] [gazebo_track_car]: camera traffic-light green candidate ignored as non-lamp-shaped color patch; reason=aspect bbox=373x68px
+[gazebo_track_car-2] [INFO] [1781167973.055761629] [gazebo_track_car]: camera traffic-light green candidate ignored as non-lamp-shaped color patch; reason=aspect bbox=91x19px
+[gazebo_track_car-2] [INFO] [1781167973.234712629] [gazebo_track_car]: camera traffic-light green candidate ignored as non-lamp-shaped color patch; reason=aspect bbox=142x30px
+[gazebo_track_car-2] [INFO] [1781167973.258131254] [gazebo_track_car]: traffic light is now YELLOW.
+[gazebo_track_car-2] [INFO] [1781167973.306722229] [gazebo_track_car]: camera traffic light is YELLOW score=74.4 area=84px bbox=10x10px fill=0.84 center=(686,226)
+[gazebo_track_car-2] [INFO] [1781167973.307011257] [gazebo_track_car]: camera traffic light ignored outside distance gate; state=yellow segment=flat_top_center_to_top_right_reverse gate<=1.70m nearby_target=- area=84px bbox=10x10px center=(686,226)
+[gazebo_track_car-2] [INFO] [1781167973.674984078] [gazebo_track_car]: MOTION pos=(+0.369,+2.494) yaw=-0.897 v=0.035 step_err=0.0027m/0.017rad track_err=0.0141m footprint=road:6.00px route=flat_top_center_to_top_right_reverse cmd_vel=(0.028,-0.227)
+[gazebo_track_car-2] [INFO] [1781167974.262679686] [gazebo_track_car]: traffic light is now RED.
+[gazebo_track_car-2] [INFO] [1781167974.313998281] [gazebo_track_car]: camera traffic light is RED score=42.8 area=51px bbox=7x9px fill=0.81 center=(613,221)
+[gazebo_track_car-2] [INFO] [1781167975.065904205] [gazebo_track_car]: camera traffic light lost for 0.2s.
+[gazebo_track_car-2] [INFO] [1781167975.678758408] [gazebo_track_car]: MOTION pos=(+0.416,+2.456) yaw=-1.184 v=0.029 step_err=0.0021m/0.012rad track_err=0.0255m footprint=road:7.00px route=flat_top_center_to_top_right_reverse cmd_vel=(0.028,-0.085)
+[gazebo_track_car-2] [INFO] [1781167975.930065850] [gazebo_track_car]: camera traffic light is RED score=37.8 area=45px bbox=9x8px fill=0.62 center=(831,205)
+[gazebo_track_car-2] [WARN] [1781167976.576237221] [gazebo_track_car]: JITTER events=6 reasons=cmd_xy_error=0.0505m pos=(+0.430,+2.434) step=0.0006/0.0028m yaw=0.001/0.012rad route=flat_top_center_to_top_right_reverse
+[gazebo_track_car-2] [WARN] [1781167977.599177313] [gazebo_track_car]: JITTER events=51 reasons=cmd_xy_error=0.0810m pos=(+0.442,+2.407) step=0.0006/0.0027m yaw=0.001/0.010rad route=flat_top_center_to_top_right_reverse
+[gazebo_track_car-2] [INFO] [1781167977.696915694] [gazebo_track_car]: MOTION pos=(+0.443,+2.405) yaw=-1.298 v=0.028 step_err=0.0023m/0.010rad track_err=0.0842m footprint=road:10.00px route=flat_top_center_to_top_right_reverse cmd_vel=(0.028,-0.040)
+[gazebo_track_car-2] [INFO] [1781167978.083897302] [gazebo_track_car]: route segment=flat_top_center_to_mid_top_right_entry; previous=flat_top_center_to_top_right_reverse; distance=0.001m; decision=route/right from palette_turn_right_03_yaw_270: flat_top_center_to_mid_top_right_entry delta=-90.0deg
+[gazebo_track_car-2] [INFO] [1781167978.094669078] [gazebo_track_car]: camera sign ignored because scene sign context disagrees; detected=turn_right_sign scene_ahead=go_straight_sign
+[gazebo_track_car-2] [INFO] [1781167978.096078284] [gazebo_track_car]: ROUTE_PROGRESS_SYNC actual=(+0.447,+2.394) cmd_error=0.096m route_dist=0.045m yaw_error=0.258rad segment=flat_top_center_to_mid_top_right_entry@0.085m->flat_top_center_to_mid_top_right_entry@0.085m
+[gazebo_track_car-2] [INFO] [1781167978.485721511] [gazebo_track_car]: camera traffic light lost for 0.2s.
+[gazebo_track_car-2] [INFO] [1781167979.600768143] [gazebo_track_car]: queued maneuver 'right' from camera sign camera_sign_turn_right; next_branch=1.45m
+[gazebo_track_car-2] [INFO] [1781167979.700609939] [gazebo_track_car]: MOTION pos=(+0.499,+1.996) yaw=-1.584 v=0.275 step_err=0.0228m/0.001rad track_err=0.0082m footprint=road:7.00px route=flat_top_center_to_mid_top_right_entry cmd_vel=(0.276,-0.025)
+[gazebo_track_car-2] [INFO] [1781167979.861416239] [gazebo_track_car]: camera traffic light is RED score=35.1 area=44px bbox=6x10px fill=0.73 center=(680,214)
+[gazebo_track_car-2] [INFO] [1781167979.968929302] [gazebo_track_car]: camera turn sign ignored as left/right ambiguous; segment=flat_top_center_to_mid_top_right_entry best=camera_sign_turn_right:0.51 opposite=turn_left_sign:0.48
+[gazebo_track_car-2] [INFO] [1781167980.069959256] [gazebo_track_car]: camera turn sign ignored as left/right ambiguous; segment=flat_top_center_to_mid_top_right_entry best=camera_sign_turn_left:0.52 opposite=turn_right_sign:0.50
+[gazebo_track_car-2] [INFO] [1781167980.102214853] [gazebo_track_car]: camera turn sign ignored as left/right ambiguous; segment=flat_top_center_to_mid_top_right_entry best=camera_sign_turn_right:0.49 opposite=turn_left_sign:0.48
+[gazebo_track_car-2] [INFO] [1781167980.103444027] [gazebo_track_car]: camera turn sign ignored as left/right ambiguous; segment=flat_top_center_to_mid_top_right_entry best=camera_sign_turn_left:0.50 opposite=turn_right_sign:0.48
+[gazebo_track_car-2] [INFO] [1781167980.109067847] [gazebo_track_car]: camera turn sign ignored as left/right ambiguous; segment=flat_top_center_to_mid_top_right_entry best=camera_sign_turn_right:0.51 opposite=turn_left_sign:0.50
+[gazebo_track_car-2] [INFO] [1781167980.110150413] [gazebo_track_car]: camera turn sign ignored as left/right ambiguous; segment=flat_top_center_to_mid_top_right_entry best=camera_sign_turn_left:0.49 opposite=turn_right_sign:0.49
+[gazebo_track_car-2] [INFO] [1781167980.154660572] [gazebo_track_car]: camera turn sign ignored as left/right ambiguous; segment=flat_top_center_to_mid_top_right_entry best=camera_sign_turn_right:0.51 opposite=turn_left_sign:0.51
+[gazebo_track_car-2] [INFO] [1781167980.206875854] [gazebo_track_car]: camera_sign=camera_sign_parking source=camera kind=parking_sign maneuver=parking score=0.33 area=1364px bbox=31x44px center=(8,178)
+[gazebo_track_car-2] [INFO] [1781167980.235508080] [gazebo_track_car]: camera sign seen but action is waiting until closer; detected=parking_sign sign=camera_sign_parking scene_sign=palette_parking_03_yaw_270 sign_dist=1.923m action_dist<=1.35m
+[gazebo_track_car-2] [INFO] [1781167980.545507058] [gazebo_track_car]: camera traffic light ignored outside distance gate; state=red segment=flat_top_center_to_mid_top_right_entry gate<=1.70m nearby_target=palette_traffic_light_02_yaw_180 dist=2.70m forward=2.68m lateral=0.35m area=64px bbox=8x12px center=(705,211)
+[gazebo_track_car-2] [INFO] [1781167981.704801357] [gazebo_track_car]: MOTION pos=(+0.492,+1.440) yaw=-1.572 v=0.279 step_err=0.0273m/0.000rad track_err=0.0004m footprint=road:7.00px route=flat_top_center_to_mid_top_right_entry cmd_vel=(0.279,+0.007)
+[gazebo_track_car-2] [INFO] [1781167982.205395848] [gazebo_track_car]: traffic light is now GREEN.
+[gazebo_track_car-2] [INFO] [1781167982.232171860] [gazebo_track_car]: camera traffic light is GREEN score=57.4 area=69px bbox=8x11px fill=0.78 center=(508,234)
+[gazebo_track_car-2] [INFO] [1781167982.846720064] [gazebo_track_car]: parking stub armed from camera sign camera_sign_parking; next_branch=0.55m
+[gazebo_track_car-2] [INFO] [1781167983.098056873] [gazebo_track_car]: camera traffic-light green candidate ignored as non-lamp-shaped color patch; reason=aspect bbox=59x24px
+[gazebo_track_car-2] [INFO] [1781167983.203406659] [gazebo_track_car]: camera sign ignored as parking/turn confusion; segment=flat_top_center_to_mid_top_right_entry best=camera_sign_turn_right:0.47 parking=camera_sign_parking:0.32
+[gazebo_track_car-2] [INFO] [1781167983.246883482] [gazebo_track_car]: camera_sign=camera_sign_turn_right source=camera kind=turn_right_sign maneuver=right score=0.48 area=9120px bbox=114x80px center=(231,208)
+[gazebo_track_car-2] [INFO] [1781167983.324894473] [gazebo_track_car]: camera_sign=camera_sign_speed_limit source=camera kind=speed_limit_sign maneuver=- score=0.55 area=598px bbox=23x26px center=(645,223)
+[gazebo_track_car-2] [INFO] [1781167983.344052288] [gazebo_track_car]: camera_sign=camera_sign_turn_right source=camera kind=turn_right_sign maneuver=right score=0.47 area=10416px bbox=124x84px center=(219,206)
+[gazebo_track_car-2] [INFO] [1781167983.414270929] [gazebo_track_car]: camera traffic-light green candidate ignored as non-lamp-shaped color patch; reason=aspect bbox=363x70px
+[gazebo_track_car-2] [INFO] [1781167983.414541143] [gazebo_track_car]: camera traffic-light green candidate ignored as non-lamp-shaped color patch; reason=aspect bbox=341x70px
+[gazebo_track_car-2] [INFO] [1781167983.437298976] [gazebo_track_car]: camera sign action allowed by route branch context; detected=turn_right_sign sign=camera_sign_turn_right next_branch=0.38m area=11645px matching 3D sign is not route-adjacent
+[gazebo_track_car-2] [INFO] [1781167983.487722752] [gazebo_track_car]: camera traffic-light green candidate ignored as non-lamp-shaped color patch; reason=aspect bbox=372x72px
+[gazebo_track_car-2] [INFO] [1781167983.557300196] [gazebo_track_car]: camera traffic-light green candidate ignored as non-lamp-shaped color patch; reason=aspect bbox=70x28px
+[gazebo_track_car-2] [INFO] [1781167983.612062119] [gazebo_track_car]: camera traffic-light green candidate ignored as non-lamp-shaped color patch; reason=aspect bbox=393x78px
+[gazebo_track_car-2] [INFO] [1781167983.690256310] [gazebo_track_car]: camera traffic-light green candidate ignored as non-lamp-shaped color patch; reason=aspect bbox=73x30px
+[gazebo_track_car-2] [INFO] [1781167983.694684691] [gazebo_track_car]: camera_sign=camera_sign_parking source=camera kind=parking_sign maneuver=parking score=0.34 area=1248px bbox=48x26px center=(180,198)
+[gazebo_track_car-2] [INFO] [1781167983.711325055] [gazebo_track_car]: camera traffic-light green candidate ignored as non-lamp-shaped color patch; reason=fill bbox=74x31px
+[gazebo_track_car-2] [INFO] [1781167983.726083254] [gazebo_track_car]: MOTION pos=(+0.492,+0.876) yaw=-1.569 v=0.279 step_err=0.0209m/0.000rad track_err=0.0061m footprint=road:8.79px route=flat_top_center_to_mid_top_right_entry cmd_vel=(0.251,+0.192)
+[gazebo_track_car-2] [INFO] [1781167983.746675574] [gazebo_track_car]: camera traffic-light green candidate ignored as non-lamp-shaped color patch; reason=aspect bbox=416x84px
+[gazebo_track_car-2] [WARN] [1781167983.752975990] [gazebo_track_car]: JITTER events=27 reasons=speed_delta=0.073m/s pos=(+0.493,+0.871) step=0.0045/0.0000m yaw=0.001/0.000rad route=flat_top_center_to_mid_top_right_entry
+[gazebo_track_car-2] [INFO] [1781167983.815692473] [gazebo_track_car]: camera traffic-light green candidate ignored as non-lamp-shaped color patch; reason=aspect bbox=330x90px
+[gazebo_track_car-2] [INFO] [1781167983.866974810] [gazebo_track_car]: camera traffic-light green candidate ignored as non-lamp-shaped color patch; reason=aspect bbox=430x90px
+[gazebo_track_car-2] [INFO] [1781167983.867323092] [gazebo_track_car]: camera traffic-light green candidate ignored as non-lamp-shaped color patch; reason=aspect bbox=329x91px
+[gazebo_track_car-2] [INFO] [1781167983.876749795] [gazebo_track_car]: camera traffic-light green candidate ignored as non-lamp-shaped color patch; reason=aspect bbox=431x93px
+[gazebo_track_car-2] [INFO] [1781167983.934904334] [gazebo_track_car]: camera traffic-light green candidate ignored as non-lamp-shaped color patch; reason=fill bbox=68x30px
+[gazebo_track_car-2] [INFO] [1781167983.979512376] [gazebo_track_car]: camera traffic-light green candidate ignored as non-lamp-shaped color patch; reason=aspect bbox=307x90px
+[gazebo_track_car-2] [INFO] [1781167983.979731722] [gazebo_track_car]: camera traffic-light green candidate ignored as non-lamp-shaped color patch; reason=fill bbox=64x29px
+[gazebo_track_car-2] [INFO] [1781167983.983267067] [gazebo_track_car]: camera_sign=camera_sign_turn_right source=camera kind=turn_right_sign maneuver=right score=0.46 area=17127px bbox=173x99px center=(182,197)
+[gazebo_track_car-2] [INFO] [1781167984.035120009] [gazebo_track_car]: camera traffic-light green candidate ignored as non-lamp-shaped color patch; reason=aspect bbox=439x111px
+[gazebo_track_car-2] [INFO] [1781167984.088832263] [gazebo_track_car]: camera traffic-light green candidate ignored as non-lamp-shaped color patch; reason=aspect bbox=285x83px
+[gazebo_track_car-2] [INFO] [1781167984.092510720] [gazebo_track_car]: camera_sign=camera_sign_speed_limit source=camera kind=speed_limit_sign maneuver=- score=0.51 area=2496px bbox=64x39px center=(713,218)
+[gazebo_track_car-2] [INFO] [1781167984.145410449] [gazebo_track_car]: camera traffic-light green candidate ignored as non-lamp-shaped color patch; reason=aspect bbox=266x77px
+[gazebo_track_car-2] [INFO] [1781167984.145703365] [gazebo_track_car]: camera traffic-light green candidate ignored as non-lamp-shaped color patch; reason=fill bbox=49x25px
+[gazebo_track_car-2] [INFO] [1781167984.215188118] [gazebo_track_car]: camera_sign=camera_sign_parking source=camera kind=parking_sign maneuver=parking score=0.32 area=12408px bbox=132x94px center=(246,208)
+[gazebo_track_car-2] [INFO] [1781167984.217209207] [gazebo_track_car]: camera traffic-light green candidate ignored as non-lamp-shaped color patch; reason=aspect bbox=244x70px
+[gazebo_track_car-2] [INFO] [1781167984.451435918] [gazebo_track_car]: camera traffic-light green candidate ignored as non-lamp-shaped color patch; reason=aspect bbox=122x35px
+[gazebo_track_car-2] [INFO] [1781167984.635332810] [gazebo_track_car]: camera traffic-light green candidate ignored as non-lamp-shaped color patch; reason=aspect bbox=452x115px
+[gazebo_track_car-2] [INFO] [1781167984.746419324] [gazebo_track_car]: camera traffic-light green candidate ignored as non-lamp-shaped color patch; reason=aspect bbox=473x115px
+[gazebo_track_car-2] [INFO] [1781167984.805999063] [gazebo_track_car]: camera traffic-light green candidate ignored as non-lamp-shaped color patch; reason=aspect bbox=491x114px
+[gazebo_track_car-2] [INFO] [1781167984.872507220] [gazebo_track_car]: camera traffic-light green candidate ignored as non-lamp-shaped color patch; reason=aspect bbox=513x114px
+[gazebo_track_car-2] [INFO] [1781167984.971087391] [gazebo_track_car]: camera traffic-light green candidate ignored as non-lamp-shaped color patch; reason=aspect bbox=533x113px
+[gazebo_track_car-2] [INFO] [1781167985.019340268] [gazebo_track_car]: camera traffic light lost for 0.2s.
+[gazebo_track_car-2] [INFO] [1781167985.069252177] [gazebo_track_car]: camera traffic-light green candidate ignored as non-lamp-shaped color patch; reason=aspect bbox=94x36px
+[gazebo_track_car-2] [INFO] [1781167985.129248559] [gazebo_track_car]: camera turn sign ignored as left/right ambiguous; segment=flat_top_center_to_mid_top_right_entry best=camera_sign_turn_left:0.48 opposite=turn_right_sign:0.47
+[gazebo_track_car-2] [INFO] [1781167985.140210369] [gazebo_track_car]: camera turn sign ignored as left/right ambiguous; segment=flat_top_center_to_mid_top_right_entry best=camera_sign_turn_right:0.50 opposite=turn_left_sign:0.49
+[gazebo_track_car-2] [INFO] [1781167985.181968832] [gazebo_track_car]: camera traffic light is GREEN score=45.5 area=54px bbox=10x6px fill=0.90 center=(858,235)
+[gazebo_track_car-2] [WARN] [1781167985.230025848] [gazebo_track_car]: JITTER events=4 reasons=yaw_step_error=0.226rad pos=(+0.506,+0.644) step=0.0032/0.0152m yaw=0.015/0.241rad route=flat_top_center_to_mid_top_right_entry
+[gazebo_track_car-2] [INFO] [1781167985.283571688] [gazebo_track_car]: camera traffic-light green candidate ignored as non-lamp-shaped color patch; reason=aspect bbox=486x109px
+[gazebo_track_car-2] [INFO] [1781167985.405531319] [gazebo_track_car]: camera traffic-light green candidate ignored as non-lamp-shaped color patch; reason=aspect bbox=469x107px
+[gazebo_track_car-2] [INFO] [1781167985.522424998] [gazebo_track_car]: camera traffic light lost for 0.2s.
+[gazebo_track_car-2] [INFO] [1781167985.556202913] [gazebo_track_car]: camera turn sign ignored as left/right ambiguous; segment=flat_top_center_to_mid_top_right_entry best=camera_sign_turn_left:0.49 opposite=turn_right_sign:0.47
+[gazebo_track_car-2] [INFO] [1781167985.623269294] [gazebo_track_car]: route segment=aaa_flat_parking_stub_stop; previous=flat_top_center_to_mid_top_right_entry; distance=0.010m; decision=route/parking from camera_sign_parking: aaa_flat_parking_stub_stop
+[gazebo_track_car-2] [INFO] [1781167985.628298696] [gazebo_track_car]: ROUTE_PROGRESS_SYNC actual=(+0.563,+0.598) cmd_error=0.063m route_dist=0.017m yaw_error=0.252rad segment=aaa_flat_parking_stub_stop@0.010m->aaa_flat_parking_stub_stop@0.071m
+[gazebo_track_car-2] [INFO] [1781167985.651429700] [gazebo_track_car]: camera sign ignored as parking/turn confusion; segment=aaa_flat_parking_stub_stop best=camera_sign_turn_right:0.54 parking=camera_sign_parking:0.39
+[gazebo_track_car-2] [INFO] [1781167985.652621022] [gazebo_track_car]: camera turn sign ignored as left/right ambiguous; segment=aaa_flat_parking_stub_stop best=camera_sign_turn_left:0.51 opposite=turn_right_sign:0.48
+[gazebo_track_car-2] [INFO] [1781167985.731989709] [gazebo_track_car]: MOTION pos=(+0.581,+0.589) yaw=-0.195 v=0.209 step_err=0.0170m/0.011rad track_err=0.0084m footprint=road:6.20px route=aaa_flat_parking_stub_stop cmd_vel=(0.222,+0.418)
+[gazebo_track_car-2] [INFO] [1781167985.761446867] [gazebo_track_car]: camera traffic-light green candidate ignored as non-lamp-shaped color patch; reason=aspect bbox=429x97px
+[gazebo_track_car-2] [INFO] [1781167985.765284636] [gazebo_track_car]: camera_sign=camera_sign_turn_right source=camera kind=turn_right_sign maneuver=right score=0.53 area=4284px bbox=63x68px center=(535,215)
+[gazebo_track_car-2] [INFO] [1781167985.852618382] [gazebo_track_car]: camera turn sign ignored as left/right ambiguous; segment=aaa_flat_parking_stub_stop best=camera_sign_turn_right:0.51 opposite=turn_left_sign:0.48
+[gazebo_track_car-2] [INFO] [1781167986.151231360] [gazebo_track_car]: camera turn sign ignored as left/right ambiguous; segment=aaa_flat_parking_stub_stop best=camera_sign_turn_left:0.52 opposite=turn_right_sign:0.49
+[gazebo_track_car-2] [INFO] [1781167986.240868514] [gazebo_track_car]: camera traffic-light green candidate ignored as non-lamp-shaped color patch; reason=low bbox=25x24px
+[gazebo_track_car-2] [WARN] [1781167986.251457706] [gazebo_track_car]: JITTER events=11 reasons=speed_delta=0.040m/s pos=(+0.697,+0.575) step=0.0033/0.0000m yaw=0.014/0.000rad route=aaa_flat_parking_stub_stop
+[gazebo_track_car-2] [INFO] [1781167986.430003059] [gazebo_track_car]: camera sign action blocked; no matching facing 3D sign is close enough; detected=turn_right_sign sign=camera_sign_turn_right detection_dist<=3.40m action_dist<=0.95m
+[gazebo_track_car-2] [INFO] [1781167986.477073092] [gazebo_track_car]: camera turn sign ignored as left/right ambiguous; segment=aaa_flat_parking_stub_stop best=camera_sign_turn_right:0.50 opposite=turn_left_sign:0.49
+[gazebo_track_car-2] [INFO] [1781167986.561881676] [gazebo_track_car]: camera traffic-light green candidate ignored as non-lamp-shaped color patch; reason=fill bbox=24x27px
+[gazebo_track_car-2] [INFO] [1781167986.565514696] [gazebo_track_car]: camera turn sign ignored as left/right ambiguous; segment=aaa_flat_parking_stub_stop best=camera_sign_turn_left:0.53 opposite=turn_right_sign:0.53
+[gazebo_track_car-2] [INFO] [1781167986.589526563] [gazebo_track_car]: camera turn sign ignored as left/right ambiguous; segment=aaa_flat_parking_stub_stop best=camera_sign_turn_right:0.49 opposite=turn_left_sign:0.49
+[gazebo_track_car-2] [INFO] [1781167986.694481972] [gazebo_track_car]: camera traffic light is GREEN score=64.2 area=76px bbox=12x8px fill=0.79 center=(893,235)
+[gazebo_track_car-2] [INFO] [1781167986.698027205] [gazebo_track_car]: camera sign ignored as parking/turn confusion; segment=aaa_flat_parking_stub_stop best=camera_sign_turn_left:0.49 parking=camera_sign_parking:0.33
+[gazebo_track_car-2] [INFO] [1781167986.718926237] [gazebo_track_car]: camera traffic-light green candidate ignored as non-lamp-shaped color patch; reason=aspect bbox=493x106px
+[gazebo_track_car-2] [INFO] [1781167986.722068578] [gazebo_track_car]: camera sign ignored as parking/turn confusion; segment=aaa_flat_parking_stub_stop best=camera_sign_turn_right:0.53 parking=camera_sign_parking:0.37
+[gazebo_track_car-2] [INFO] [1781167986.723177705] [gazebo_track_car]: camera turn sign ignored as left/right ambiguous; segment=aaa_flat_parking_stub_stop best=camera_sign_turn_left:0.51 opposite=turn_right_sign:0.50
+[gazebo_track_car-2] [INFO] [1781167986.724248709] [gazebo_track_car]: camera sign ignored as parking/turn confusion; segment=aaa_flat_parking_stub_stop best=camera_sign_turn_left:0.49 parking=camera_sign_parking:0.33
+[gazebo_track_car-2] [INFO] [1781167986.798372217] [gazebo_track_car]: camera sign ignored as parking/turn confusion; segment=aaa_flat_parking_stub_stop best=camera_sign_turn_right:0.52 parking=camera_sign_parking:0.37
+[gazebo_track_car-2] [INFO] [1781167986.799422552] [gazebo_track_car]: camera turn sign ignored as left/right ambiguous; segment=aaa_flat_parking_stub_stop best=camera_sign_turn_right:0.49 opposite=turn_left_sign:0.49
+[gazebo_track_car-2] [INFO] [1781167986.800684910] [gazebo_track_car]: camera turn sign ignored as left/right ambiguous; segment=aaa_flat_parking_stub_stop best=camera_sign_turn_left:0.51 opposite=turn_right_sign:0.50
+[gazebo_track_car-2] [INFO] [1781167986.819344361] [gazebo_track_car]: camera turn sign ignored as left/right ambiguous; segment=aaa_flat_parking_stub_stop best=camera_sign_turn_right:0.48 opposite=turn_left_sign:0.47
+[gazebo_track_car-2] [INFO] [1781167986.820401419] [gazebo_track_car]: camera sign ignored as parking/turn confusion; segment=aaa_flat_parking_stub_stop best=camera_sign_turn_left:0.46 parking=camera_sign_parking:0.32
+[gazebo_track_car-2] [INFO] [1781167986.859486936] [gazebo_track_car]: camera traffic-light green candidate ignored as non-lamp-shaped color patch; reason=aspect bbox=514x107px
+[gazebo_track_car-2] [INFO] [1781167986.863036378] [gazebo_track_car]: camera turn sign ignored as left/right ambiguous; segment=aaa_flat_parking_stub_stop best=camera_sign_turn_left:0.49 opposite=turn_right_sign:0.49
+[gazebo_track_car-2] [INFO] [1781167986.864130907] [gazebo_track_car]: camera turn sign ignored as left/right ambiguous; segment=aaa_flat_parking_stub_stop best=camera_sign_turn_right:0.48 opposite=turn_left_sign:0.45
+[gazebo_track_car-2] [INFO] [1781167986.881570421] [gazebo_track_car]: camera traffic-light green candidate ignored as non-lamp-shaped color patch; reason=fill bbox=27x30px
+[gazebo_track_car-2] [INFO] [1781167986.884332477] [gazebo_track_car]: camera sign ignored as parking/turn confusion; segment=aaa_flat_parking_stub_stop best=camera_sign_turn_right:0.52 parking=camera_sign_parking:0.36
+[gazebo_track_car-2] [INFO] [1781167986.885698892] [gazebo_track_car]: camera turn sign ignored as left/right ambiguous; segment=aaa_flat_parking_stub_stop best=camera_sign_turn_left:0.49 opposite=turn_right_sign:0.49
+[gazebo_track_car-2] [INFO] [1781167986.928999446] [gazebo_track_car]: camera traffic light lost for 0.2s.
+[gazebo_track_car-2] [INFO] [1781167986.978980268] [gazebo_track_car]: camera traffic-light green candidate ignored as non-lamp-shaped color patch; reason=aspect bbox=536x108px
+[gazebo_track_car-2] [INFO] [1781167987.068607636] [gazebo_track_car]: camera traffic-light green candidate ignored as non-lamp-shaped color patch; reason=fill bbox=31x33px
+[gazebo_track_car-2] [INFO] [1781167987.079364768] [gazebo_track_car]: camera traffic-light green candidate ignored as non-lamp-shaped color patch; reason=aspect bbox=554x108px
+[gazebo_track_car-2] [INFO] [1781167987.108587664] [gazebo_track_car]: camera sign ignored as parking/turn confusion; segment=aaa_flat_parking_stub_stop best=camera_sign_turn_left:0.53 parking=camera_sign_parking:0.38
+[gazebo_track_car-2] [INFO] [1781167987.160281021] [gazebo_track_car]: camera sign ignored as parking/turn confusion; segment=aaa_flat_parking_stub_stop best=camera_sign_turn_right:0.49 parking=camera_sign_parking:0.34
+[gazebo_track_car-2] [INFO] [1781167987.169188359] [gazebo_track_car]: camera traffic-light green candidate ignored as non-lamp-shaped color patch; reason=aspect bbox=573x108px
+[gazebo_track_car-2] [INFO] [1781167987.230220725] [gazebo_track_car]: traffic light is now YELLOW.
+[gazebo_track_car-2] [WARN] [1781167987.247752265] [gazebo_track_car]: JITTER events=1 reasons=yaw_step_error=0.361rad pos=(+0.835,+0.549) step=0.0031/0.0233m yaw=0.016/0.377rad route=aaa_flat_parking_stub_stop
+[gazebo_track_car-2] [INFO] [1781167987.269151651] [gazebo_track_car]: camera traffic light is YELLOW score=1005.9 area=1107px bbox=48x31px fill=0.74 center=(779,203)
+[gazebo_track_car-2] [INFO] [1781167987.318006246] [gazebo_track_car]: camera turn sign ignored as left/right ambiguous; segment=aaa_flat_parking_stub_stop best=camera_sign_turn_right:0.48 opposite=turn_left_sign:0.44
+[gazebo_track_car-2] [INFO] [1781167987.749635075] [gazebo_track_car]: MOTION pos=(+0.875,+0.508) yaw=-1.329 v=0.111 step_err=0.0059m/0.009rad track_err=0.0151m footprint=road:7.59px route=aaa_flat_parking_stub_stop cmd_vel=(0.105,-0.397)
+[gazebo_track_car-2] [INFO] [1781167987.999276998] [gazebo_track_car]: camera turn sign ignored as left/right ambiguous; segment=aaa_flat_parking_stub_stop best=camera_sign_turn_left:0.50 opposite=turn_right_sign:0.47
+[gazebo_track_car-2] [INFO] [1781167988.042421500] [gazebo_track_car]: camera turn sign ignored as left/right ambiguous; segment=aaa_flat_parking_stub_stop best=camera_sign_turn_right:0.53 opposite=turn_left_sign:0.50
+[gazebo_track_car-2] [INFO] [1781167988.075971376] [gazebo_track_car]: camera turn sign ignored as left/right ambiguous; segment=aaa_flat_parking_stub_stop best=camera_sign_turn_left:0.61 opposite=turn_right_sign:0.60
+[gazebo_track_car-2] [INFO] [1781167988.142023699] [gazebo_track_car]: camera turn sign ignored as left/right ambiguous; segment=aaa_flat_parking_stub_stop best=camera_sign_turn_right:0.60 opposite=turn_left_sign:0.58
+[gazebo_track_car-2] [INFO] [1781167988.237585714] [gazebo_track_car]: traffic light is now RED.
+[gazebo_track_car-2] [INFO] [1781167988.263031347] [gazebo_track_car]: camera turn sign ignored as left/right ambiguous; segment=aaa_flat_parking_stub_stop best=camera_sign_turn_left:0.50 opposite=turn_right_sign:0.50
+[gazebo_track_car-2] [INFO] [1781167988.284232919] [gazebo_track_car]: camera traffic light is RED score=322.7 area=367px bbox=22x22px fill=0.76 center=(615,199)
+[gazebo_track_car-2] [INFO] [1781167988.287273554] [gazebo_track_car]: camera turn sign ignored as left/right ambiguous; segment=aaa_flat_parking_stub_stop best=camera_sign_turn_right:0.49 opposite=turn_left_sign:0.46
+[gazebo_track_car-2] [INFO] [1781167988.485097031] [gazebo_track_car]: camera turn sign ignored as left/right ambiguous; segment=aaa_flat_parking_stub_stop best=camera_sign_turn_left:0.50 opposite=turn_right_sign:0.47
+[gazebo_track_car-2] [INFO] [1781167989.751214654] [gazebo_track_car]: MOTION pos=(+0.906,+0.260) yaw=-1.623 v=0.128 step_err=0.0105m/0.001rad track_err=0.0152m footprint=road:7.00px route=aaa_flat_parking_stub_stop cmd_vel=(0.122,-0.025)
+[gazebo_track_car-2] [INFO] [1781167991.767352259] [gazebo_track_car]: MOTION pos=(+0.897,+0.103) yaw=-1.649 v=0.049 step_err=0.0039m/0.000rad track_err=0.0069m footprint=road:7.00px route=aaa_flat_parking_stub_stop cmd_vel=(0.049,-0.006)
+[gazebo_track_car-2] [WARN] [1781167993.306250252] [gazebo_track_car]: JITTER events=9 reasons=speed_delta=0.050m/s,yaw_rate_delta=0.439rad/s pos=(+0.897,+0.026) step=0.0016/0.0000m yaw=0.011/0.000rad route=aaa_flat_parking_stub_stop
+[gazebo_track_car-2] [INFO] [1781167993.453436177] [gazebo_track_car]: camera_sign=camera_sign_speed_limit source=camera kind=speed_limit_sign maneuver=- score=0.51 area=3432px bbox=78x44px center=(695,219)
+[gazebo_track_car-2] [INFO] [1781167993.473637102] [gazebo_track_car]: camera sign seen but action is waiting until closer; detected=speed_limit_sign sign=camera_sign_speed_limit scene_sign=palette_speed_limit_03_yaw_270 sign_dist=2.399m action_dist<=0.95m
+[gazebo_track_car-2] [INFO] [1781167993.542900980] [gazebo_track_car]: camera speed-limit candidate ignored as solid red lamp-like blob; segment=aaa_flat_parking_stub_stop component_bbox=22x25px red_fill=0.79
+[gazebo_track_car-2] [INFO] [1781167993.583307710] [gazebo_track_car]: camera speed-limit candidate ignored as solid red lamp-like blob; segment=aaa_flat_parking_stub_stop component_bbox=21x24px red_fill=0.82
+[gazebo_track_car-2] [INFO] [1781167993.620599982] [gazebo_track_car]: camera speed-limit candidate ignored as solid red lamp-like blob; segment=aaa_flat_parking_stub_stop component_bbox=23x19px red_fill=0.71
+[gazebo_track_car-2] [INFO] [1781167993.640091981] [gazebo_track_car]: camera speed-limit candidate ignored as solid red lamp-like blob; segment=aaa_flat_parking_stub_stop component_bbox=17x16px red_fill=0.80
+[gazebo_track_car-2] [INFO] [1781167993.709287449] [gazebo_track_car]: ROUTE_PROGRESS_SYNC actual=(+0.944,-0.010) cmd_error=0.061m route_dist=0.061m yaw_error=0.906rad segment=aaa_flat_parking_stub_stop@0.961m->aaa_flat_parking_stub_stop@0.961m
+[gazebo_track_car-2] [INFO] [1781167993.742355708] [gazebo_track_car]: camera_sign=camera_sign_turn_right source=camera kind=turn_right_sign maneuver=right score=0.49 area=1392px bbox=48x29px center=(297,231)
+[gazebo_track_car-2] [INFO] [1781167993.769134629] [gazebo_track_car]: MOTION pos=(+0.951,-0.020) yaw=-2.629 v=0.202 step_err=0.0040m/0.051rad track_err=0.0720m footprint=road:2.00px route=aaa_flat_parking_stub_stop cmd_vel=(0.000,-2.800)
+[gazebo_track_car-2] [INFO] [1781167993.879022179] [gazebo_track_car]: camera turn sign ignored as left/right ambiguous; segment=aaa_flat_parking_stub_stop best=camera_sign_turn_right:0.51 opposite=turn_left_sign:0.49
+[gazebo_track_car-2] [WARN] [1781167993.968310116] [gazebo_track_car]: parking complete; stopped at segment=aaa_flat_parking_stub_stop pose=(+0.891,+0.019) yaw=-1.571
+[gazebo_track_car-2] [INFO] [1781167993.971029562] [gazebo_track_car]: camera traffic light ignored outside distance gate; state=red segment=aaa_flat_parking_stub_stop gate<=1.70m nearby_target=- area=1175px bbox=43x36px center=(280,174)
+[gazebo_track_car-2] [WARN] [1781167994.270737770] [gazebo_track_car]: JITTER events=45 reasons=cmd_xy_error=0.1025m pos=(+0.958,-0.059) step=0.0000/0.0000m yaw=0.000/0.000rad route=aaa_flat_parking_stub_stop
+[gazebo_track_car-2] [WARN] [1781167995.288360381] [gazebo_track_car]: JITTER events=51 reasons=cmd_xy_error=0.1025m pos=(+0.958,-0.059) step=0.0000/0.0000m yaw=0.000/0.000rad route=aaa_flat_parking_stub_stop
+[gazebo_track_car-2] [INFO] [1781167995.777363476] [gazebo_track_car]: MOTION pos=(+0.958,-0.059) yaw=-3.122 v=0.000 step_err=0.0000m/0.000rad track_err=0.1025m footprint=road:3.00px route=aaa_flat_parking_stub_stop cmd_vel=(0.000,+0.000)
+[gazebo_track_car-2] [INFO] [1781167996.279486998] [gazebo_track_car]: traffic light is now GREEN.
+[gazebo_track_car-2] [INFO] [1781167996.294108015] [gazebo_track_car]: camera traffic-light green candidate ignored as non-lamp-shaped color patch; reason=aspect bbox=456x73px
+[gazebo_track_car-2] [INFO] [1781167996.324281158] [gazebo_track_car]: camera traffic light is GREEN score=932.9 area=1010px bbox=48x29px fill=0.73 center=(260,221)
+[gazebo_track_car-2] [WARN] [1781167996.401548680] [gazebo_track_car]: JITTER events=55 reasons=cmd_xy_error=0.1025m pos=(+0.958,-0.059) step=0.0000/0.0000m yaw=0.000/0.000rad route=aaa_flat_parking_stub_stop
+[gazebo_track_car-2] [WARN] [1781167997.401761666] [gazebo_track_car]: JITTER events=50 reasons=cmd_xy_error=0.1025m pos=(+0.958,-0.059) step=0.0000/0.0000m yaw=0.000/0.000rad route=aaa_flat_parking_stub_stop
+[gazebo_track_car-2] [INFO] [1781167997.803801196] [gazebo_track_car]: MOTION pos=(+0.958,-0.059) yaw=-3.122 v=0.000 step_err=0.0000m/0.000rad track_err=0.1025m footprint=road:3.00px route=aaa_flat_parking_stub_stop cmd_vel=(0.000,+0.000)
+[gazebo_track_car-2] [WARN] [1781167998.405194462] [gazebo_track_car]: JITTER events=50 reasons=cmd_xy_error=0.1025m pos=(+0.958,-0.059) step=0.0000/0.0000m yaw=0.000/0.000rad route=aaa_flat_parking_stub_stop
+[gazebo_track_car-2] [WARN] [1781167999.511521750] [gazebo_track_car]: JITTER events=55 reasons=cmd_xy_error=0.1025m pos=(+0.958,-0.059) step=0.0000/0.0000m yaw=0.000/0.000rad route=aaa_flat_parking_stub_stop
+[gazebo_track_car-2] [INFO] [1781167999.805436414] [gazebo_track_car]: MOTION pos=(+0.958,-0.059) yaw=-3.121 v=0.000 step_err=0.0000m/0.000rad track_err=0.1025m footprint=road:3.00px route=aaa_flat_parking_stub_stop cmd_vel=(0.000,+0.000)
+[gazebo_track_car-2] [WARN] [1781168000.510500390] [gazebo_track_car]: JITTER events=50 reasons=cmd_xy_error=0.1025m pos=(+0.958,-0.059) step=0.0000/0.0000m yaw=0.000/0.000rad route=aaa_flat_parking_stub_stop
+[gazebo_track_car-2] [INFO] [1781168001.308390263] [gazebo_track_car]: traffic light is now YELLOW.
+[gazebo_track_car-2] [INFO] [1781168001.339902276] [gazebo_track_car]: camera traffic light is YELLOW score=1248.6 area=1367px bbox=49x35px fill=0.80 center=(254,197)
+[gazebo_track_car-2] [INFO] [1781168001.340170415] [gazebo_track_car]: camera traffic light ignored outside distance gate; state=yellow segment=aaa_flat_parking_stub_stop gate<=1.70m nearby_target=- area=1367px bbox=49x35px center=(254,197)
+[gazebo_track_car-2] [WARN] [1781168001.508369895] [gazebo_track_car]: JITTER events=50 reasons=cmd_xy_error=0.1025m pos=(+0.958,-0.059) step=0.0000/0.0000m yaw=0.000/0.000rad route=aaa_flat_parking_stub_stop
+[gazebo_track_car-2] [INFO] [1781168001.811774003] [gazebo_track_car]: MOTION pos=(+0.958,-0.059) yaw=-3.121 v=0.000 step_err=0.0000m/0.000rad track_err=0.1024m footprint=road:3.00px route=aaa_flat_parking_stub_stop cmd_vel=(0.000,+0.000)
+[gazebo_track_car-2] [INFO] [1781168002.308314605] [gazebo_track_car]: traffic light is now RED.
+[gazebo_track_car-2] [INFO] [1781168002.352069141] [gazebo_track_car]: camera traffic light is RED score=1366.6 area=1520px bbox=52x39px fill=0.75 center=(248,169)
+[gazebo_track_car-2] [INFO] [1781168002.352336619] [gazebo_track_car]: camera traffic light ignored outside distance gate; state=red segment=aaa_flat_parking_stub_stop gate<=1.70m nearby_target=- area=1520px bbox=52x39px center=(248,169)
+[gazebo_track_car-2] [WARN] [1781168002.516288875] [gazebo_track_car]: JITTER events=50 reasons=cmd_xy_error=0.1024m pos=(+0.958,-0.059) step=0.0000/0.0000m yaw=0.000/0.000rad route=aaa_flat_parking_stub_stop
+[gazebo_track_car-2] [WARN] [1781168003.615429898] [gazebo_track_car]: JITTER events=55 reasons=cmd_xy_error=0.1024m pos=(+0.958,-0.059) step=0.0000/0.0000m yaw=0.000/0.000rad route=aaa_flat_parking_stub_stop
+[gazebo_track_car-2] [INFO] [1781168003.815103415] [gazebo_track_car]: MOTION pos=(+0.958,-0.059) yaw=-3.121 v=0.000 step_err=0.0000m/0.000rad track_err=0.1024m footprint=road:3.00px route=aaa_flat_parking_stub_stop cmd_vel=(0.000,+0.000)
+[gazebo_track_car-2] [WARN] [1781168004.638092931] [gazebo_track_car]: JITTER events=51 reasons=cmd_xy_error=0.1024m pos=(+0.958,-0.059) step=0.0000/0.0000m yaw=0.000/0.000rad route=aaa_flat_parking_stub_stop
+[gazebo_track_car-2] [WARN] [1781168005.637021928] [gazebo_track_car]: JITTER events=50 reasons=cmd_xy_error=0.1024m pos=(+0.958,-0.059) step=0.0000/0.0000m yaw=0.000/0.000rad route=aaa_flat_parking_stub_stop
+[WARNING] [launch]: user interrupted with ctrl-c (SIGINT)
+[INFO] [gazebo_camera_viewer-3]: sending signal 'SIGINT' to process[gazebo_camera_viewer-3]
+[INFO] [gazebo_track_car-2]: sending signal 'SIGINT' to process[gazebo_track_car-2]
+[INFO] [gzserver-1]: sending signal 'SIGINT' to process[gzserver-1]
+[INFO] [gazebo_camera_viewer-3]: process has finished cleanly [pid 7414]
+[INFO] [gazebo_track_car-2]: process has finished cleanly [pid 7411]
+[ERROR] [gzserver-1]: process has died [pid 7409, exit code -2, cmd 'gzserver /home/quocbao/Downloads/map_2                                                                      -s libgazebo_ros_init.so   -s libgazebo_ros_factory.so   -s libgazebo_ros_force_system.so       '].

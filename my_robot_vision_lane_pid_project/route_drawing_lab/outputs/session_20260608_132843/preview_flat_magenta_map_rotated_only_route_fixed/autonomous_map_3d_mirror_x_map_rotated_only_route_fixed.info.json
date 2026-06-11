@@ -1,0 +1,23 @@
+{
+  "world": "/home/quocbao/my_robot_vision_full_project/my_robot_vision/route_drawing_lab/outputs/session_20260608_132843/preview_flat_magenta_map_rotated_only_route_fixed/autonomous_map_3d_mirror_x_map_rotated_only_route_fixed.world",
+  "source_world": "/home/quocbao/my_robot_vision_full_project/my_robot_vision/route_drawing_lab/outputs/session_20260608_132843/preview_flat_magenta_original2d_3d_camera_match_2d/autonomous_map_3d_mirror_x_flat_magenta_original2d_camera_match_2d.world",
+  "purpose": "Rotate only the 3D map model 180 degrees around its center while keeping the magenta route overlay mesh unchanged.",
+  "map_pose": [
+    0.0,
+    0.3,
+    0.0,
+    0.0,
+    0.0,
+    3.141593
+  ],
+  "route_overlay_transform_changed": false,
+  "camera_pose_changed_from_source": false,
+  "camera_pose": [
+    0.0,
+    0.3,
+    7.5,
+    0.0,
+    1.570796,
+    -1.570796
+  ]
+}

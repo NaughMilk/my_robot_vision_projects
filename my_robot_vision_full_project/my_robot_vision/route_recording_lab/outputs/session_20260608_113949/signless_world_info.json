@@ -1,0 +1,21 @@
+{
+  "source_world": "/home/quocbao/Downloads/map_1",
+  "output_world": "/home/quocbao/my_robot_vision_full_project/my_robot_vision/route_recording_lab/generated/autonomous_map_recording_signless.world",
+  "removed_road_sign_models": [
+    "sign_go_straight_top_island",
+    "sign_turn_right_top_right_island",
+    "sign_speed_limit_left_island",
+    "sign_parking_lower_right_island",
+    "sign_turn_left_lower_left_island"
+  ],
+  "removed_state_blocks": 1,
+  "car_spawn_mode": "existing_model_pose_updated",
+  "start_pose": [
+    -1.828125,
+    2.1796875,
+    0.02,
+    0.0,
+    0.0,
+    3.141592653589793
+  ]
+}
